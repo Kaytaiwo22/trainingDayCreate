@@ -1,6 +1,6 @@
 .category-container {
     display: inline-flex;
-    position: absolute;
+    position: relative;
     flex-direction: row;
     width: 100%;
     flex-wrap: wrap;
