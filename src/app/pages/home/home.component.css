@@ -5,7 +5,7 @@ h2 {
 .hero-wrapper {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 90vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url('/assets/images/heroImage.jpg');
