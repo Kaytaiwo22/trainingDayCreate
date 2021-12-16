@@ -7,7 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SweetsCategoriesComponent implements OnInit {
 
-  constructor() { }
+  categoryList: any = [];
+
+  constructor() {
+    this.categoryList = [{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    }]
+  }
 
   ngOnInit(): void {
   }

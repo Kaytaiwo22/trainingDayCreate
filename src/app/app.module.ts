@@ -31,7 +31,8 @@ import {LoginHeaderInterceptorService} from './components/login-form/login-heade
 import {VerifiedAsLoggedInService} from "../verified-as-logged-in.service";
 import {VerifiedAsLoggedOutService} from "../verified-as-logged-out.service";
 import {UserDetailsService} from "../user-details.service";
-import { SweetsCategoriesComponent } from './sweets-categories/sweets-categories.component';
+import { SweetCategoriesModule } from './components/sweets-categories/sweets-categories.module';
+
 
 declare global {
   interface Window {
@@ -41,7 +42,7 @@ declare global {
 export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass: LoginHeaderInterceptorService, multi: true }];
 
 @NgModule({
-  declarations: [MainComponent, SweetsCategoriesComponent],
+  declarations: [MainComponent],
     imports: [
         CommonModule,
         RouterModule,
@@ -67,7 +68,8 @@ export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass:
         AccountModule,
         MenuModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        SweetCategoriesModule,
     ],
   providers: [VerifiedAsLoggedInService,VerifiedAsLoggedOutService, UserDetailsService, CookieService, { provide: AosToken, useValue: aos },
       httpInterceptorProviders],
