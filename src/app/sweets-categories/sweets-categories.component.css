@@ -1,0 +1,9 @@
+.category-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+}
