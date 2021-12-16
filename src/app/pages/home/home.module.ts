@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home.component";
 import {HeroModule} from "../../components/hero/hero.module";
+import {StepsModule} from "../../components/steps/steps.module";
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ export class ConfirmationRoutingModule {}
  * The Module
  */
 @NgModule({
-    imports: [CommonModule, RouterModule, ConfirmationRoutingModule, HeroModule],
+  imports: [CommonModule, RouterModule, ConfirmationRoutingModule, HeroModule, StepsModule],
   declarations: [HomeComponent],
   providers: []
 })
