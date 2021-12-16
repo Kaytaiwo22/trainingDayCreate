@@ -1,0 +1,15 @@
+<div class="category">
+  <ul>
+    <h2 class="catHeader">Show me your yummy...</h2>
+    <li class="medium-font" *ngFor="let categoryItem of categoryItems" [ngClass]="{'selected': categoryItem?._id === queryId}">
+      <a class="cat-text" routerLink="/shop" [queryParams]="{ categoryId: categoryItem?._id }">
+        <i class="fas fa-star"></i> {{ categoryItem.name }}
+      </a>
+    </li>
+    <li class="medium-font" [ngClass]="{'selected': !queryId}">
+      <a class="showAll" routerLink="/shop">
+        Show Me Everything!
+      </a>
+    </li>
+  </ul>
+</div>

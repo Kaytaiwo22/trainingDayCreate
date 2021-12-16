@@ -1,0 +1,20 @@
+<div class="icon-layout" [ngClass]="{'no-header': !header || headerInside, 'no-margin': noMargin}">
+  <h2 *ngIf="header && !headerInside">{{header}}</h2>
+  <div *ngIf="header && !headerInside" class="title-line"></div>
+
+  <div class="grid-x" [ngStyle]="{'transform': 'skewY('+ skewValue*-1 +'deg)'}">
+    <div class="small-12 columns header-column" *ngIf="header && headerInside" [ngStyle]="{'transform': 'skewY('+ skewValue +'deg)'}">
+      <h2>{{header}}</h2>
+      <div class="title-line"></div>
+    </div>
+    <div class="small-12 medium-4 columns" *ngFor="let item of items" [ngStyle]="{'transform': 'skewY('+ skewValue +'deg)'}">
+      <img [src]="item.iconUrl" width="60px" [alt]="item.title" aria-hidden="true" />
+      <h3 class="h5" style="font-size: 15px"> {{item.title}}</h3>
+      <div class="title-line line-bottom"></div>
+      <button *ngIf="item.buttonText && item.buttonLink !== '/chat'" class="button small-button" [routerLink]="item.buttonLink"
+              data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" data-aos-offset="200">{{item.buttonText}}</button>
+      <button *ngIf="item.buttonText && item.buttonLink === '/chat'" class="button small-button" (click)="openLiveChat()"
+              data-aos="zoom-in" data-aos-duration="500" data-aos-delay="250" data-aos-offset="200">{{item.buttonText}}</button>
+    </div>
+  </div>
+</div>

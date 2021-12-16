@@ -1,0 +1,13 @@
+<div class="web-dev-title-wrapper">
+  <h2>{{header}}</h2>
+  <div class="title-line"></div>
+  <div class="grid-x" *ngIf="items && items?.length">
+    <div class="small-12 medium-6 columns blog-wrapper" *ngFor="let item of items" data-aos="fade-up" data-aos-duration="500" data-aos-offset="200">
+      <div class="blog" [ngStyle]="{'background-image': 'url(' + item.imageUrl + ')'}">
+        <h3>{{item.title}}</h3>
+        <div class="title-line white"></div>
+        <button [routerLink]="item.buttonLink" class="button small-button" *ngIf="item.buttonText">{{item.buttonText}}</button>
+      </div>
+    </div>
+  </div>
+</div>

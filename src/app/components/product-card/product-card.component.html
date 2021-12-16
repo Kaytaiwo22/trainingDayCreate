@@ -1,0 +1,30 @@
+<div class="el-wrapper">
+  <div class="box-up">
+    <img class="img" [src]="product.imageUrls[0]" />
+    <div class="img-info">
+      <div class="info-inner">
+        <span class="p-name">{{ product.productName }}</span>
+        <span class="p-company"
+          ><a routerLink="/product-detail">{{ product.categoryName }}</a></span
+        >
+      </div>
+      <div class="a-size">
+        <!-- <span>{{product.description}}</span><br>-->
+        <button class="button inverted" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">View Product</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="box-down">
+    <div class="h-bg">
+      <div class="h-bg-inner"></div>
+    </div>
+
+    <a class="cart" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">
+      <span class="price">{{ product.price | currency: product.currency }}</span>
+      <span class="add-to-cart">
+        <span class="txt">{{ product.calltoAction }} View Product</span>
+      </span>
+    </a>
+  </div>
+</div>

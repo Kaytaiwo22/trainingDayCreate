@@ -1,0 +1,17 @@
+<div class="grid-x blog-text">
+  <div class="small-10 small-offset-1 medium-10 medium-offset-1 columns">
+    <div class="text-wrapper">
+      <div *ngFor="let paragraph of paragraphs">
+        <h1 *ngIf="paragraph.type === 'h1'">{{paragraph.text}}</h1>
+        <h2 *ngIf="paragraph.type === 'h2'">{{paragraph.text}}</h2>
+        <h3 *ngIf="paragraph.type === 'h3'">{{paragraph.text}}</h3>
+        <h4 *ngIf="paragraph.type === 'h4'">{{paragraph.text}}</h4>
+        <h5 *ngIf="paragraph.type === 'h5'">{{paragraph.text}}</h5>
+        <p *ngIf="paragraph.type === 'p'" [innerHtml]="paragraph.text"></p>
+        <ul *ngIf="paragraph.type === 'li'">
+          <li [innerHtml]="paragraph.text"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

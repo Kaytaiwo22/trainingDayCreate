@@ -1,0 +1,17 @@
+<div class="contact-wrapper">
+  <div class="grid-x">
+    <div class="small-12 medium-3 columns">
+      <h2>Lets chat!</h2>
+    </div>
+    <div class="small-12 medium-3 columns input-wrap">
+      <input *ngIf="!hideFields" type="text" name="fullName" [(ngModel)]="fullName" placeholder="Your name" aria-label="Full Name"/>
+    </div>
+    <div class="small-12 medium-3 columns input-wrap">
+      <input *ngIf="!hideFields" type="text" name="phoneNo" [(ngModel)]="phoneNo" placeholder="Phone number" aria-label="Phone Number"/>
+    </div>
+    <div class="small-12 medium-3 columns">
+      <button *ngIf="!hideFields" (click)="submitContactRequest()" class="button">Call me</button>
+      <button *ngIf="hideFields" class="button">Thanks, we'll be in touch</button>
+    </div>
+  </div>
+</div>

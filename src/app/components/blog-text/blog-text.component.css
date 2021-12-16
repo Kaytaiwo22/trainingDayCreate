@@ -1,0 +1,21 @@
+.blog-text {
+  position: relative;
+}
+
+.text-wrapper {
+  padding: 10px 0;
+}
+
+ul {
+  margin: 0;
+}
+
+ul li {
+  padding: 0;
+}
+
+@media (max-width: 520px) {
+  .text-wrapper {
+    padding: 10px 0;
+  }
+}

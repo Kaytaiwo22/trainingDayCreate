@@ -1,0 +1,169 @@
+.burger-icon {
+  cursor: pointer;
+  color: #a2a2a2;
+  margin-top: 7px;
+}
+
+.burger-icon :hover {
+  color: black;
+}
+.burger-menu {
+  margin-top: 7px;
+  position: fixed;
+  right: -35%;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  background-color: #ffffff;
+  color:#f683b1;
+  padding: 100px 0;
+  z-index: 2;
+  border-left: 2px solid #ffffff;
+}
+
+@media (max-width: 520px) {
+  .burger-menu {
+    width: 100%;
+    right: -100%;
+    border-left: 0;
+  }
+}
+
+.close-menu {
+  -webkit-animation: slide-left-to-right 0.25s forwards;
+  animation: slide-left-to-right 0.25s forwards;
+  right: -35%;
+}
+
+.open-menu {
+  -webkit-animation: slide-right-to-left 0.25s;
+  animation: slide-right-to-left 0.25s;
+  right: 0;
+}
+
+@media (max-width: 520px) {
+  .close-menu {
+    -webkit-animation: slide-left-to-right-full 0.25s forwards;
+    animation: slide-left-to-right-full 0.25s forwards;
+    right: -100%;
+  }
+
+  .open-menu {
+    -webkit-animation: slide-right-to-left-full 0.25s;
+    animation: slide-right-to-left-full 0.25s;
+    right: 0;
+  }
+}
+
+.close-menu-icon {
+  position: absolute;
+  top: 35px;
+  right: 40px;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  color: #f683b1;
+  cursor: pointer;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav ul li {
+  text-align: center;
+  list-style: none;
+  padding: 10px 0;
+  outline: 0;
+}
+
+nav ul li a {
+  color: #f376a8;
+  /*text-shadow: 1px 1px black;*/
+  font-weight: 800;
+}
+
+.menu-icon {
+  margin-right: 12px;
+}
+
+.call-link,
+.call-link:hover,
+.call-link:visited,
+.call-link:focus {
+  color: #a2a2a2;
+}
+
+@-webkit-keyframes slide-right-to-left {
+  0% {
+    right: -35%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-right-to-left {
+  0% {
+    right: -35%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes slide-left-to-right {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -35%;
+  }
+}
+
+@keyframes slide-left-to-right {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -35%;
+  }
+}
+
+@-webkit-keyframes slide-right-to-left-full {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-right-to-left-full {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@-webkit-keyframes slide-left-to-right-full {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+@keyframes slide-left-to-right-full {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: -100%;
+  }
+}

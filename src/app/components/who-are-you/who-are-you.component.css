@@ -1,0 +1,21 @@
+.who-are-you-wrapper {
+  width: 100%;
+  background-color: #CE4C74;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: #FFF;
+}
+
+.who-are-you-wrapper p {
+  padding: 0 20px;
+}
+
+.who-are-you-wrapper .columns {
+  padding-top: 40px;
+}
+
+.padded-sides {
+  padding-left: 20%;
+  padding-right: 20%;
+}

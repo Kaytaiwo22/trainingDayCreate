@@ -1,0 +1,50 @@
+.half-info {
+  position: relative;
+  text-align: center;
+  height: calc(100vh - 106px);
+  min-height: 400px;
+}
+
+.image {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(243, 243, 243, .9);
+  padding: 0 15px;
+}
+
+.subheader-present {
+  margin-bottom: 0;
+}
+
+h2, h4 {
+  color: #CE4C74;
+}
+
+p {
+  color: #000;
+  font-weight: bold;
+}
+
+.description {
+  position: relative;
+}
+
+.description .vertical-center {
+  width: 100%;
+  padding: 0 15px;
+}
+
+@media (max-width: 639px) {
+  .description {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}

@@ -1,0 +1,25 @@
+.title-txt{
+  text-align: center;
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 40px;
+  padding: 20px;
+}
+
+
+.parallax {
+  /* The image used */
+  background-image: url('/assets/images/candy.jpg');
+
+  /* Set a specific height */
+  height: 50px;
+  width: 100%;
+
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

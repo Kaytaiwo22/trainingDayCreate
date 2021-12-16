@@ -1,0 +1,14 @@
+<div class="grid-x half-info">
+  <div class="small-12 columns image"
+       [ngStyle]="{'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition}">
+    <div class="text-wrapper">
+      <h2 [hidden]="!imageHeader" [ngClass]="{'subheader-present': subHeader}"
+          [ngStyle]="{'color': headerColor}">
+        <b class="red-brand-text">Create</b>&nbsp;<span>{{imageHeader}}</span>
+      </h2>
+      <h4 [hidden]="!subHeader" [ngStyle]="{'color': headerColor}">{{subHeader}}</h4>
+      <p [hidden]="!paragraph">{{paragraph}}</p>
+      <button routerLink="{{buttonLink}}" [hidden]="!buttonText" class="button">{{buttonText}} ></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+<div class="image-cluster" *ngIf="imageUrls && imageUrls?.length">
+  <img *ngFor="let imageUrl of imageUrls;let i = index" [src]="imageUrl" width="25%" [alt]="imageAltText[i]" />
+</div>

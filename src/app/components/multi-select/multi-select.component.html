@@ -1,0 +1,18 @@
+<div class="grid-x multi-select">
+  <button *ngFor="let option of options; let i = index"
+          class="small-12 columns multi-select-option {{mediumClassName}}"
+          [ngClass]="{'selected': i === selectedOption, 'full-descriptions-available': options[selectedOption]?.fullDetails}"
+          (click)="selectedOption = i">
+    <h2>{{option.mainTitle}}</h2>
+    <div class="title-line" aria-hidden="true"></div>
+    <div class="short-description" [innerHtml]="option.shortDescription"></div>
+    <p class="headline-price handwriting-font h4">
+      <span class="from-text" *ngIf="option.showFrom">from</span>
+      <span>{{option.headlinePrice}}</span>
+    </p>
+  </button>
+  <div class="small-12 columns full-description" *ngIf="options[selectedOption]?.fullDetails">
+    <h3>{{options[selectedOption].sectionTitle}}</h3>
+    <div class="full-details" [innerHtml]="options[selectedOption]?.fullDetails"></div>
+  </div>
+</div>

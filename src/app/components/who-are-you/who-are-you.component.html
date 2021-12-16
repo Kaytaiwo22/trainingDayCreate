@@ -1,0 +1,31 @@
+<div class="who-are-you-wrapper" [ngStyle]="{'background-color': backgroundColor, 'color': textColor, 'transform': 'skewY('+ skewValue*-1 +'deg)'}"
+     [ngClass]="{'padded-sides': padded}">
+  <div [ngStyle]="{'transform': 'skewY('+ skewValue +'deg)'}">
+    <h2>{{header}}</h2>
+    <p>{{description}}</p>
+    <div [hidden]="hideSummary">
+      <div class="grid-x">
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Consultancy</h4>
+        </div>
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Fully Managed Projects</h4>
+        </div>
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Design</h4>
+        </div>
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Architecture & Control</h4>
+        </div>
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Support</h4>
+        </div>
+        <div class="small-12 medium-4 large-2 columns" data-aos="zoom-in" data-aos-duration="500" data-aos-offset="100">
+          <h4>Resourcing</h4>
+        </div>
+      </div>
+    </div>
+    <button *ngIf="buttonText && buttonLink !== '/chat'" routerLink="{{buttonLink}}" class="button">{{buttonText}}</button>
+    <button *ngIf="buttonText && buttonLink === '/chat'" (click)="openLiveChat()" class="button">{{buttonText}}</button>
+  </div>
+</div>

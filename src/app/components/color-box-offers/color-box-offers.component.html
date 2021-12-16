@@ -1,0 +1,35 @@
+<div class="offers grid-x">
+    <div class="sweets small-12 medium-3 columns">
+        <h3 class="offers-title">Sweets</h3>
+        <img class="thumbnail"
+        [src]="sweetImgUrl"/>
+        <p class="offers-description">{{sweetDescription}}</p>
+        <button class="button invert-Btn" routerLink="/shop" >{{sweetButtonTxt}}</button>
+    </div>
+<!--    <div class="sweets small-12 medium-4 columns">-->
+<!--        <h3 class="offers-title">{{offerOneName}}</h3>-->
+<!--        <img class="thumbnail" [src]="offerOneImageUrl"/>-->
+<!--        <p class="offers-description">{{offerOneDescription}}</p>-->
+<!--        <button class="button invert-Btn" [routerLink]="'/shop'">Order Now</button>-->
+<!--    </div>-->
+    <div class="cupcakes small-12 medium-3 columns">
+        <h3 class="offers-title">Cupcakes</h3>
+        <img class="thumbnail" [src]="cupcakeImgUrl"/>
+        <p class="offers-description">{{cupcakeDescription}}</p>
+        <button class="button invert-Btn" routerLink="/shop">{{cupcakeButtonTxt}}</button>
+    </div>
+
+    <div class="cookies small-12 medium-3 columns">
+        <h3 class="offers-title">Cookies</h3>
+        <img class="thumbnail" [src]="cookieImgUrl" />
+        <p class="offers-description">{{cookieDescription}}</p>
+        <button class="button invert-Btn" routerLink="/shop">{{cookieButtonTxt}}</button>
+    </div>
+
+    <div class="cookies small-12 medium-3 columns">
+        <h3 class="offers-title">Hampers</h3>
+        <img class="thumbnail" [src]="hamperImgUrl"/>
+        <p class="offers-description">{{hamperDescription}}</p>
+        <button class="button invert-Btn" routerLink="/shop">{{hamperButtonTxt}}</button>
+    </div>
+</div>

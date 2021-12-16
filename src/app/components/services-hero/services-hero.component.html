@@ -1,0 +1,39 @@
+<div class="card-wrapper">
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <div class="image-overlay">
+        <h4>{{serviceTitle}}</h4>
+        <p class="weeks">{{weeks}}</p>
+        <p class="price">{{price}}</p>
+      </div>
+    </div>
+    <div class="flip-card-back">
+      <h6 class="card-header">{{serviceTitle}}</h6>
+      <p class="card-description">{{description}}</p>
+      <div>
+        <button routerLink="{{buttonLink}}" *ngIf="buttonText" class="button small-button">{{buttonText}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!--
+
+<div class="card-wrapper">
+<div class="flip-container"  ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front">
+
+      <h1>{{serviceTitle}}</h1>
+
+    </div>
+    <div class="back">
+
+      <h6>{{price}}</h6>
+
+    </div>
+  </div>
+</div>
+</div>-->

@@ -1,0 +1,51 @@
+.half-info:not(.half-size) {
+  position: relative;
+  text-align: center;
+  height: calc(100vh - 190px);
+  min-height: 400px;
+}
+
+.half-info.half-size {
+  position: relative;
+  text-align: center;
+  height: 60vh;
+}
+
+.image {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.image h1 {
+  position: absolute;
+  top: calc(50% - 30px);
+  width: 100%;
+  text-align: center;
+  color: #CE4C74;
+  background-color: rgba(243, 243, 243, .7);
+}
+
+.button {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #CE4C74;
+}
+
+.description {
+  position: relative;
+}
+
+.description .vertical-center {
+  width: 100%;
+  padding: 0 15px;
+}
+
+@media (max-width: 639px) {
+  .description {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}

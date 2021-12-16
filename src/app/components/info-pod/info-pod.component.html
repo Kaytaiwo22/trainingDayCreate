@@ -1,0 +1,23 @@
+<div class="grid-x info-pod">
+  <div class="small-12 medium-2 columns"
+       *ngIf="!imageRight"></div>
+  <div class="small-12 medium-2 columns vertical-center image-section-left"
+       *ngIf="!imageRight">
+    <img src="{{imageUrl}}" width="80%" />
+  </div>
+  <div class="small-12 medium-10 columns" [ngClass]="{'imageRight': imageRight}">
+    <h2><span>{{header}}</span></h2>
+    <p>{{paragraph}}</p>
+    <button routerLink="{{buttonLink}}" *ngIf="buttonLink" class="button">{{buttonText}} ></button>
+    <img class="mobile-image" src="{{imageUrl}}" width="20%"
+         [ngClass]="{'no-button': !buttonLink}" />
+  </div>
+  <div class="small-12 medium-2 columns"
+       *ngIf="!imageRight"></div>
+  <div class="small-12 medium-2 columns image-section"
+       *ngIf="imageRight">
+    <div class="vertical-center image-wrapper">
+      <img src="{{imageUrl}}" width="80%" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,65 @@
+.software-values-wrapper {
+  width: 100%;
+  background-color: #FFFFFF;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.software-values-wrapper p {
+  padding: 0 20px;
+}
+
+.software-values-wrapper h3 {
+  padding: 0 20px;
+  color: #CE4C74;
+}
+
+.who-are-you-wrapper {
+  width: 100%;
+  background-color: #CE4C74;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: #FFF;
+}
+
+.who-are-you-wrapper p {
+  padding: 0 20px;
+}
+
+.who-are-you-wrapper .columns {
+  padding-top: 40px;
+}
+
+.phone-fields, .email-fields {
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 4px 16px;
+}
+
+.button {
+  margin-left: 20px;
+}
+
+.phone-fields .button, .email-fields .button {
+  margin-left: 0;
+}
+
+.phone-fields h3, .email-fields h3 {
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.email-fields p {
+  padding-left: 0;
+}
+
+.email-fields {
+  margin-top: 40px;
+}
+
+.be-in-touch {
+  padding-left: 0!important;
+}
+
+ul {
+  margin-left: 50px;
+}

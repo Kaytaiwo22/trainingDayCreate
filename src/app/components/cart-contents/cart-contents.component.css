@@ -1,0 +1,135 @@
+
+.cart-contents {
+    padding: 50px;
+    border-bottom: 1px solid #CE4C74;
+}
+
+.q-btn, .update-btn {
+    float: right;
+    padding: 5px;
+    margin: 0 5px;
+    font-size: 40px;
+    line-height: .5;
+}
+
+.q-btn.add {
+    font-size: 16px;
+    line-height: 1;
+    padding: 12px;
+}
+
+.remove-btn {
+    width: 30px;
+    padding-left: 0;
+}
+
+img{
+    contain: inherit;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.media-body {
+    text-align: left;
+}
+
+.product-name{
+    font-weight: bold;
+    color:#CE4C74;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-description{
+    font-weight: lighter;
+    color:grey;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.product-price{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #CE4C74;
+    float: left;
+    width: 50%;
+   font-size: 25px;
+}
+
+.quantity{
+    position: relative;
+    height: auto;
+    float: left;
+    width: 150px;
+    border: 2px solid black;
+    text-align: center;
+    border-radius: 40px;
+    padding:10px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.qty-pad{
+    margin: 20px;
+    float: left;
+}
+
+.outer {
+    display: table;
+    clear: both;
+    margin-left: auto;
+}
+
+.btn-wrapper {
+    margin-right: 20px;
+}
+
+@media (max-width: 520px) {
+    img {
+        max-height: 100px;
+        width: auto;
+    }
+
+    .media.mb-3 {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .cart-contents {
+        border-bottom: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .grid-x {
+        border-bottom: 1px solid #CE4C74;
+        padding-bottom: 20px;
+    }
+
+    .product-name {
+        text-align: center;
+    }
+
+    .product-price {
+        width: 100%;
+        text-align: center;
+    }
+
+    .qty-pad {
+        width: 100%;
+    }
+
+    .quantity {
+        margin: 0 auto;
+        float: none;
+    }
+
+    .outer {
+        margin-left: 0;
+    }
+
+    .btn-wrapper {
+        width: 100%;
+    }
+
+}

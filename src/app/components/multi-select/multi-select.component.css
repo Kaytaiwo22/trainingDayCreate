@@ -1,0 +1,77 @@
+.multi-select {
+  position: relative;
+  background-color: #FFF;
+  clear: both;
+}
+
+.multi-select-option {
+  position: relative;
+  padding: 30px 30px 5px 30px;
+  outline: 0;
+}
+
+.multi-select-option.full-descriptions-available {
+  cursor: pointer;
+}
+
+.full-description {
+  background-color: #009DD6;
+  padding: 30px;
+}
+
+.full-description h3 {
+  color: #FFF;
+}
+
+.short-description em {
+  font-weight: bold;
+  color: #029DD6;
+}
+
+.multi-select-option.full-descriptions-available.selected {
+  background-color: #3dcaff4d;
+}
+
+.multi-select-option.full-descriptions-available:not(.selected):hover {
+  background-color: #3dcaff1c;
+}
+
+.multi-select-option.full-descriptions-available.selected:after {
+  content: ' ';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20px);
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #009DD6;
+}
+
+h2 {
+  color: #CE4C74;
+}
+
+.title-line {
+  width: 50px;
+  height: 3px;
+  border-radius: 5px;
+  background-color: #CE4C74;
+  margin: 0 auto 30px auto;
+}
+
+.headline-price {
+  text-align: right;
+  margin-top: 20px;
+  color: #CE4C74;
+}
+
+.from-text {
+  font-size: 16px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+
+.full-details p, .full-details li {
+  color: #FFF;
+}

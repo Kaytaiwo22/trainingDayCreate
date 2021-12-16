@@ -1,0 +1,40 @@
+<div class="grid-x">
+  <div class="small-12 medium-4 columns cart-contents">
+    <div class="media mb-3">
+      <img [src]="product.imageUrls" [alt]="'Image of' + product.name" />
+    </div>
+  </div>
+  <div class="small-12 medium-8 columns cart-contents">
+    <div class="media-body">
+      <h5 class="product-name">{{ product.name }}</h5>
+      <p class="product-price">Price: {{ product.price * product.quantityInBasket | currency: 'GBP' }}</p>
+      <div class="outer">
+        <div class="qty-pad">
+          <h3 class="quantity">{{ product.quantityInBasket }}</h3>
+        </div>
+        <div class="btn-wrapper">
+          <button
+            (click)="updateQuantityInternal(this.product.quantityInBasket + 1)"
+            class="button q-btn add"
+          >
+            Add one more!
+          </button>
+          <button
+            *ngIf="product.quantityInBasket > 1"
+            (click)="updateQuantityInternal(this.product.quantityInBasket - 1)"
+            class="button q-btn"
+          >
+            <img src="./assets/images/icons/minus-circle-outline.svg" width="30px" class="remove-btn" alt="Reduce Quantity" />
+          </button>
+          <button
+            *ngIf="product.quantityInBasket === 1"
+            (click)="updateQuantityInternal(0)"
+            class="button q-btn"
+          >
+            <img src="./assets/images/icons/trash-2-outline.svg" width="30px" class="remove-btn" alt="Remove Product" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="router-outlet">
+  <div class="full-width" [ngClass]="{'no-gradient': noGradient}">
+    <ul class="grid-x large-screen-menu">
+      <li class="medium-3 columns" *ngFor="let menuItem of menuItems">
+        <a class="nav" [routerLink]="menuItem.link" [queryParams]="menuItem.queryParams">
+          {{ menuItem.text }}
+        </a>
+      </li>
+    </ul>
+    <div class="grid-x small-screen-menu">
+      <div class="small-12 columns">
+        <a [routerLink]="'/shop'">
+          <img src="assets/images/icons/shopping-cart-outline-white.svg" width="20px" alt="Shop Now" />
+          Shop Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

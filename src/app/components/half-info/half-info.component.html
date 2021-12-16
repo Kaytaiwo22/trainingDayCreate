@@ -1,0 +1,19 @@
+<div class="grid-x half-info" [ngClass]="{'half-size': halfSize}">
+  <div class="small-12 medium-6 columns image"
+       [hidden]="imageRight"
+       [ngStyle]="{'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition}">
+    <h1 [hidden]="!imageHeader"><span>{{imageHeader}}</span></h1>
+  </div>
+  <div class="small-12 medium-6 columns description">
+    <div class="vertical-center">
+      <h2><span>{{header}}</span></h2>
+      <p [innerHTML]="paragraph"></p>
+      <button [routerLink]="buttonLink" *ngIf="buttonText" class="button inverted">{{buttonText}}</button>
+    </div>
+  </div>
+  <div class="small-12 medium-6 columns image"
+       [hidden]="!imageRight"
+       [ngStyle]="{'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition}">
+    <h1 [hidden]="!imageHeader"><span>{{imageHeader}}</span></h1>
+  </div>
+</div>

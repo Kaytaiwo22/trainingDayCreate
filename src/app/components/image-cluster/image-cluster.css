@@ -1,0 +1,27 @@
+.image-cluster {
+  width: 100%;
+  position: relative;
+  max-width: 80%;
+  margin: 120px auto;
+  display: table;
+}
+
+.image-cluster img {
+  float: left;
+}
+
+.image-cluster img:nth-child(1) {
+  transform: skew(-40deg, 40deg);
+}
+
+.image-cluster img:nth-child(2) {
+  transform: skew(-20deg, 20deg);
+}
+
+.image-cluster img:nth-child(3) {
+  transform: skew(20deg, -20deg);
+}
+
+.image-cluster img:nth-child(4) {
+  transform: skew(40deg, -40deg);
+}

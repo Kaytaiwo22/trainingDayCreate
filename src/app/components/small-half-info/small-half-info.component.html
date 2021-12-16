@@ -1,0 +1,23 @@
+<div class="grid-x small-half-info">
+  <div class="small-12 medium-4 medium-offset-1 columns image"
+       [hidden]="imageRight"
+       [ngStyle]="{'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition, 'transform': 'skewY('+ skewValue*-1 +'deg)'}">
+    <h2 [hidden]="!imageHeader" [ngStyle]="{'transform': 'skewY('+ skewValue +'deg)'}"><span>{{imageHeader}}</span></h2>
+  </div>
+  <div class="small-12 medium-5 medium-offset-1 columns description">
+    <div class="vertical-center">
+      <h2 style="color:black;"><span>{{header}}</span></h2>
+      <p>{{paragraph}}</p>
+      <h4 style="color:black;">{{smallHeader}}</h4>
+      <p>{{paragraph2}}</p>
+
+       <button routerLink="{{buttonLink}}" [hidden]="!buttonText" class="button">{{buttonText}} ></button>
+
+      </div>
+  </div>
+  <div class="small-12 medium-4 medium-offset-1 columns image"
+       [hidden]="!imageRight"
+       [ngStyle]="{'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition, 'transform': 'skewY('+ skewValue*-1 +'deg)'}">
+    <h2 [hidden]="!imageHeader" [ngStyle]="{'transform': 'skewY('+ skewValue +'deg)'}"><span>{{imageHeader}}</span></h2>
+  </div>
+</div>

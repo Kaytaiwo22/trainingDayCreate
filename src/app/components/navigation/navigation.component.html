@@ -1,0 +1,26 @@
+<div>
+  <a routerLink="/cart">
+    <img src="./assets/images/icons/shop-white.png" width="30px" class="burger-icon" alt="Your Cart" />
+  </a>
+<!--  <a (click)="toggleMenu()">-->
+<!--    <img src="/assets/images/icons/menu-white.svg-->
+<!--" width="30px" class="burger-icon" alt="Open Main Menu" />-->
+
+<!--  </a>-->
+  <div class="burger-menu" [ngClass]="{'open-menu': burgerMenuOpen, 'close-menu': !burgerMenuOpen && menuInteractionStarted}">
+    <a (click)="toggleMenu()">
+      <img src="./assets/images/icons/close-pink.png" width="40px" class="close-menu-icon" alt="Close Main Menu" />
+    </a>
+
+    <nav class="vertical-center">
+      <ul>
+        <li class="medium-font" *ngFor="let menuItem of menuItems">
+          <a [routerLink]="menuItem.link" [queryParams]="menuItem.queryParams" (click)="toggleMenu()">
+            {{menuItem.text}}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+

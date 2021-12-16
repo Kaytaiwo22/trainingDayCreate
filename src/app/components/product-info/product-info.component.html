@@ -1,0 +1,58 @@
+<div class="grid-x">
+  <div class="parallax"></div>
+
+  <div class="product small-12 large-6 columns">
+<!--    <h1>{{ product?.productName }} - {{ product?.name }}</h1>-->
+<!--    <div class="imageContainer">-->
+<!--      <div class="bigImage" *ngFor="let image of product?.imageUrls; let i = index">-->
+<!--        <img-->
+<!--          class="productImage"-->
+<!--          [src]="image"-->
+<!--          [ngClass]="{ active: imageCounter === i }"-->
+<!--          width="100%"-->
+<!--          alt="Image of {{ product?.name }}"-->
+<!--        />-->
+<!--      </div>-->
+<!--      <div class="arrow-container">-->
+<!--        <button class="sliderBtn left"><i class="fas fa-angle-left arrowIcons" (click)="imageLeft()"></i></button>-->
+<!--        <button class="sliderBtn right"><i class="fas fa-angle-right arrowIcons" (click)="imageRight()"></i></button>-->
+<!--      </div>-->
+<!--    </div>-->
+    <app-product-display-card [product]="product" hideViewProduct="true"></app-product-display-card>
+  </div>
+  <div class="product-details small-12 large-6 columns">
+    <div class="smallImageWrapper">
+      <div class="smallImages" *ngFor="let image of product?.imageUrls; let i = index">
+        <img
+                class="thumbnailProductImage"
+                [src]="image"
+                [ngClass]="{ active: imageCounter === i }"
+                width="20%"
+                alt="Image of {{ product?.name }}"
+        />
+      </div>
+    </div>
+    <p [innerHTML]="product?.description"></p>
+    <p *ngIf="product?.quantityAvailable && product?.quantityAvailable < 100">
+      <i>Only {{ product?.quantityAvailable }} left</i>
+    </p>
+    <p *ngIf="product?.quantityAvailable === 0"><i>Sold Out</i></p>
+
+    <label for="allProductOptions">Product Type</label>
+    <select name="allProductOptions" id="allProductOptions" (change)="productChange($event.target.value)">
+      <option
+        *ngFor="let allProductOption of allProductOptions"
+        [value]="allProductOption._id"
+        [selected]="product?._id === allProductOption._id"
+        >{{ allProductOption.name }} - {{ allProductOption.price | currency: 'GBP' }}</option
+      >
+    </select>
+
+    <div class="buy-container">
+      <button class="button" (click)="buyProduct()" *ngIf="product?.quantityAvailable !== 0">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="parallax"></div>
+
+</div>

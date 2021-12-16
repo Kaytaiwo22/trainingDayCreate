@@ -1,0 +1,16 @@
+<div class="hero-wrapper"
+     [ngStyle]="{'background-color': backgroundColor, 'background-image': 'url(' + imageUrl + ')', 'background-position': backgroundPosition}"
+     [ngClass]="{'half-size': halfSize}">
+  <div class="hero-statement-wrapper" [ngStyle]="{'color': textColor}">
+    <h1 class="handwriting-font large-font" data-aos="zoom-in" data-aos-duration="250" data-aos-offset="200" [ngStyle]="{'color': textColor, 'text-align': textAlign}">
+      <span class="handwriting-font large-font block" [innerHtml]="header"></span>
+        <span class="typewrite">
+          {{mainTypeText}}
+<!--            Delicious Treats For You-->
+        </span>
+    </h1>
+    <div class="footer-text" [innerHTML]="footer"></div>
+    <button routerLink="{{buttonLink}}" *ngIf="buttonText" class="button" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="1000" data-aos-offset="-500">{{buttonText}}</button>
+    <div class="arrow bounce" *ngIf="!hideDownArrow"></div>
+  </div>
+</div>

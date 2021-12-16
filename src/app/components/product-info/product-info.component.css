@@ -1,0 +1,166 @@
+.product-details {
+  padding: 50px 30px 30px;
+}
+
+.product {
+  padding: 30px;
+}
+
+
+img {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.text {
+  font-weight: bold;
+}
+
+.product-details {
+  position: relative;
+  right: 0;
+  top: auto;
+}
+
+h1, h4 {
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-weight: normal;
+  margin: 0;
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f683b1;
+  color: #FFF;
+  border-radius: 20px;
+  width: 100%;
+  font-weight: 500;
+}
+h4 {
+  font-size: 16pt;
+  color: #aaa;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+.buy-container {
+  width: 100%;
+}
+
+.buy-container button {
+  display: inline;
+}
+
+@media (max-width: 520px) {
+  h1 {
+    font-size: 24px;
+  }
+}
+
+
+.productImage {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.smallImageWrapper {
+  margin-bottom: 30px;
+}
+
+.smallImages {
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.thumbnailProductImage {
+  width: 100px;
+  height: 100px;
+  padding-left: 10px;
+  padding-top: 10px;
+  border-radius: 25px;
+}
+
+.thumbnailProductImage.active {
+  padding-left: 0;
+}
+
+.productImage {
+  display:none;
+}
+
+.productImage.active {
+  display:block;
+  height: 350px;
+  /*border: 1px solid #CE4C74;*/
+  border-radius: 20px;
+}
+
+.imageContainer {
+  max-width: 100%;
+}
+
+.arrow-container {
+  /*display: flex;*/
+}
+
+.sliderBtn {
+  /*width: 100%;*/
+  background-color: #f683b1;
+  color:white;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 50%;
+
+}
+
+.left {
+  float: left;
+}
+.right {
+ float: right;
+}
+
+.sliderBtn:hover {
+  background-color: #f683b1;
+  border: 1px solid #f683b1;
+}
+
+.sliderBtn:focus {
+  outline:0;
+}
+
+
+.arrowIcons {
+  font-size: 30px;
+}
+
+.bigImage-wrapper {
+  position: relative;
+  border: 1px solid black;
+  height: 400px;
+}
+
+.bigImage {
+  background-size: contain;
+}
+
+.parallax {
+  /* The image used */
+  background-image: url('/assets/images/candy.jpg');
+
+  /* Set a specific height */
+  height: 200px;
+  width: 100%;
+
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

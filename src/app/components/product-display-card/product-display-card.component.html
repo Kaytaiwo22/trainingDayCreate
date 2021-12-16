@@ -1,0 +1,76 @@
+<!--<div class="el-wrapper">-->
+<!--  <div class="box-up">-->
+<!--    <img class="img" [src]="product.imageUrls[0]" />-->
+<!--    <div class="img-info">-->
+<!--      <div class="info-inner">-->
+<!--        <span class="p-name">{{ product.productName }}</span>-->
+<!--        <span class="p-company">-->
+<!--          <a routerLink="/product-detail">{{ product.categoryName }}</a>-->
+<!--        </span>-->
+<!--      </div>-->
+<!--      <div class="a-size">-->
+<!--        &lt;!&ndash; <span>{{product.description}}</span><br>&ndash;&gt;-->
+<!--        <button class="button inverted" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">View Product</button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+
+<!--  <div class="box-down">-->
+<!--    <div class="h-bg">-->
+<!--      <div class="h-bg-inner"></div>-->
+<!--    </div>-->
+
+<!--    <a class="cart" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">-->
+<!--      <span class="price">{{ product.price | currency: product.currency }}</span>-->
+<!--      <span class="add-to-cart">-->
+<!--        <span class="txt">{{ product.calltoAction }} View Product</span>-->
+<!--      </span>-->
+<!--    </a>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container">
+  <div class="card">
+    <div class="card-head">
+      <img src="./assets/images/logo.png" alt="logo" class="card-logo">
+      <img src="./assets/images/picknmix.png" alt="sweets" class="product-img">
+      <div class="product-detail">
+        <h2>{{ product?.productName }}</h2> {{ product?.description }}
+      </div>
+      <span class="back-text">
+          <span class="theme-pink">Magical</span>
+<!--          <br/>   -->
+      </span>
+      <span class="text-back">
+                    <span class="theme-grey">Treats</span>
+      </span>
+
+    </div>
+    <div class="card-body">
+      <div class="product-desc">
+        <span class="product-title">
+                <b>{{ product?.categoryName }}</b>{{ product?.productName }}
+                <span class="badge">
+                  New
+                </span>
+        </span>
+        <span class="product-caption">
+            {{ product?.description }}
+              </span>
+        <span class="product-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star grey"></i>
+              </span>
+      </div>
+      <div class="product-properties">
+        <span class="product-price">
+                <b>{{ product?.price | currency: product?.currency }}</b>
+              </span>
+      </div>
+        <button class="button viewBtn" routerLink="/product-detail" [queryParams]="{ id: product?._id }" routerLinkActive="active" *ngIf="!hideViewProduct">View Product</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.info-pod {
+  width: 90%;
+  margin-left: 5%;
+  position: relative;
+  text-align: left;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.image-section {
+  position: relative;
+}
+
+.image-section img {
+  padding-left: 10%;
+}
+
+.image-section-left img {
+  padding-left: 10%;
+}
+
+.button {
+  display: inline-block;
+}
+
+.image-wrapper {
+  width: 100%;
+}
+
+.mobile-image {
+  display: none;
+}
+
+@media (max-width: 639px) {
+ .image-section, .image-section-left {
+   display: none;
+ }
+
+ .mobile-image {
+   display: block;
+   position: absolute;
+   right: 0;
+   bottom: 60px;
+ }
+
+ .mobile-image.no-button {
+   bottom: 10px;
+ }
+}

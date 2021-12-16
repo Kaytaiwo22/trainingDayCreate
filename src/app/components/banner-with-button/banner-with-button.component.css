@@ -1,0 +1,16 @@
+.banner{
+  width: 100%;
+  padding: 30px;
+  background-color: #4e4e4e;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.banner .button {
+  background-color: #f683b1;
+  border:1px solid #4e4e4e;
+  /*color: #f683b1;*/
+  color: white;
+}

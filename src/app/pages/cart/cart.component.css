@@ -1,0 +1,98 @@
+.header-text {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.total-price, .shipping-text {
+    text-align: center;
+    font-weight: bold;
+    color: #CE4C74;
+    font-size: 20px;
+}
+
+.shipping-text {
+    font-size: 23px;
+    margin-top: 40px;
+}
+
+.total-price {
+    margin-bottom: 50px;
+    display: table;
+    clear: both;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.shipping-price {
+    text-align: center;
+    font-weight: bold;
+    color: #CE4C74;
+    margin-top: 40px;
+}
+
+.button-wrapper {
+    display: table;
+    margin: 0 auto 100px;
+}
+
+button {
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+button.small-button {
+    padding: 6px;
+    font-size: 12px;
+    margin-top: 24px;
+}
+
+.shipping-option-choice, .coupon-option {
+    max-width: 300px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.coupon-input {
+    float: left;
+    width: 60%;
+}
+
+.coupon-button {
+    float: left;
+    width: 40%;
+}
+
+.coupon-banner-error {
+    background-color: #8B0000;
+    color: #FFF;
+    font-weight: bold;
+    width: 100%;
+    clear: both;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.coupon-banner-success {
+    background-color: #006400;
+    color: #FFF;
+    font-weight: bold;
+    width: 100%;
+    clear: both;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@media (max-width: 520px) {
+    .button {
+        width: calc(100% - 10px);
+    }
+}
