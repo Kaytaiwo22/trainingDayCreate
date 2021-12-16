@@ -15,6 +15,51 @@ export class SweetsCategoriesComponent implements OnInit {
       categoryDescription: "Description",
       imageUrl: "assets/images/30day.png",
       target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
+    },{
+      categoryTitle: "Test",
+      categoryDescription: "Description",
+      imageUrl: "assets/images/30day.png",
+      target: "category/#" 
     }]
   }
 

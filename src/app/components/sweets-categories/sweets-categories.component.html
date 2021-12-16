@@ -1,14 +1,13 @@
-<section>
-    <div class="category-container" *ngFor="let category of categoryList" >
-        <div class="category">
+
+    <div class="category-container"  >
+        <div class="category" *ngFor="let category of categoryList">
             <div class="description">
                 <h2>{{category.categoryTitle}}</h2>
                 <p>{{category.categoryDescription}}</p>
                 <a [href]="category.target">EXPLORE OUR SWEETS</a>
             </div>
             <div class="image">
-                <img [src]="category.imageUrl" alt="#">
+                <img [src]="category.imageUrl" alt="#" style="height: 100px; width: 100px;  ">
             </div>
         </div>
     </div>
-</section>
