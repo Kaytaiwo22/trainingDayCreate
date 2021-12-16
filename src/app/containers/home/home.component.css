@@ -58,20 +58,20 @@ li a {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.parallax2 {
-  margin-top: 40px;
-  /* The image used */
-  /*background-image: url('src/assets/images/heartcookie.jpg');*/
+/*.parallax2 {*/
+/*  margin-top: 40px;*/
+/*  !* The image used *!*/
+/*  background-image: url('src/assets/images/heartcookie.jpg');*/
 
-  /* Set a specific height */
-  height: 350px;
+/*  !* Set a specific height *!*/
+/*  height: 350px;*/
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+/*  !* Create the parallax scrolling effect *!*/
+/*  background-attachment: fixed;*/
+/*  background-position: center;*/
+/*  background-repeat: no-repeat;*/
+/*  background-size: cover;*/
+/*}*/
 
 .call-to-action{
   font-size: 25px;

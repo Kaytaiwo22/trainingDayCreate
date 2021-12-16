@@ -1,0 +1,137 @@
+<div class="registration">
+  <div class="wrapper text-center" *ngIf="isLoading">
+    <p>Please wait...</p>
+  </div>
+  <div class="wrapper" *ngIf="!isLoading">
+    <form
+      class="content"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit($event)"
+    >
+      <h2 class="heading">Sign Up</h2>
+      <label>
+        <span class="required">* Required</span>
+
+        <input
+          type="text"
+          [formControl]="firstName"
+          placeholder="First Name"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+          class="username"
+        />
+      </label>
+      <label>
+        <span class="required">* Required</span>
+
+        <input
+          type="text"
+          [formControl]="lastName"
+          placeholder="Last Name"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+          class="username"
+        />
+      </label>
+      <label>
+        <span class="required">* Required</span>
+
+        <input
+          type="text"
+          [formControl]="email"
+          placeholder="Email address"
+          class="email"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+      </label>
+      <label>
+        <span class="required">* Required</span>
+
+        <input
+          type="password"
+          [formControl]="password"
+          placeholder="Password"
+          class="passsword"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+      </label>
+      <select
+        [formControl]="gender"
+        class="selectField"
+        [ngClass]="{ 'form-submitted': formSubmitted }"
+      >
+        <option value="" disabled selected>Select your gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Gender Neutral</option>
+        <option>Prefer not to say</option>
+      </select>
+      <label>
+        <input
+          type="text"
+          [formControl]="phoneNumber"
+          placeholder="Contact number"
+          class="username"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+      </label>
+      <label>
+        <input
+          type="text"
+          [formControl]="addressLine1"
+          placeholder="Address Line 1"
+          class="address"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+        <input
+          type="text"
+          [formControl]="addressLine2"
+          placeholder="Address Line 2"
+          class="address"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+        <input
+          type="text"
+          [formControl]="addressLine3"
+          placeholder="Address Line 3"
+          class="address"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+        <input
+          type="text"
+          [formControl]="postCode"
+          placeholder="Post Code"
+          class="username"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+      </label>
+
+      <p class="newsletter">
+        <input
+          type="checkbox"
+          class="input-checkbox"
+          [formControl]="marketingAllowed"
+        />
+        Join our mail list.
+      </p>
+      <p class="tnc">
+          <span class="required">* Required</span>
+
+          <input
+          type="checkbox"
+          class="input-checkbox"
+          (change)="changeEvent($event)"
+        />
+          This box must be ticked before purchase can be made. Ticking this box means that you agree not to share any of the information and documents
+        received and will only use them for your own personal use. You agree
+        that James the sleep coach will not be held liable for any injury, loss
+        or damages in connection with use of the information and videos on this
+        document/website.
+      </p>
+
+      <button class="button register" id="check" type="submit" [disabled]="submitButton">Register</button>
+      <p class="form-error" *ngIf="error">{{ error }}</p>
+    </form>
+    <div class="mini-info">
+      <a routerLink="/login"><span>Already have an account?</span></a>
+    </div>
+  </div>
+</div>

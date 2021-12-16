@@ -1,0 +1,445 @@
+.review-container {
+  margin: 0;
+}
+
+.header {
+  width: 100%;
+  text-align: left;
+}
+
+.beach-name {
+  margin-top: 20px;
+  font-size: 30px;
+  margin-bottom: 0;
+  font-weight: bolder;
+}
+
+.beach-location {
+  font-size: 18px;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+.step-section {
+  margin-top: 30px;
+}
+
+.step {
+  background: #509EDC;
+  color: white;
+  padding: 7px;
+  border-radius: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.question {
+  color: #363666;
+}
+.wrapper-section {
+  text-align: left;
+}
+
+.fa-times {
+  position: relative;
+  left: 93%;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+.response {
+  padding: 10px;
+  text-transform: capitalize;
+  border: 2px solid #787878;
+  box-shadow: 0 4px 2px -2px gray;
+  text-align: center;
+  border-radius: 10px;
+  height: auto;
+  width: 100%;
+}
+
+.object {
+  text-align: left;
+}
+
+.list-objects {
+  width: 100%;
+}
+
+.icon-container {
+  display: flex;
+  padding-bottom: 10px;
+  margin: 0;
+}
+
+.name-object {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+.hidden-check {
+  visibility: hidden;
+  margin: 0;
+}
+
+.hidden-check:checked + label {
+  color: #509EDC;
+  font-weight: bold;
+
+  img {
+    filter: invert(67%) sepia(34%) saturate(3274%) hue-rotate(180deg) brightness(90%) contrast(90%);
+  }
+}
+
+.display-item :hover,
+.display-item :hover .display-item.selected {
+  color: #509EDC;
+  font-weight: bold;
+}
+
+.icon-images {
+  display: block;
+  margin: 12px 0;
+  color: white;
+  width: 30px;
+  background-size: 208px;
+}
+
+.other {
+  width: 350px;
+}
+
+.upload {
+  display: inline-flex;
+}
+
+.upload-response {
+  position: relative;
+  top: 33px;
+  padding-left: 30px;
+  font-size: 20px;
+}
+
+.uploaded-images {
+  margin-left: 150px;
+}
+
+.uploaded {
+  width: 117px;
+  border-radius: 14px;
+  height: 97px;
+  background-position: center;
+  background-size: contain;
+  margin: 0px 10px;
+}
+
+.star-response {
+  width: 100%;
+  padding: 0 10px;
+  border: 2px solid #787878;
+  box-shadow: 0 4px 2px -2px gray;
+  border-radius: 30px;
+}
+
+.button-sec {
+  width: 400px;
+  padding: 20px;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transform-origin: bottom;
+  //display: block;
+  //margin: 0 auto;
+}
+
+input {
+  padding: 30px 20px;
+  border: 1px solid #787878;
+  box-shadow: 0 4px 2px -2px gray;
+  display: block;
+  border-radius: 50px;
+  font-size: 19px;
+}
+
+.error  {
+  text-align: center;
+  background: #363666;
+  color: white;
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.text-danger{
+  color: #db0000;
+}
+
+.listing {
+  padding: 10px 20px 10px 20px;
+}
+.display {
+  padding: 20px 20px;
+  text-transform: capitalize;
+  border: 1px solid #787878;
+  box-shadow: 0 4px 2px -2px gray;
+  display: block;
+  border-radius: 50px;
+  font-size: 19px;
+}
+
+.display-item {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+textarea {
+  height: 300px;
+  padding: 30px 20px;
+  border: 1px solid #787878;
+  box-shadow: 0 4px 2px -2px gray;
+  display: block;
+  border-radius: 30px;
+  font-size: 19px;
+}
+
+.fname {
+  margin-right: 10px;
+  width: 100%;
+}
+
+.send {
+  color: #ffffff;
+  background-color: #509EDC;
+  border: 2px solid #509EDC;
+  font-size: 20px;
+  padding: 20px;
+}
+.send-small {
+  color: #ffffff;
+  background-color: #509EDC;
+  border: 2px solid #509EDC;
+  font-size: 20px;
+  padding: 20px;
+  width: 300px;
+}
+
+.text-right .send {
+  margin: 20px 0 0 auto;
+}
+
+.below {
+  margin-top: 50px;
+}
+
+.blue-text {
+  text-align: left;
+  color: #509EDC;
+  font-weight: bold;
+  padding-left: 20px;
+}
+
+.confirm {
+  display: inline-block;
+  width: 20%;
+  margin: 0;
+  box-shadow: none;
+  color: #363666;
+}
+
+label.confirm {
+  width: 80%;
+}
+
+.confirm-label {
+  font-size: 18px;
+  display: inline-flex;
+}
+
+.long-line {
+  border-top: 2px solid #509EDC;
+  width: 100%;
+}
+.lname {
+  width: 100%;
+}
+
+.face-icons {
+  width: 80px;
+  margin: 0px 20px;
+}
+.face :hover,
+.face :hover .face.selected {
+  background-color: #509EDC;
+  fill: #509EDC;
+}
+
+.beachTypeName :hover,
+.beachTypeName :hover .beachTypeName.selected {
+  color: #509EDC;
+}
+
+.red-line {
+  border-top: 3px solid #b60000;
+  transform: rotate(
+                  45deg
+  );
+  position: relative;
+  top: 22px;
+  left: 11px;
+  width: 33px;
+  z-index: 1;
+}
+
+.weather-image {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.weather {
+  display: inline-flex;
+  margin-right: 7%;
+  font-weight: bold;
+}
+.weather:hover,
+.weather.selected {
+  color: #509EDC;
+}
+
+.upload-btn {
+  width: 100%;
+  padding: 20px 30px;
+  background: white;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+.grid {
+  display: inline-flex;
+}
+
+.row {
+  //height: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+.rating-list li {
+  float: right;
+  color: #000000;
+  font-size: 40px;
+  padding: 10px 5px;
+  margin-right: 20px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li,
+.rating-list li.selected {
+  color: #ffbd47;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+  margin-left: 0;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.slide-in {
+  animation-name: fadeSlowIn;
+  animation-timing-function: ease;
+}
+
+.list {
+  text-transform: capitalize;
+}
+
+.character {
+  display: block;
+  font-size: 10px;
+  //padding: 10px;
+  text-align: right;
+}
+
+.toggleState {
+  background-color: orange;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-100px);
+  }
+  30% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(1000px);
+  }
+  30% {
+    transform: translateX(1000px);
+  }
+  50% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeSlowIn {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .phone {
+    max-height: 507px;
+  }
+
+  .message-to {
+    width: 100%;
+  }
+
+  .grid {
+    display: block;
+  }
+
+  .fname {
+    margin-bottom: 10px;
+  }
+
+  .user-response {
+  }
+
+  .list {
+    font-size: 15px;
+  }
+}

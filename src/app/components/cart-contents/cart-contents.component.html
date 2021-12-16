@@ -1,40 +1,50 @@
-<div class="grid-x">
-  <div class="small-12 medium-4 columns cart-contents">
+
+<div class="grid-x wrapper">
+  <!-- Image -->
+  <div class="small-12 medium-3 columns cart-contents">
     <div class="media mb-3">
-      <img [src]="product.imageUrls" [alt]="'Image of' + product.name" />
+      <h5 class="product-name">{{product.productDetails.mainProductName}} - <span class="bold-option">{{ product.productDetails.name }}</span></h5>
     </div>
   </div>
-  <div class="small-12 medium-8 columns cart-contents">
+  <!-- product name -->
+  <div class="small-12 medium-6 columns cart-contents">
     <div class="media-body">
-      <h5 class="product-name">{{ product.name }}</h5>
-      <p class="product-price">Price: {{ product.price * product.quantityInBasket | currency: 'GBP' }}</p>
+      <p [innerHTML]="product.productDetails.description"></p>
+    </div>
+  </div>
+    <!-- price -->
+  <div class="small-12 medium-3 columns cart-contents">
+    <div class="media-body">
+      <p class="product-price"> {{ product.productDetails.price * product.quantity | currency: 'GBP' }}</p>
       <div class="outer">
         <div class="qty-pad">
-          <h3 class="quantity">{{ product.quantityInBasket }}</h3>
+          <h3 class="quantity">{{ product.quantity }}</h3>
         </div>
         <div class="btn-wrapper">
+<!--          <button-->
+<!--                  (click)="updateQuantityInternal(product.quantity + 1)"-->
+<!--                  class="button q-btn add"-->
+<!--          >-->
+<!--            <img  src="./assets/images/icons/add-circle-outline.svg" width="30px" class="remove-btn" alt="Add Quantity" />-->
+<!--          </button>-->
+
+
           <button
-            (click)="updateQuantityInternal(this.product.quantityInBasket + 1)"
-            class="button q-btn add"
-          >
-            Add one more!
-          </button>
-          <button
-            *ngIf="product.quantityInBasket > 1"
-            (click)="updateQuantityInternal(this.product.quantityInBasket - 1)"
-            class="button q-btn"
+                  *ngIf="product.quantity > 1"
+                  (click)="updateQuantityInternal(product.quantity - 1)"
+                  class="button q-btn quan"
           >
             <img src="./assets/images/icons/minus-circle-outline.svg" width="30px" class="remove-btn" alt="Reduce Quantity" />
           </button>
           <button
-            *ngIf="product.quantityInBasket === 1"
-            (click)="updateQuantityInternal(0)"
-            class="button q-btn"
+                  *ngIf="product.quantity === 1"
+                  (click)="updateQuantityInternal(0)"
+                  class="button q-btn"
           >
             <img src="./assets/images/icons/trash-2-outline.svg" width="30px" class="remove-btn" alt="Remove Product" />
           </button>
         </div>
       </div>
-    </div>
+      </div>
   </div>
 </div>

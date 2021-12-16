@@ -1,0 +1,38 @@
+<div class="modal">
+  <!-- Modal content -->
+  <div class="modal-content"  *ngIf="!isSuccessful">
+    <span (click)="modalClosed()" class="close"><i class="fas fa-times"></i></span>
+      <div class="content">
+        <h2>Select the date</h2>
+        <p>When would you like to have a video call with James to discuss your progress and challenges! <span>Remember this must be after 2+ weeks after you starting your programme</span></p>
+        <div class="calendar grid-x" [formGroup]="bookingForm">
+          <select class="selectButton dates small-12 medium-4 columns" [formControl]="dateValue">
+            <option selected="true" disabled="disabled">Date</option>
+            <option *ngFor="let date of dates;" [value]="date" >{{date}}</option>
+          </select>
+          <select class="selectButton months small-12 medium-4 columns" [formControl]="monthValue" [(ngModel)]="monthValue">
+            <option selected="true" disabled="disabled">Month</option>
+            <option *ngFor="let month of months;" [value]="month" >{{month}}</option>
+          </select>
+          <select class="selectButton months small-12 medium-4 columns" [formControl]="timeValue" [(ngModel)]="timeValue">
+            <option selected="true" disabled="disabled">Available Times</option>
+            <option *ngFor="let time of times;" [value]="time" >{{time}}</option>
+          </select>
+          <button class="button finishBtn" (click)="submitContactRequest('Video Meeting Booking from')">Send</button>
+        </div>
+
+
+      </div>
+  </div>
+  <div class="modal-content successful" *ngIf="isSuccessful">
+    <div class="content">
+      <div class="success" >
+        <h2>Booking Confirmed</h2>
+        <p>James will be in contact shortly</p>
+        <button class="button finishBtn" (click)="modalClosed()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+</div>

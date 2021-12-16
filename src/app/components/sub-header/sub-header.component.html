@@ -1,18 +1,41 @@
 <div class="router-outlet">
-  <div class="full-width" [ngClass]="{'no-gradient': noGradient}">
-    <ul class="grid-x large-screen-menu">
-      <li class="medium-3 columns" *ngFor="let menuItem of menuItems">
-        <a class="nav" [routerLink]="menuItem.link" [queryParams]="menuItem.queryParams">
-          {{ menuItem.text }}
+  <div class="full-width">
+    <ul class="grid-x whole-list large-screen-menu">
+      <li class="medium-1 columns sale-font">
+        <a routerLink="/">
+         Home
         </a>
       </li>
-    </ul>
-    <div class="grid-x small-screen-menu">
-      <div class="small-12 columns">
-        <a [routerLink]="'/shop'">
-          <img src="assets/images/icons/shopping-cart-outline-white.svg" width="20px" alt="Shop Now" />
-          Shop Now
+<!--      <li class="medium-1 columns list" *ngFor="let menuItem of menuItems">-->
+<!--        <a class="menu-items" [routerLink]="menuItem.link" [queryParams]="menuItem.queryParams">-->
+<!--          {{ menuItem.text }}-->
+<!--        </a>-->
+<!--      </li>-->
+<!--      <li class="bars">-->
+<!--        <button class="sidebar">-->
+<!--          <i class="fas fa-bars"></i>-->
+<!--        </button>-->
+<!--      </li>-->
+      <li class="medium-1 columns list" *ngFor="let menuItem of categories;">
+        <a class="css-dropdown"  routerLink="/shop" [queryParams]="{categoryId: menuItem._id}">
+          {{ menuItem.name }}
         </a>
+    </li>
+      <li class="medium-1 columns  more-font">
+        <a routerLink="/catalog">
+          More
+        </a>
+      </li>
+  </ul>
+    <div class="small-screen-menu">
+      <div class="shopsmall">
+        <ul class="grid-x">
+          <li class="medium-6 columns smallList" *ngFor="let menuItem of smallItems;let i = index">
+            <a class="css-dropdown" [routerLink]="menuItem.link">
+              {{ menuItem.text }}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

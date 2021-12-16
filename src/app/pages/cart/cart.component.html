@@ -1,19 +1,27 @@
-<div class="router-outlet">
-  <h3 class="header-text">Your products</h3>
-
-  <app-cart-contents *ngFor="let product of products;let i = index;" [product]="product" (updateQuantity)="updateProductQuantity($event)" [productArrayNumber]="i"> </app-cart-contents>
+<div class="router-outlet wrapper">
+  <h3 class="header-text">Your Basket</h3>
+  <div class="headers grid-x">
+    <div class="small-12 medium-3 columns headings">
+      <h3>Product Name</h3>
+    </div>
+    <div class="small-12 medium-6 columns headings">
+      <h3>Product Details</h3>
+    </div>
+    <div class="small-12 medium-3 columns headings">
+      <h3 class="price-header">Price</h3>
+    </div>
+  </div>
+  <app-cart-contents *ngFor="let product of basket?.products;let i = index;" [product]="product" (updateQuantity)="updateProductQuantity($event)" [productArrayNumber]="i"> </app-cart-contents>
 
    <!--TODO: Dynamically fetch from backend-->
-  <div *ngIf="products.length">
-    <h4 class="shipping-text standard-font" *ngIf="(25 - totalPrice) > 0">Spend {{25 - totalPrice | currency: 'GBP'}} more for Free Delivery!</h4>
-    <h4 class="shipping-text standard-font" *ngIf="(25 - totalPrice) <= 0">Free Standard Delivery Available!</h4>
-    <div class="shipping-option-choice">
+  <div *ngIf="basket?.products?.length">
+    <h4 class="shipping-text standard-font" *ngIf="(50.01 - basket?.totalProductCost) > 0">Spend {{50.01 - basket?.totalProductCost | currency: 'GBP'}} more for Free UK Delivery!</h4>
+
+    <div class="modification-wrapper" *ngIf="basket">
+    <div class="shipping-option-choice" *ngIf="shippingOptions?.length">
       <label for="shippingOption">Shipping Option</label>
       <select name="shippingOption" id="shippingOption" (change)="updateShipping($event.target.value)">
-        <option value="standard" [selected]="!isCollection && !premiumDeliverySelected" *ngIf="totalPrice < 25">Standard (3-7 days): £2.99</option>
-        <option value="standard" [selected]="!isCollection && !premiumDeliverySelected" *ngIf="totalPrice >= 25">Standard (3-7 days): FREE</option>
-        <option value="premium" [selected]="!isCollection && premiumDeliverySelected">Premium (48 hours): £8.39</option>
-        <option value="collection" [selected]="isCollection">Collection - Free</option>
+        <option [value]="shippingOption.id" [selected]="shippingOption.id === basket.shippingId" *ngFor="let shippingOption of shippingOptions">{{shippingOption.name}}: {{shippingOption.price | currency: shippingOption.currency}}</option>
       </select>
     </div>
     <div class="coupon-option">
@@ -31,25 +39,27 @@
     <div class="coupon-banner-success" *ngIf="couponDiscount && discountType === 'percentage'">
       Applied {{couponDiscount}}% discount!
     </div>
-    <div class="coupon-banner-success" *ngIf="couponDiscount && discountType === 'deliveryDiscount' && shippingCost > 0">
+    <div class="coupon-banner-success" *ngIf="couponDiscount && discountType === 'deliveryDiscount' && basket.shippingCost > 0">
       Discounted shipping by {{couponDiscount | currency: 'GBP'}}!
     </div>
-    <div class="coupon-banner-success" *ngIf="couponDiscount && discountType === 'deliveryDiscount' && shippingCost === 0">
+    <div class="coupon-banner-success" *ngIf="couponDiscount && discountType === 'deliveryDiscount' && basket.shippingCost === 0">
       Free shipping applied!
     </div>
-    <h4 class="total-price"><span *ngIf="couponDiscount">Discounted </span>Total Price: {{totalPrice + shippingCost | currency: 'GBP'}}</h4>
 
-    <div class="button-wrapper">
-      <button class="button inverted" routerLink="/shop">Continue Shopping</button>
-      <button class="button" *ngIf="products.length" (click)="checkout()">Go to Checkout</button>
+      <h4 class="total-price"><span *ngIf="couponDiscount">Discounted </span>Total Price: {{basket?.totalProductCost + basket?.shippingCost | currency: 'GBP'}}</h4>
+
+      <div class="button-wrapper">
+        <button class="button inverted" routerLink="/programmes">Continue Shopping</button>
+        <button class="button" *ngIf="basket?.products.length" (click)="registerNow()">Go to Checkout</button>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="!products.length">
+  <div *ngIf="empty || !basket.products.length">
     <h4 class="shipping-text standard-font">Your basket is empty - let's go shopping!</h4>
 
     <div class="button-wrapper">
-      <button class="button" routerLink="/shop">Shop Now</button>
+      <button class="button" routerLink="/programmes">Shop Now</button>
     </div>
   </div>
 </div>

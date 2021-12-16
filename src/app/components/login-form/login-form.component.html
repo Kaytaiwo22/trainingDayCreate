@@ -1,0 +1,43 @@
+<div class="login">
+  <div class="wrapper">
+    <div class="content">
+      <form
+        class="content"
+        [formGroup]="loginForm">
+        <h2 class="heading">Sign In</h2>
+        <label>
+          <input
+            type="text"
+            [formControl]="email"
+            placeholder="Email address"
+            class="email"/>
+        </label>
+        <label>
+          <input
+            type="password"
+            [formControl]="password"
+            placeholder="Password"
+            class="password"/>
+        </label>
+        <button
+          class="button register"
+          id="check"
+          type="submit"
+          (click)="submitLogin()">
+          Sign In
+        </button>
+        <p class="form-error" *ngIf="error">{{ error }}</p>
+      </form>
+
+<!--                      <div formGroupName="loginForm">-->
+<!--                          <input type="text" formControlName="email" placeholder="Email Address" class="user-input">-->
+<!--                          <input type="password" formControlName="password" placeholder="Password" class="user-input" (keyup)="isEnter($event)">-->
+<!--                          <button class="button register" (click)="submitLogin()" type="submit">Login</button>-->
+<!--                                              <p class="form-error" *ngIf="error">{{error}}</p>-->
+<!--                      </div>-->
+      <div class="mini-info">
+        <a routerLink="/programmes" href="/programmes">Dont have an account?</a>
+      </div>
+    </div>
+  </div>
+</div>

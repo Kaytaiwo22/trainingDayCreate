@@ -3,6 +3,7 @@ import { AosToken } from '../../components/animate-on-scroll/aos';
 import { TaggingService } from '../../containers/main/tagging.service';
 import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 declare var Stripe: any;
 
@@ -11,47 +12,75 @@ declare var Stripe: any;
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent {
-  public products: {
-    _id: string;
-    name: string;
-    price: number;
-    currency: string;
-    imageUrls: string[];
-    description: string;
-    quantityAvailable: number;
-    productName: string;
-    productId: string;
-  }[];
+    public shippingOptions: {
+        id: string;
+        name: string;
+        description: string;
+        price: number;
+        currency: string;
+        freeCondition: {
+            priceGreaterThan: number;
+        },
+        productLimit: {
+            quantityLessThan: number;
+        },
+        shippingAllowedToCountries: string[];
+    }[];
 
-  public totalPrice: number;
-  public shippingCost: number;
-  public premiumDeliverySelected: boolean;
-  public isCollection: boolean;
+  public basket: {
+      _id: string;
+      shippingCost: number;
+      shippingId: string;
+      totalProductCost: number;
+      websiteID: string;
+      couponCode?: string;
+      products: {
+          productId: string;
+          optionId: string;
+          quantity: number;
+          productDetails: {
+              description: string;
+              imageUrls: string[];
+              mainProductName: string;
+              name: string;
+              price: number;
+              quantityAvailable: string;
+              _id: string;
+          };
+      }[]
+  };
+
   public couponCode: string;
   public couponDiscount?: number;
   public discountType?: string;
   public couponError?: string;
+  public empty?: boolean;
 
   constructor(
     private taggingService: TaggingService,
     @Inject(AosToken) aos,
     private http: HttpClient,
+    private router: Router,
     private cookieService: CookieService
   ) {
     this.taggingService.setAllTags(
-        'Magical Treats',
-        'Checkout with Magical Treats to buy your yummy cakes, cookies, sweets and hampers.'
+        'James The Sleep Coach',
+        'Checkout James The Sleep Coach'
     );
     aos.init();
 
-    this.setupCart();
+    if (this.cookieService.get('BASKET_ID')) {
+        this.setupCart();
+    } else {
+        this.empty = true;
+    }
   }
 
   setupCart() {
-      this.products = [];
+      this.empty = false;
       this.http
           .get(
-              'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+              'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
               this.cookieService.get('BASKET_ID') +
               '?includeProductDetails=true'
           )
@@ -60,122 +89,63 @@ export class CartComponent {
                   status: boolean;
                   code: number;
                   result: {
-                      premiumDeliverySelected: boolean;
-                      isCollection: boolean;
-                      couponCode: string;
+                      _id: string;
+                      shippingCost: number;
+                      shippingOptions: {
+                          id: string;
+                          name: string;
+                          description: string;
+                          price: number;
+                          currency: string;
+                          freeCondition: {
+                              priceGreaterThan: number;
+                          },
+                          productLimit: {
+                              quantityLessThan: number;
+                          },
+                          shippingAllowedToCountries: string[];
+                      }[];
+                      shippingId: string;
+                      totalProductCost: number;
+                      websiteID: string;
+                      couponCode?: string;
                       products: {
                           productId: string;
                           optionId: string;
                           quantity: number;
                           productDetails: {
-                              _id: string;
+                              description: string;
+                              imageUrls: string[];
+                              mainProductName: string;
                               name: string;
                               price: number;
-                              currency: string;
-                              imageUrls: string[];
-                              description: string;
-                              quantityAvailable: number;
-                              productName: string;
-                              productId: string;
-                              quantityInBasket?: number;
+                              quantityAvailable: string;
+                              _id: string;
                           };
-                      }[];
+                      }[]
                   };
               }) => {
-                  this.totalPrice = 0;
-                  basket.result.products.forEach((product) => {
-                      product.productDetails.quantityInBasket = product.quantity;
-                      product.productDetails.productId = product.productId;
-                      this.products.push(product.productDetails);
-                      this.totalPrice = this.totalPrice + (product.productDetails.price * product.productDetails.quantityInBasket);
-                  });
-
+                  this.basket = basket.result;
                   this.couponCode = basket.result.couponCode;
-
-                  if (this.couponCode) {
-                      this.http
-                          .get(
-                              'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/coupons/' +
-                              this.couponCode
-                          )
-                          .subscribe(
-                              (coupon: {
-                                  status: boolean;
-                                  code: number;
-                                  result: {
-                                      _id: string;
-                                      couponCode: string;
-                                      websiteID: string;
-                                      active: boolean;
-                                      sagesLimitedTo?: number;
-                                      amount: number;
-                                      discountType: string;
-                                  };
-                              }) => {
-                                  if (coupon.result.active) {
-                                      this.couponDiscount = coupon.result.amount;
-                                      this.discountType = coupon.result.discountType;
-
-                                      if (this.discountType === 'percentage') {
-                                          this.totalPrice = this.totalPrice * ((100 - this.couponDiscount) / 100);
-                                      }
-                                  }
-
-                                  this.shippingCost = 0;
-                                  this.premiumDeliverySelected = basket.result.premiumDeliverySelected;
-                                  this.isCollection = basket.result.isCollection;
-                                  if (basket.result.premiumDeliverySelected) {
-                                      this.shippingCost = 8.39;
-                                  } else if (this.totalPrice < 25 && !this.isCollection) {
-                                      this.shippingCost = 2.99;
-                                  } else if (this.isCollection) {
-                                      this.shippingCost = 0;
-                                  }
-
-                                  if (this.discountType === 'deliveryDiscount') {
-                                      this.shippingCost = this.shippingCost - this.couponDiscount;
-
-                                      if (this.shippingCost < 0) {
-                                          this.shippingCost = 0;
-                                      }
-                                  }
-                              }, () => {
-                                  this.couponError = 'Coupon not valid.';
-
-                                  this.shippingCost = 0;
-                                  this.premiumDeliverySelected = basket.result.premiumDeliverySelected;
-                                  this.isCollection = basket.result.isCollection;
-                                  if (basket.result.premiumDeliverySelected) {
-                                      this.shippingCost = 8.39;
-                                  } else if (this.totalPrice < 25 && !this.isCollection) {
-                                      this.shippingCost = 2.99;
-                                  } else if (this.isCollection) {
-                                      this.shippingCost = 0;
-                                  }
-                              });
-                  } else {
-                      this.shippingCost = 0;
-                      this.premiumDeliverySelected = basket.result.premiumDeliverySelected;
-                      this.isCollection = basket.result.isCollection;
-                      if (basket.result.premiumDeliverySelected) {
-                          this.shippingCost = 8.39;
-                      } else if (this.totalPrice < 25 && !this.isCollection) {
-                          this.shippingCost = 2.99;
-                      } else if (this.isCollection) {
-                          this.shippingCost = 0;
-                      }
-                  }
+                  this.shippingOptions = basket.result.shippingOptions;
+              }, () => {
+                  this.cookieService.delete('BASKET_ID');
+                  this.empty = true;
               }
           );
   }
 
+  registerNow(){
+      this.router.navigate(["/register"])
+  }
+
   checkout() {
-    this.http.get('https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd').subscribe((websiteData: {
+    this.http.get('https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48').subscribe((websiteData: {
         result: {
             stripePublic: string;
         }
     }) => {
-        this.http.post('https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+        this.http.post('https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
             this.cookieService.get('BASKET_ID') + '/purchase', {}).subscribe((basketToPurchase: {
             result: string;
         }) => {
@@ -189,15 +159,17 @@ export class CartComponent {
                 // error, display the localized error message to your customer
                 // using `result.error.message`.
             });
+            this.router.navigate(["/account"]);
         });
     });
+
   }
 
   updateProductQuantity(details: { quantity: number; productArrayNumber: number }) {
       let basketBody;
       this.http
         .get(
-          'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+          'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
             this.cookieService.get('BASKET_ID')
         )
         .subscribe(
@@ -205,14 +177,15 @@ export class CartComponent {
             status: boolean;
             code: number;
             result: {
-              premiumDeliverySelected: boolean;
-              isCollection: boolean;
-              couponCode?: string;
-              products: {
-                productId: string;
-                optionId: string;
-                quantity: number;
-              }[];
+                _id: string;
+                shippingId: string;
+                websiteID: string;
+                couponCode?: string;
+                products: {
+                    productId: string;
+                    optionId: string;
+                    quantity: number;
+                }[]
             };
           }) => {
             // The front end has the products that are in the DB in the following variable now
@@ -226,12 +199,10 @@ export class CartComponent {
 
             this.http
               .put(
-                'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+                'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
                   this.cookieService.get('BASKET_ID'),
                 {
                     products: basketBody,
-                    premiumDeliverySelected: basket.result.premiumDeliverySelected,
-                    isCollection: basket.result.isCollection,
                     couponCode: basket.result.couponCode
                 }
               )
@@ -242,11 +213,11 @@ export class CartComponent {
         );
   }
 
-  updateShipping(type) {
+  updateShipping(newShippingId) {
       let basketBody;
       this.http
           .get(
-              'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+              'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
               this.cookieService.get('BASKET_ID')
           )
           .subscribe(
@@ -254,37 +225,29 @@ export class CartComponent {
                   status: boolean;
                   code: number;
                   result: {
-                      premiumDeliverySelected: boolean;
-                      isCollection: boolean;
+                      _id: string;
+                      shippingId: string;
+                      websiteID: string;
                       couponCode?: string;
                       products: {
                           productId: string;
                           optionId: string;
                           quantity: number;
-                      }[];
+                      }[]
                   };
               }) => {
-                  let premiumDeliverySelected = false;
-                  let isCollection = false;
-
                   // The front end has the products that are in the DB in the following variable now
                   basketBody = basket.result.products;
-
-                  if (type === 'premium') {
-                      premiumDeliverySelected = true;
-                  } else if (type === 'collection') {
-                      isCollection = true;
-                  }
+                  this.couponCode = basket.result.couponCode;
 
                   this.http
                       .put(
-                          'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+                          'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
                           this.cookieService.get('BASKET_ID'),
                           {
                               products: basketBody,
-                              premiumDeliverySelected,
-                              couponCode: basket.result.couponCode,
-                              isCollection
+                              shippingId: newShippingId,
+                              couponCode: basket.result.couponCode
                           }
                       )
                       .subscribe(() => {
@@ -299,7 +262,7 @@ export class CartComponent {
       self.couponError = '';
       this.http
           .get(
-              'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/coupons/' +
+              'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/coupons/' +
               self.couponCode
           )
           .subscribe(
@@ -320,7 +283,7 @@ export class CartComponent {
                       let basketBody;
                       this.http
                           .get(
-                              'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+                              'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
                               this.cookieService.get('BASKET_ID')
                           )
                           .subscribe(
@@ -328,14 +291,15 @@ export class CartComponent {
                                   status: boolean;
                                   code: number;
                                   result: {
+                                      _id: string;
+                                      shippingId: string;
+                                      websiteID: string;
                                       couponCode?: string;
-                                      premiumDeliverySelected: boolean;
-                                      isCollection: boolean;
                                       products: {
                                           productId: string;
                                           optionId: string;
                                           quantity: number;
-                                      }[];
+                                      }[]
                                   };
                               }) => {
 
@@ -344,12 +308,10 @@ export class CartComponent {
 
                                   this.http
                                       .put(
-                                          'https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/baskets/' +
+                                          'https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/baskets/' +
                                           this.cookieService.get('BASKET_ID'),
                                           {
                                               products: basketBody,
-                                              premiumDeliverySelected: basket.result.premiumDeliverySelected,
-                                              isCollection: basket.result.isCollection,
                                               couponCode: self.couponCode
                                           }
                                       )

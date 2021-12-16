@@ -1,7 +1,7 @@
 import {Component, Inject, ViewContainerRef, ViewEncapsulation} from '@angular/core';
-import {AosToken} from '../../components/animate-on-scroll/aos';
-import {ActivatedRoute} from '@angular/router';
-import {TaggingService} from '../main/tagging.service';
+import {AosToken} from "../../components/animate-on-scroll/aos";
+import {ActivatedRoute} from "@angular/router";
+import {TaggingService} from "../main/tagging.service";
 import {PagesService} from './pages.service';
 
 @Component({
@@ -14,6 +14,7 @@ export class PagesComponent {
   public slug: string;
 
   constructor(private taggingService: TaggingService, @Inject(AosToken) aos, private route: ActivatedRoute, private pagesService: PagesService, private viewContainerRef: ViewContainerRef) {
+      console.log('pages')
     aos.init();
     this.route.params.subscribe((routeParams) => {
       if (routeParams.slug) {

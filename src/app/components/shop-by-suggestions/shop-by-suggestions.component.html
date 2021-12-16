@@ -1,0 +1,18 @@
+<div class="wrapper">
+        <button class="button suggestions-button">See More Suggestions like this</button>
+   <div class="container grid-x">
+       <!--Section-->
+        <div class="image-box small-12 medium-4 columns" *ngFor="let suggest of products; let i = index;">
+            <div class="image-wrap">
+                <img class="img" [src]="suggest.options[0].imageUrls[0]"/>
+            </div>
+            <div class="text-info">
+                <button class="button inverted add" routerLink="/product-detail" [queryParams]="{ id: suggest.options[0]._id }" routerLinkActive="active">View Product
+                </button>
+                <a class="item-name" routerLink="/product-detail" [queryParams]="{ id: suggest.options[0]._id }" routerLinkActive="active">{{suggest.productName}}</a>
+                <p class="item-price">{{suggest.options[0].price  | currency: 'GBP'}}</p>
+                <div class="cart-add"></div>
+            </div>
+        </div>
+   </div>
+</div>

@@ -1,0 +1,79 @@
+.wrapper {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    padding: 0px 10px;
+}
+
+.logo {
+    width: 110px;
+    display: block;
+    margin: 0 auto;
+}
+
+.information h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    color: #bc2a8d;
+}
+
+.right-info h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0;
+    color: #5e83d2;
+}
+
+.information {
+    margin-top: 5%;
+}
+.right-info {
+    margin-top: 5%;
+}
+
+.button {
+    width: 200px;
+}
+
+.model {
+    width:100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+button {
+    margin-top: 10%;
+}
+
+.like {
+    color: #5e83d2;
+    background-color: white;
+    border: 2px solid  #5e83d2;
+}
+
+.like:hover {
+    background-color: #5e83d2;
+    border: 2px solid #1a5ce8;
+    color: white;
+}
+
+.follow {
+    color: #bc2a8d;
+    background-color: white;
+    border: 2px solid #bc2a8d;
+}
+
+.follow:hover {
+    background-color: #bc2a8d;
+    border: 2px solid #a3006f;
+    color: white;
+}
+

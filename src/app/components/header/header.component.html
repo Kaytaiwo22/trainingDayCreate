@@ -1,10 +1,21 @@
-<div class="router-outlet">
-  <div class="small-header-offset">
-      <img class="img-header" src="./assets/images/small-logo.png"/>
+<div class="router-outlet grid-x">
+  <div class="header-wrapper small-12 medium-6 columns">
+      <a routerLink="/">
+          <img class="img-header" src="./assets/images/logo.png" alt="logo" />
+      </a>
   </div>
-  <div class="header-wrapper small-header">
-      <div class="navigation-wrapper">
-        <app-nav class="item"></app-nav>
-      </div>
-  </div>
+    <div class="icon-holder small-12 medium-6 columns">
+        <a routerLink="/">
+            <i class="fas fa-home icons"></i>
+        </a>
+        <a routerLink="/login">
+            <i class="fas fa-user icons"></i>
+        </a>
+        <a routerLink="/contact">
+            <i class="fas fa-envelope icons"></i>
+        </a>
+        <a routerLink="/cart">
+            <i class="fas fa-shopping-cart icons"></i>
+        </a>
+    </div>
 </div>

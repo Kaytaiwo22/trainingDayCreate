@@ -1,30 +1,17 @@
-<div class="el-wrapper">
-  <div class="box-up">
-    <img class="img" [src]="product.imageUrls[0]" />
-    <div class="img-info">
-      <div class="info-inner">
-        <span class="p-name">{{ product.productName }}</span>
-        <span class="p-company"
-          ><a routerLink="/product-detail">{{ product.categoryName }}</a></span
-        >
-      </div>
-      <div class="a-size">
-        <!-- <span>{{product.description}}</span><br>-->
-        <button class="button inverted" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">View Product</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="box-down">
-    <div class="h-bg">
-      <div class="h-bg-inner"></div>
+<div class="wrapper">
+    <div class="container">
+        <div class="image">
+            <img class="guarantee" src="./assets/images/30day.png" alt="money back guarantee"/>
+            <img class="img" [src]="product.options[0].imageUrls[0]" [alt]="product.options[0].name"/>
+        </div>
+        <div class="description-container">
+            <p class="item-name">{{ product.productName }}</p>
+            <p class="item-price">
+                <button class="button buy" (click)="buyProduct()" *ngIf="product?.options[0].quantityAvailable !== 0">Add to Cart</button>
+                {{ product.options[0].price | currency: 'GBP' }}</p>
+            <p class="descriptions" [innerHTML]="product.options[0].description">
+            </p>
+        </div>
     </div>
 
-    <a class="cart" routerLink="/product-detail" [queryParams]="{ id: product._id }" routerLinkActive="active">
-      <span class="price">{{ product.price | currency: product.currency }}</span>
-      <span class="add-to-cart">
-        <span class="txt">{{ product.calltoAction }} View Product</span>
-      </span>
-    </a>
-  </div>
 </div>

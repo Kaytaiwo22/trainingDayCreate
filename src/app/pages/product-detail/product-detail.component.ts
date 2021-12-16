@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -6,62 +6,52 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.css'],
 })
-export class ProductDetailComponent {
+export class ProductDetailComponent implements OnDestroy {
   public product: {
+    options: {
+      name: string;
+      price: number;
+      descriptions: string;
+      imageUrls: string[];
+      quantityAvailable: number;
+      _id: string;
+    }[];
     _id: string;
-    name: string;
-    price: number;
-    currency: string;
-    imageUrls: string[];
-    description: string;
-    quantityAvailable: number;
+    categoryId: string;
     productName: string;
+    deleted: boolean;
+    websiteID: string;
   };
-  public allProductOptions: {
-    _id: string;
-    name: string;
-    price: number;
-    currency: string;
-    imageUrls: string[];
-    description: string;
-    quantityAvailable: number;
-    productName: string;
-  }[];
-
-  public productName: string;
+  private queryParamSub;
 
   constructor(private activatedRoute: ActivatedRoute, private http: HttpClient) {
-    this.activatedRoute.queryParams.subscribe((queryParams) => {
-      this.http.get('https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/products').subscribe(
-        (products: {
-          result: {
-            _id: string;
-            categoryId: string;
-            productName: string;
-            websiteID: string;
-            options: {
+    this.queryParamSub = this.activatedRoute.queryParams.subscribe(queryParams => {
+      this.http.get('https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/products?optionId=' +
+          queryParams.id).subscribe(
+          (products: {
+            result: {
+              options: {
+                name: string;
+                price: number;
+                descriptions: string;
+                imageUrls: string[];
+                quantityAvailable: number;
+                _id: string;
+              }[];
               _id: string;
-              name: string;
-              description: string;
-              price: number;
-              quantityAvailable: number;
-              imageUrls: string[];
+              categoryId: string;
+              productName: string;
+              deleted: boolean;
+              websiteID: string;
             }[];
-          }[];
-        }) => {
-          products.result.forEach((product: any) => {
-            product.options.forEach((productOption) => {
-              if (product.options && productOption && productOption._id === queryParams.id) {
-                productOption.currency = 'GBP';
-                productOption.productName = product.productName;
-                productOption.productId = product._id;
-                this.product = productOption;
-                this.allProductOptions = product.options;
-              }
-            });
-          });
-        }
+          }) => {
+            this.product = products.result[0];
+          }
       );
     });
+  }
+
+  ngOnDestroy() {
+    this.queryParamSub.unsubscribe();
   }
 }

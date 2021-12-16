@@ -1,44 +1,83 @@
+.wrapper {
+    padding: 10px 70px;
+}
+.headers {
+    background-color:#131e5f;
+    color: white;
+    /*border-bottom:2px solid #131e5f;*/
+    /*border-top:2px solid #131e5f;*/
+    border-radius: 25px;
+}
+
+.headings {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+.price-header {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.headings h3  {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
 .header-text {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .total-price, .shipping-text {
     text-align: center;
     font-weight: bold;
-    color: #CE4C74;
+    color: black;
     font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .shipping-text {
     font-size: 23px;
-    margin-top: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+    clear: both;
+    padding: 10px;
 }
 
 .total-price {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: table;
     clear: both;
     width: 100%;
     padding-top: 20px;
 }
 
+label {
+    color: black;
+}
+
 .shipping-price {
     text-align: center;
     font-weight: bold;
-    color: #CE4C74;
+    color: black;
     margin-top: 40px;
 }
 
 .button-wrapper {
-    display: table;
-    margin: 0 auto 100px;
+    display: block;
+    clear: both;
+    width: 100%;
+    text-align: center;
 }
 
 button {
-    float: left;
+    display: inline-block;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -46,7 +85,7 @@ button {
 button.small-button {
     padding: 6px;
     font-size: 12px;
-    margin-top: 24px;
+    margin-top: 11px;
 }
 
 .shipping-option-choice, .coupon-option {
@@ -55,13 +94,19 @@ button.small-button {
     margin: 0 auto;
 }
 
+.modification-wrapper {
+    background-color: #ECECEC;
+    width: 100%;
+    padding: 20px 10px;
+}
+
 .coupon-input {
-    float: left;
+    display: inline-block;
     width: 60%;
 }
 
 .coupon-button {
-    float: left;
+    display: inline-block;
     width: 40%;
 }
 
@@ -94,5 +139,23 @@ button.small-button {
 @media (max-width: 520px) {
     .button {
         width: calc(100% - 10px);
+    }
+}
+
+@media (max-width: 700px) {
+    .headers {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .wrapper {
+        padding: 10px;
+    }
+
+    .header-text{
+        color: white;
+        background-color: #131e5f;
+        padding: 20px 5px;
+        border-radius: 31px;
     }
 }

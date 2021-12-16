@@ -8,15 +8,12 @@ import { SmallHalfInfoModule } from "../../components/small-half-info/small-half
 import { ContactModule } from "../../components/contact/contact.module";
 import { BlogTextModule } from "../../components/blog-text/blog-text.module";
 import { ParallaxModule } from "../../components/parallax/parallax.module";
-import {Call2actionComponent} from '../../components/call2action/call2action.component';
 import {Call2actionModule} from '../../components/call2action/call2action.module';
-import {ColorBoxOffersComponent} from '../../components/color-box-offers/color-box-offers.component';
-import {ColorBoxOffersModule} from '../../components/color-box-offers/color-box-offers.module';
-import {BannerWithButtonModule} from '../../components/banner-with-button/banner-with-button.module';
+import {MenuModule} from '../../components/menu/menu.module';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: PagesComponent,
   },
 ];
@@ -41,9 +38,8 @@ export class PagesRoutingModule {}
     ParallaxModule,
     ContactModule,
     BlogTextModule,
-    Call2actionModule,
-    ColorBoxOffersModule,
-    BannerWithButtonModule
+      Call2actionModule,
+      MenuModule
   ],
   declarations: [PagesComponent],
   providers: [],

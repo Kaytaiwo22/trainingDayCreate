@@ -23,7 +23,7 @@ export class WhoAreYouComponent implements OnInit {
   ngOnInit() {
   }
 
-  // openLiveChat() {
-  //   window.LC_API.open_chat_window();
-  // }
+  openLiveChat() {
+    // window.LC_API.open_chat_window();
+  }
 }

@@ -1,65 +1,76 @@
 .category {
+  border-radius: 3px;
   margin: 0 auto;
-  padding: 0 30px 30px;
-  height: 100%;
-}
-
-.catHeader{
+  padding: 30px;
   width: 100%;
-  color: #CE4C74;
-  padding: 10px;
+}
+.color-box {
+  display: inline-flex;
+  background-color: #FFDE32;
+  width: 150px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  outline: none;
 }
 
-.category li.selected {
-  background-color: #ffffff;
-  border-radius: 10px;
+.left-box {
+  display: inline-flex;
+  background-color: #FFDE32;
+  width: 150px;
+  padding: 7px 10px;
+  border-radius: 20px;
+  float: right;
 }
 
-ul {
+.left-button {
+  width:100%;
+}
+
+button {
+  margin-top: 0;
+}
+
+.text {
   width: 100%;
-  margin-left: 0;
-}
-
-ul li {
-  margin-bottom: 15px;
+  padding-left: 10px;
   font-size: 18px;
-}
-
-.category li.selected a {
-  text-decoration: underline;
-}
-
-h2 {
-  color: #CE4C74;
-}
-
-.medium-font{
-  padding: 10px;
-  list-style: none;
-}
-
-.cat-text :hover{
-  color: #a2a2a2;
-}
-
-a {
-  color: #fff;
+  margin: 0;
+  color: black;
   font-weight: bold;
-  /*background: #fff;*/
-  background: #f683b1;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #f683b1 8%, #c74e55 83%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #f683b1 8%, #c74e55 83%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #f683b1 8%, #c74e55 83%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f683b1', endColorstr='#c74e55', GradientType=1);
-  border-radius: 25px;
-  padding: 10px 10px 10px 15px;
+  margin-top: 5px;
 }
 
+.refineIcon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin-top: 3px;
+  margin-left: 10%;
+}
+.choices {
+  color: #000;
+  text-transform: capitalize;
+  text-align: center;
+  font-weight: lighter;
+  max-height: 6px;
+}
+.pure-checkbox {
+  padding: 0px !important;
+}
 
-/*.showAll {*/
-/*  color: #a2a2a2;*/
-/*}*/
+.selectionFields .lazyContainer .dropdown-list ul li:last-child {
+   padding-bottom: 0px !important;
+  height: 11px !important;
+}
+
+.selectionFields .lazyContainer ul li {
+    padding:  0px !important;
+  cursor: pointer;
+   text-align: left;
+ }
+
+
+.selectionFields .pure-checkbox input[type="checkbox"]:checked + label[_ngcontent-c1]:before {
+  background: #38d574 !important;
+}
+

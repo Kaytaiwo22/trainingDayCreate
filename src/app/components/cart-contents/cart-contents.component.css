@@ -1,87 +1,184 @@
-
+.wrapper {
+    /*border-left: 2px solid  #131e5f;*/
+    /*border-right: 2px solid  #131e5f;*/
+    /*border-bottom: 1px solid #131e5f;*/
+}
 .cart-contents {
-    padding: 50px;
-    border-bottom: 1px solid #CE4C74;
+    padding: 10px 25px;
+    /*border-bottom: 2px solid black;*/
 }
 
 .q-btn, .update-btn {
-    float: right;
     padding: 5px;
-    margin: 0 5px;
-    font-size: 40px;
-    line-height: .5;
+    display:  block;
+    margin: 0 auto;
+    border: 2px solid #131e5f;
 }
 
 .q-btn.add {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1;
-    padding: 12px;
+    padding: 6px 12px 10px;
+    color: white;
+    font-weight: bold;
+    background-color: #131e5f;
+    border: 2px solid #131e5f;
+    width: 40px;
+    margin:0;
+    text-align: center;
 }
 
 .remove-btn {
-    width: 30px;
+    /*width: 30px;*/
     padding-left: 0;
+    background-color: #131e5f;
+    width: 30px;
+    margin:0;
+}
+
+.book {
+    border-radius: 30px;
+    color: #131e5f;
+    background-color: white;
 }
 
 img{
     contain: inherit;
-    width: 500px;
+    /*object-fit: contain;*/
+    /*object-position: center;*/
+    width: 300px;
     height: auto;
-    border-radius: 10px;
+}
+
+.product-image {
+    object-fit: contain;
+    object-position: center;
+    width: 300px;
+    max-height: 112px;
 }
 
 .media-body {
-    text-align: left;
+    /*text-align: left;*/
+    /*display: inline-flex;*/
 }
 
-.product-name{
+.bold-option {
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    color:#CE4C74;
+}
+
+
+.product-name{
+    /*font-weight: bold;*/
+    color:black;
     text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .product-description{
     font-weight: lighter;
     color:grey;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .product-price{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: #CE4C74;
+    font-family: 'Quicksand', sans-serif;
+    /*font-weight: bold;*/
+    color: black;
     float: left;
     width: 50%;
-   font-size: 25px;
+   font-size: 20px;
 }
 
 .quantity{
     position: relative;
     height: auto;
     float: left;
-    width: 150px;
-    border: 2px solid black;
+    width: 40px;
+    /*border: 2px solid #131e5f;*/
     text-align: center;
-    border-radius: 40px;
+    /*border-radius: 10px;*/
     padding:10px;
     margin-bottom: 0;
     margin-top: 0;
-}
+    font-family: 'Quicksand', sans-serif;
+    /*left: 80%;*/
 
+}
+.q-btn:hover, .q-btn:focus {
+animation: none;
+}
 .qty-pad{
     margin: 20px;
-    float: left;
+    float: right;
+    margin-bottom: 0px;
 }
 
 .outer {
     display: table;
     clear: both;
-    margin-left: auto;
+    /*margin-left: auto;*/
+    margin: 0 auto;
 }
 
 .btn-wrapper {
-    margin-right: 20px;
+    /*margin-right: 40px;*/
+    display: block;
+    margin: 0 auto;
+    padding-top:15px;
+}
+
+.add {
+    font-size: 30px;
+}
+
+@media (max-width: 995px) {
+
+    .qty-pad {
+        width: 100%;
+    }
+    .quantity {
+        margin-left: 20px;
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .outer {
+        display: block;
+        margin: 0 auto;
+        /*margin-left: 0;*/
+    }
+
+    .btn-wrapper {
+        width: 100%;
+    }
+
+
+    .q-btn.add {
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        width: 100%;
+        border-bottom: 2px solid #131e5f;
+    }
+    .q-btn, .update-btn {
+        border-bottom: black;
+        width: 100%;
+    }
+    .update-btn {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .remove-btn {
+        /*width: 20px;*/
+    }
+}
+
+@media (max-width: 700px) {
+    .wrapper {
+        border-left: 2px solid white;
+        border-right: 2px solid white;
+    }
 }
 
 @media (max-width: 520px) {
@@ -102,12 +199,13 @@ img{
     }
 
     .grid-x {
-        border-bottom: 1px solid #CE4C74;
+        border-bottom: 1px solid #131e5f;
         padding-bottom: 20px;
     }
 
     .product-name {
         text-align: center;
+        font-size: 20px;
     }
 
     .product-price {
@@ -120,16 +218,29 @@ img{
     }
 
     .quantity {
-        margin: 0 auto;
-        float: none;
+        margin-left: 20px;
     }
 
     .outer {
-        margin-left: 0;
+        display: block;
+        margin: 0 auto;
+        /*margin-left: 0;*/
     }
 
     .btn-wrapper {
         width: 100%;
     }
 
+    .q-btn.add {
+        border-bottom: black;
+        width: 100%;
+        border-bottom: 2px solid #131e5f;
+    }
+    .q-btn, .update-btn {
+        border-bottom: black;
+        width: 100%;
+    }
+    .remove-btn {
+        width: 20px;
+    }
 }

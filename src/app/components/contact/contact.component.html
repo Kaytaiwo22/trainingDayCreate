@@ -1,27 +1,53 @@
-<app-hero [header]="'Magical Treats.<br/><strong>Contact Us Today!</strong><br/><br/>'"
-          [backgroundColor]="'#f683b1'"
-          [textColor]="'#ffffff'"
-          [halfSize]="true"
-          [hideDownArrow]="false"
-          [textAlign]="'center'">
-</app-hero>
-<div class="software-values-wrapper">
-  <div class="grid-x">
-    <div class="small-12 medium-10 medium-offset-1 columns">
-      <div class="email-fields">
-        <h3 *ngIf="!hideEmailFields">Email Us</h3>
-        <p *ngIf="!hideEmailFields">Pop us your contact details and a message, and we will be in touch in no time.</p>
-        <div *ngIf="!hideEmailFields">
-          <label for="fullNameEmail">Your name</label>
-          <input type="text" name="fullNameEmail" id="fullNameEmail" [(ngModel)]="fullNameEmail"/>
-          <label for="emailAddress">Your email address</label>
-          <input type="text" name="emailAddress" id="emailAddress" [(ngModel)]="emailAddress"/>
-          <label for="message">How can we help?</label>
-          <textarea type="text" name="message" id="message" [(ngModel)]="message"></textarea>
+<div class="router-outlet">
+  <app-hero [header]="'<span>James the sleep coach</span><br/>'"
+            [backgroundColor]="'#131e5f'"
+            [halfSize]="true"
+            [hideDownArrow]="false"
+            [textAlign]="'center'">
+  </app-hero>
+  <div class="software-values-wrapper">
+    <div class="grid-x">
+      <div class="information small-12 medium-6 columns">
+          <h2 class="head-name">James The Sleep Coach</h2>
+          <div class="profile">
+              <img src="assets/images/james.jpeg" class="profile">
+          </div>
+        <a href="https://www.facebook.com/James-the-sleep-coach-104651534635937" class="social-links">
+          <img src="assets/images/icons/facebook-logo.svg" class="social-icon"> <span class="social-name">James the sleep Coach</span>
+        </a>
+        <a href="https://www.instagram.com/james_the_sleep_coach/?hl=en" class="social-links">
+          <img src="assets/images/icons/instagram-logo.svg" class="social-icon"> <span class="social-name">james_the_sleep_coach
+</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCpLRVimO7gVh0hz-objMqyQ" class="social-links">
+          <img src="assets/images/icons/youtube-logo.svg" class="social-icon"> <span class="social-name">James, The Sleep Coach
+</span>
+        </a>
+        <a href="https://www.linkedin.com/in/james-the-sleep-coach-70bbb71ab/" class="social-links">
+          <img src="assets/images/icons/linkedin.svg" class="social-icon"> <span class="social-name">James The Sleep Coach
+</span>
+        </a>
+      </div>
+      <div class="small-12 medium-6 columns contact-form">
+        <div class="email-fields">
+          <h3 *ngIf="!hideEmailFields">Email Us</h3>
+          <p *ngIf="!hideEmailFields">Pop us your contact details and a message, and we will be in touch in no time.</p>
+          <div *ngIf="!hideEmailFields">
+            <label for="fullNameEmail">Your name</label>
+            <input type="text" name="fullNameEmail" id="fullNameEmail" [(ngModel)]="fullNameEmail"/>
+            <label for="emailAddress">Your email address</label>
+            <input type="text" name="emailAddress" id="emailAddress" [(ngModel)]="emailAddress"/>
+            <label for="message">How can we help?</label>
+            <textarea type="text" name="message" id="message" [(ngModel)]="message"></textarea>
+          </div>
+
+          <div class="button-wrapper">
+            <button (click)="submitContactRequest()" *ngIf="!hideEmailFields" class="button send">Send Message</button>
+          </div>
+
+          <h3 *ngIf="hideEmailFields">Thank you</h3>
+          <p *ngIf="hideEmailFields">We'll be in touch shortly. We look forward to speaking with you.</p>
         </div>
-        <button (click)="submitContactRequest('Email Request')" *ngIf="!hideEmailFields" class="button">Send Message</button>
-        <h3 *ngIf="hideEmailFields">Thank you</h3>
-        <p *ngIf="hideEmailFields">We'll be in touch shortly. We look forward to speaking with you.</p>
       </div>
     </div>
   </div>

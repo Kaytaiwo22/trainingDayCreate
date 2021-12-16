@@ -11,14 +11,14 @@ export class TaggingService {
   setAllTags(pageTitle: string, description: string, pageImage?: string, pageType?: string) {
 
     if (!pageImage) {
-      pageImage = 'https://MagicalTreats.co.uk/assets/images/logo.png';
+      pageImage = 'https://jamesthesleepcoach.com/assets/images/james-og-image.png';
     }
 
     if (!pageType) {
       pageType = 'website';
     }
 
-    this.title.setTitle(pageTitle + ' | Magical Treats');
+    this.title.setTitle(pageTitle + ' | James The Sleep Coach');
 
     this.meta.updateTag({ name: 'description', content: description });
 
@@ -30,6 +30,6 @@ export class TaggingService {
 
     this.meta.updateTag({ property: 'og:type', content: pageType });
 
-    this.meta.updateTag({ property: 'og:url', content: 'https://magicaltreats.co.uk' + window.location.pathname });
+    this.meta.updateTag({ property: 'og:url', content: 'https://jamesthesleepcoach.com' + window.location.pathname });
   }
 }

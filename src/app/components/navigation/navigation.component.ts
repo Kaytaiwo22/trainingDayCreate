@@ -16,7 +16,7 @@ export class NavigationComponent {
         },
         {
             text: 'About',
-            link: '/about-us',
+            link: '/about',
         },
         // {
         //   text: 'Why us?',
@@ -24,7 +24,8 @@ export class NavigationComponent {
         // },
         {
             text: 'Order Online',
-            link: '/shop'
+            link: '/shop',
+            queryParams: { categoryId: '5f3947077397fc00227c3abf' },
         },
         // {
         //   text: 'Shop Wax Melts',
@@ -33,7 +34,7 @@ export class NavigationComponent {
         // },
         {
             text: 'Contact Us',
-            link: '/contact'
+            link: '/contact',
         },
     ];
 

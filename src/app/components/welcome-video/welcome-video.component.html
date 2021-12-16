@@ -1,0 +1,17 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="content">
+      <video class="animation" autoplay loop playsinline oncanplay="this.play()" onloadedmetadata="this.muted = true">
+        <source src="/assets/images/video/animation1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="scroll-section">
+        <a routerLink="/">
+          <button class="scroller" (click)="modalClosed()">
+            Home <i class="fas fa-hand-point-right"></i>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

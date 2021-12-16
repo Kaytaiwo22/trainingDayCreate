@@ -1,9 +1,9 @@
 .footer-wrapper {
-  background-color: #4e4e4e;
+  background-color: #FFFFFF;
   text-align: center;
   padding-left:20px;
   padding-top: 40px;
-  color: white;
+  color: black;
   padding-bottom: 40px;
 }
 
@@ -46,15 +46,11 @@ tr:nth-child(even) {
   padding-right: 90px;
 }
 
-.east {
-  margin-top: 30px;
-}
-
 .subfooter {
-  padding: 40px;
+  background-color: #FFFFFF;
+  padding: 40px 40px 20px;
   text-align: center;
-  color: #ffffff;
-  background-color: #4e4e4e;
+  color: #131e5f;
 }
 
 .subfooter p:not(.east):not(.create) {
@@ -62,7 +58,7 @@ tr:nth-child(even) {
 }
 
 .subfooter a {
-  color: #f683b1;
+  color: #0e1753;
   border-bottom: 1px dotted lightgrey;
 }
 
@@ -72,4 +68,10 @@ tr:nth-child(even) {
 
 .create {
   margin-top: 40px;
+  margin-bottom: 0;
+  color: #273582;
+}
+
+.create a {
+  color: #ad4a00;
 }

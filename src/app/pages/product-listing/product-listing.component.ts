@@ -9,14 +9,19 @@ import { TaggingService } from '../../containers/main/tagging.service';
 })
 export class ProductListingComponent {
   public products: {
+    options: {
+      name: string;
+      price: number;
+      descriptions: string;
+      imageUrls: string[];
+      quantityAvailable: number;
+      _id: string;
+    }[];
     _id: string;
-    name: string;
-    price: number;
-    currency: string;
-    imageUrls: string[];
-    description: string;
-    categoryName: string;
-    quantityAvailable: number;
+    categoryId: string;
+    productName: string;
+    deleted: boolean;
+    websiteID: string;
   }[] = [];
 
   public currentCategory: {
@@ -30,8 +35,8 @@ export class ProductListingComponent {
     private taggingService: TaggingService
   ) {
     this.taggingService.setAllTags(
-      'Magical Treats',
-      'Order high quality home-made treats in our shop. Handmade with love in the UK, especially for you.'
+      'James The Sleep Coach',
+      'Browse high quality clothing.'
     );
 
     this.activatedRoute.queryParams.subscribe((queryParams) => {
@@ -39,36 +44,36 @@ export class ProductListingComponent {
 
       if (queryParams.categoryId) {
         queryString = '?categoryId=' + queryParams.categoryId;
+      } else if (queryParams.searchTerm) {
+        queryString = '?searchTerm=' + queryParams.searchTerm;
       }
 
       this.http
-        .get('https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/products' + queryString)
+        .get('https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/products' + queryString)
         .subscribe(
           (products: {
             result: {
+              options: {
+                name: string;
+                price: number;
+                descriptions: string;
+                imageUrls: string[];
+                quantityAvailable: number;
+                _id: string;
+              }[];
               _id: string;
-              name: string;
-              price: number;
-              currency: string;
-              imageUrls: string[];
-              description: string;
-              categoryName: string;
-              quantityAvailable: number;
+              categoryId: string;
+              productName: string;
+              deleted: boolean;
+              websiteID: string;
             }[];
           }) => {
-            this.products = [];
-            products.result.forEach((product: any) => {
-              if (product.options && product.options[0]) {
-                product.options[0].currency = 'GBP';
-                product.options[0].productName = product.productName;
-                this.products.push(product.options[0]);
-              }
-            });
+            this.products = products.result;
           }
         );
 
       this.http
-        .get('https://api2.createdigitalsolutions.com/websites/5fc8b88c4a963931074481fd/categories' + queryString)
+        .get('https://api2.createdigitalsolutions.com/websites/60dafcc14b162471912edc48/categories' + queryString)
         .subscribe(
           (categories: {
             result: {
@@ -86,7 +91,12 @@ export class ProductListingComponent {
               }
             });
 
-            if (!this.currentCategory || !this.currentCategory.name) {
+            if (queryParams.searchTerm) {
+              this.currentCategory = {
+                name: 'Your Results',
+                description: '',
+              };
+            } else if (!this.currentCategory || !this.currentCategory.name) {
               this.currentCategory = {
                 name: 'All Products',
                 description: '',

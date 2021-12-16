@@ -1,0 +1,308 @@
+<div class="review-container">
+  <div class="header">
+    <h1 class="secondary-font">Write your Review</h1>
+    <h2 class="beach-name">{{beachDetails?.name}}</h2>
+    <h3 class="beach-location">{{beachDetails?.location?.formattedAddress?.join(', ')}}</h3>
+  </div>
+  <div class="wrapper-section">
+    <div *ngIf="errorMessage" class="error">
+      <p>Make sure all fields are filled correctly</p>
+    </div>
+    <div class="part-one" *ngIf="partOne">
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">1.</span> Please rate the beach:
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="star-response">
+            <div class="row">
+              <div class="col-sm-12">
+                <ul class="list-inline rating-list" *ngFor="let star of stars">
+                  <li
+                    (mouseover)="countStar(star)"
+                    (click)="starRating.setValue(star)"
+                    [ngClass]="{ selected: star <= tentativeStarRating }"
+                  >
+                    <i class="fas fa-star"></i>
+                  </li>
+                </ul>
+              </div>
+              <div *ngIf="getControl.starRating.touched && getControl.starRating.invalid" class="text-danger">
+                <p *ngIf="getControl.starRating.errors.required">Rating is required.</p>
+                <p *ngIf="getControl.starRating.errors?.pattern">Rating must be at least 1.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">2.</span> Title for your Review:
+          </h3>
+        </div>
+        <div class="user-response">
+          <input type="text" [formControl]="title" class="title" maxlength="50" />
+          <div *ngIf="getControl.title.touched && getControl.title.invalid" class="text-danger">
+            <p *ngIf="getControl.title.errors.required">Title is required.</p>
+            <p *ngIf="getControl.title.errors?.pattern">Title must be entered.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">3.</span> Write your Review:
+          </h3>
+        </div>
+        <div class="user-response">
+          <textarea [formControl]="review" class="textarea" maxlength="300"> </textarea>
+          <span> {{ review.value?.length }}/300 characters</span>
+        </div>
+        <div *ngIf="getControl.review.touched && getControl.review.invalid" class="text-danger">
+          <p *ngIf="getControl.review.errors.required">Review is required.</p>
+          <p *ngIf="getControl.review.errors?.minlength">Review must be over 50 characters.</p>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">4.</span> When did you visit the Beach:
+          </h3>
+        </div>
+        <div class="user-response">
+          <input type="text" [formControl]="monthSelected" class="title" maxlength="50" placeholder="MM/YYYY" />
+          <div *ngIf="getControl.monthSelected.touched && getControl.monthSelected.invalid" class="text-danger">
+            <p *ngIf="getControl.monthSelected.errors.required">Date is required.</p>
+            <p *ngIf="getControl.monthSelected.errors?.pattern">Date must be entered in MM/YYYY format.</p>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">5.</span> What facilities are around? Please click as much as you want.
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="response list-objects grid-x">
+            <div
+              class="object small-3 medium-4 columns"
+              *ngFor="let type of facilityList;let i = index"
+            >
+              <input type="checkbox"
+                     id="facility-{{i}}"
+                    [value]="type.item"
+                    (change)="updateOption(facilities, $event)"
+                    class="hidden-check small-3 medium-4 columns"
+              />
+              <label class="icon-container" for="facility-{{i}}">
+                <img class="icon-images" [src]="type.icon" [alt]="type.item" />
+                <span class="name-object"> {{ type.item }}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">6.</span> What type of Beach is it?
+          </h3>
+        </div>
+        <div class="user-response  grid-x">
+          <div class="response display">
+            <div
+                    class="object small-3 medium-4 columns"
+                    *ngFor="let type of beachTypeList;let i = index">
+              <input type="checkbox"
+                     id="beachType-{{i}}"
+                     [value]="type.item"
+                     (change)="updateOption(beachType, $event)"
+                     class="hidden-check small-3 medium-4 columns"
+              />
+              <label class="icon-container" for="beachType-{{i}}">
+<!--                <img class="icon-images" [src]="type.icon" [alt]="type.item" />-->
+                <span class="name-object"> {{ type.item }}</span>
+              </label>
+            </div>
+<!--            <div-->
+<!--                    class="object medium-2 columns"-->
+<!--                    *ngFor="let type of beachTypeList"-->
+<!--            >-->
+<!--              <label class="icon-container" >-->
+<!--                <span class="beachTypeName" [ngClass]="{'selected': type}"> {{ type.item }}</span>-->
+<!--              </label>-->
+<!--            </div>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="part-one" *ngIf="!partOne">
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">7.</span> How clean were the beach and the area?
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="response grid-x" >
+            <div
+                    class="object small-3 medium-4 columns"
+                    *ngFor="let type of clean;let i = index">
+              <input type="checkbox"
+                     id="cleanliness-{{i}}"
+                     [value]="type.item"
+                     (change)="updateOption(cleanliness, $event)"
+                     class="hidden-check small-3 medium-4 columns"
+              />
+
+              <label class="icon-container" for="cleanliness-{{i}}">
+                <img class="face-icons" [src]="type.icon" [alt]="type.item" />
+<!--                <span class="name-object"> {{ type.item }}</span>-->
+              </label>
+            </div>
+
+            </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">8.</span> How is the temperature of the water?
+          </h3>
+        </div>
+        <div class="user-response response">
+          <img src="assets/images/weather.png" class="weather-image"/>
+          <div class="weather" *ngFor="let words of temperature" >
+            <p class="weather-type"
+            [ngClass]="{'selected': words}">
+                         {{ words.item }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">9.</span> What restrictions apply? Please click as much as you want.
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="response listing grid-x">
+            <div
+                    class="object small-3 medium-4 columns"
+                    *ngFor="let type of restrictions;let i = index">
+              <input type="checkbox"
+                     id="restrictions-{{i}}"
+                     [value]="type.item"
+                     (change)="updateOption(beachRestrictions, $event)"
+                     class="hidden-check small-3 medium-4 columns"
+              />
+
+              <label class="icon-container" for="restrictions-{{i}}">
+                <div class="red-line"></div>
+                <img class="icon-images" [src]="type.icon" [alt]="type.item" />
+                <span class="name-object"> {{ type.item }}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">10.</span> What activities can you do? Please click as much as you want.
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="response list-objects grid-x">
+            <div
+                    class="object small-3 medium-4 columns"
+                    *ngFor="let type of activitiesAvailable;let i = index">
+              <input type="checkbox"
+                     id="beachActivities-{{i}}"
+                     [value]="type.item"
+                     (change)="updateOption(beachActivities, $event)"
+                     class="hidden-check small-3 medium-4 columns"
+              />
+              <label class="icon-container" for="beachActivities-{{i}}">
+                <img class="icon-images" [src]="type.icon" [alt]="type.item" />
+                <span class="name-object"> {{ type.item }}</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-section">
+        <div class="user-question">
+          <h3 class="question">
+            <span class="step">11.</span> You can upload up to 5 pictures.
+          </h3>
+        </div>
+        <div class="user-response">
+          <div class="response upload">
+            <p class="upload-response">Upload here</p>
+            <div class="uploaded-images">
+              <img src="assets/images/beach-gradient.jpeg" class="uploaded">
+              <img src="assets/images/beach-gradient.jpeg" class="uploaded">
+              <img src="assets/images/beach-gradient.jpeg" class="uploaded">
+              <img src="assets/images/beach-gradient.jpeg" class="uploaded">
+              <img src="assets/images/beach-gradient.jpeg" class="uploaded">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="below grid-x">
+      <p class="blue-text small-12 medium-6 columns" *ngIf="partOne">
+        Give more information and upload your pictures.<br />
+        You can always go back.
+      </p>
+
+      <button class="button send small-12 medium-6 columns" *ngIf="partOne && (!getControl.monthSelected.errors && !getControl.starRating.errors && !getControl.title.errors && !getControl.review.errors) " (click)="saveStarRating(); nextStep()">
+        More <i class="fas fa-chevron-right"></i>
+      </button>
+      <button class="button send small-12 medium-6 columns" *ngIf="getControl.monthSelected.errors && getControl.starRating.errors && getControl.title.errors && getControl.review.errors" (click)="scrollUp()">
+        Scroll Up <i class="fas fa-chevron-up"></i>
+      </button>
+      <button class="button send-small small-12 medium-6 columns" *ngIf="!partOne" (click)="backStep()">
+        <i class="fas fa-chevron-left"></i> Back
+      </button>
+      <button class="button send-small small-12 medium-6 columns" *ngIf="!partOne" (click)="finishReview()">
+        Save
+      </button>
+    </div>
+    <div *ngIf="getControl.monthSelected.errors && getControl.starRating.errors && getControl.title.errors && getControl.review.errors " >
+      <div class="bottom-option">
+        <div class="long-line"></div>
+        <br/>
+        <p class="blue-text">Or save your review now:</p>
+      </div>
+      <div class="grid-x">
+        <div class="small-12 medium-6 columns">
+          <input type="checkbox" id="confirm" class="confirm" name="confirm" (click)="confirmTerms()"/>
+          <label class="confirm" for="confirm" >
+            I certify that this review is genuine and based on my own experience
+          </label>
+          <label class="text-danger" *ngIf="termsUnconfirmed"> You must confirm before you finish</label>
+        </div>
+        <div class="text-right" *ngIf="partOne">
+          <button class="button send" (click)="finishReview()">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

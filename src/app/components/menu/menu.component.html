@@ -1,0 +1,95 @@
+<!--<app-loading-screen *ngIf="isLoading"></app-loading-screen>-->
+
+<div class="wrapper">
+  <app-welcome-video *ngIf="!hideAnimation" (modalClose)="close()"></app-welcome-video>
+  <div class="container"  *ngIf="hideAnimation">
+
+    <div class="page 2">
+      <div class="welcome-wrapper">
+        <div class="welcome-video">
+          <iframe style="border-radius: 30px;" width="100%" height="100%" src="https://s3.eu-west-2.amazonaws.com/create-digital-solutions-uploads/M0A0rbeXwO45hCRu39nX.webm" frameborder="0" allowfullscreen></iframe>
+        </div>
+<!--      <video class="welcome-video" autoplay>-->
+<!--        <source-->
+<!--                src="https://s3.eu-west-2.amazonaws.com/create-digital-solutions-uploads/M0A0rbeXwO45hCRu39nX.webm"-->
+<!--                type="video/mp4"-->
+<!--        />-->
+<!--        Your browser does not support the video tag.-->
+<!--      </video>-->
+
+      <app-accordion class="accordion" *ngFor="let accordion of accordions" [accordionTitle]="accordion.title" [accordionBody]="accordion.body"></app-accordion>
+      </div>
+      <div class="moon-orbit" id="section-b">
+        <div class="moon-section">
+          <img src="/assets/images/gif/rocket-blast.gif" class="orbit" />
+          <img src="/assets/images/moon2.png" class="moon-planet" />
+        </div>
+      </div>
+      <div class="menu-container" id="section-c">
+        <div class="menu-section grid-x">
+            <div class="select-section-mobile small-12 medium-4 columns">
+                <img src="/assets/images/logo.png" class="logo" />
+                <h4 class="header">Select Option</h4>
+            </div>
+          <div class="optionButton small-6 medium-4 columns">
+            <a routerLink="/sleep-programme">
+              <div class="pillow-section">
+                <img
+                  src="/assets/images/gif/pillow-sleep.gif"
+                  class="pillow-icon"
+                />
+              </div>
+              <p class="menuName">The Sleep Programme</p>
+            </a>
+          </div>
+
+          <div class="select-section small-12 medium-4 columns">
+            <img src="/assets/images/logo.png" class="logo" />
+            <h2 class="header">Select Option</h2>
+          </div>
+          <div class="blueMoon optionButton small-6 medium-4 columns">
+            <a routerLink="/contact">
+              <div class="cloud-section">
+                <img src="/assets/images/gif/clouds.gif" class="cloud-icon" />
+              </div>
+              <p class="menuName">Contact</p>
+            </a>
+          </div>
+          <div class="optionButton small-6 medium-4 columns">
+            <a routerLink="/about-me">
+              <div class="man-section">
+                <img
+                  class="active"
+                  src="/assets/images/astroman.png"
+                  class="man-icon"
+                />
+              </div>
+              <p class="menuName">My Story</p>
+            </a>
+          </div>
+
+          <div class="optionButton small-6 medium-4 columns">
+            <a routerLink="/why-sleep">
+              <div class="bed-section">
+                <img src="/assets/images/gif/bed-sleep.gif" class="bed-icon" />
+              </div>
+
+              <p class="menuName">Why Sleep?</p>
+            </a>
+          </div>
+          <div class="optionButton small-12 medium-4 columns">
+            <a routerLink="/science">
+              <div class="rocket-section">
+                <img
+                  src="/assets/images/gif/rocket-blast.gif"
+                  class="rocket-icon"
+                />
+              </div>
+              <p class="menuName scienceName">The Science</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,14 +13,29 @@
 .fa-times:before {
   content: "\f00d";
 }
-.fa-star:before {
-  content: "\f005";
+.fa-home:before {
+  content: "\f015";
+}
+.fa-envelope:before {
+  content: "\f0e0";
+}
+.fa-shopping-cart:before {
+  content: "\f07a";
+}
+.fa-hand-point-right:before {
+  content: "\f0a4";
 }
 .fa-quote-left:before {
   content: "\f10d";
 }
 .fa-clipboard-check:before {
   content: "\f46c";
+}
+.fa-arrow-alt-circle-right:before {
+  content: "\f35a";
+}
+.fa-arrow-alt-circle-left:before {
+  content: "\f359";
 }
 .fa-headset:before {
   content: "\f590";
@@ -49,8 +64,26 @@
 .fa-comment-dots:before {
   content: "\f4ad";
 }
+.fa-sort-down:before {
+  content: "\f0dd";
+}
 .fa-users:before {
   content: "\f0c0";
+}
+.fa-user-circle:before {
+  content: "\f2bd";
+}
+.fa-user-edit:before {
+  content: "\f4ff";
+}
+.fa-sign-out-alt:before {
+  content: "\f2f5";
+}
+.fa-tasks:before {
+  content: "\f0ae";
+}
+.fa-user:before {
+  content: "\f007";
 }
 .fa-user-graduate:before {
   content: "\f501";

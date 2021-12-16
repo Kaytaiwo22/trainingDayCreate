@@ -1,15 +1,13 @@
 <div>
   <a routerLink="/cart">
-    <img src="./assets/images/icons/shop-white.png" width="30px" class="burger-icon" alt="Your Cart" />
+    <img src="./assets/images/icons/shopping-cart-outline.svg" width="30px" class="burger-icon" alt="Your Cart" />
   </a>
-<!--  <a (click)="toggleMenu()">-->
-<!--    <img src="/assets/images/icons/menu-white.svg-->
-<!--" width="30px" class="burger-icon" alt="Open Main Menu" />-->
-
-<!--  </a>-->
+  <a (click)="toggleMenu()">
+    <img src="./assets/images/icons/menu-2-outline.svg" width="30px" class="burger-icon" alt="Open Main Menu" />
+  </a>
   <div class="burger-menu" [ngClass]="{'open-menu': burgerMenuOpen, 'close-menu': !burgerMenuOpen && menuInteractionStarted}">
     <a (click)="toggleMenu()">
-      <img src="./assets/images/icons/close-pink.png" width="40px" class="close-menu-icon" alt="Close Main Menu" />
+      <img src="./assets/images/icons/close-outline.svg" width="40px" class="close-menu-icon" alt="Close Main Menu" />
     </a>
 
     <nav class="vertical-center">

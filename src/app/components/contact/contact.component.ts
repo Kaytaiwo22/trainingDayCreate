@@ -13,32 +13,21 @@ export class ContactComponent {
   public fullNameEmail: string;
   public emailAddress: string;
   public message: string;
-  public hideEmailFields: boolean = false;
-  public hidePhoneFields: boolean = false;
+  public hideEmailFields = false;
 
   constructor(@Inject(AosToken) aos, public contactService: ContactService) {
     aos.init();
   }
 
-  submitContactRequest(type) {
-    if (type === 'Callback Request') {
-      this.hidePhoneFields = true;
-    } else {
-      this.hideEmailFields = true;
-    }
+  submitContactRequest() {
+    this.hideEmailFields = true;
 
     this.contactService.sendEmail({
-      subject: type,
-      fullName: type === 'Callback Request' ? this.fullName : this.fullNameEmail,
+      fullName: this.fullNameEmail,
       phone: this.phoneNo,
       email: this.emailAddress,
       message: this.message,
-      type: 'contact-magical-treats'
     }).subscribe();
-  }
-
-  openLiveChat() {
-    window.LC_API.open_chat_window();
   }
 
 }

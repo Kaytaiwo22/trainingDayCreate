@@ -14,8 +14,6 @@ import {HalfInfoModule} from '../../components/half-info/half-info.module';
 import {SmallHalfInfoModule} from '../../components/small-half-info/small-half-info.module';
 import {ProductCardModule} from '../../components/product-card/product-card.module';
 import {CategoryModule} from '../../components/category/category.module';
-import {ProductDisplayCardModule} from '../../components/product-display-card/product-display-card.module';
-import {CategoryHorizontalModule} from '../../components/category-horizontal/category-horizontal.module';
 
 const routes: Routes = [
   {
@@ -35,7 +33,7 @@ export class ProductListingRoutingModule {}
  * The Module
  */
 @NgModule({
-    imports: [CommonModule, RouterModule, ProductListingRoutingModule, ExplainerHeroModule, IconLayoutModule, FullActionGalleryModule, ImageClusterModule, HeroModule, HeaderModule, FooterModule, ImageDisplayModule, HalfInfoModule, SmallHalfInfoModule, ProductCardModule, CategoryModule, ProductDisplayCardModule, CategoryHorizontalModule],
+    imports: [CommonModule, RouterModule, ProductListingRoutingModule, ExplainerHeroModule, IconLayoutModule, FullActionGalleryModule, ImageClusterModule, HeroModule, HeaderModule, FooterModule, ImageDisplayModule, HalfInfoModule, SmallHalfInfoModule, ProductCardModule, CategoryModule],
   declarations: [ProductListingComponent],
   providers: []
 })

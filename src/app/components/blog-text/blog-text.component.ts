@@ -8,7 +8,7 @@ enum TextType {
   selector: 'app-blog-text',
   templateUrl: './blog-text.component.html',
   styleUrls: ['./blog-text.component.css'],
-  inputs: ['paragraphs'],
+  inputs: ['paragraphs', 'imageUrl'],
 
 })
 export class BlogTextComponent {
@@ -17,6 +17,8 @@ export class BlogTextComponent {
     text?: any;
     type: TextType;
   }[];
+  public imageUrl: string;
+
 
   constructor() { }
 

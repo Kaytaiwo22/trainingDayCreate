@@ -1,0 +1,36 @@
+.blog-text {
+  color: black;
+}
+
+.header {
+  text-align: center;
+}
+
+.text-wrapper {
+  padding: 10px 0;
+}
+
+.image {
+  width: 100px;
+}
+
+
+.text-wrapper ::ng-deep ul {
+  list-style: none;
+}
+.text-wrapper ::ng-deep h3 {
+  text-align: center;
+}
+
+.text-wrapper ::ng-deep ul li:before {
+  content: '✓';
+  margin-right: 5px;
+  color: #54a31d;
+}
+
+
+@media (max-width: 520px) {
+  .text-wrapper {
+    padding: 10px 0;
+  }
+}

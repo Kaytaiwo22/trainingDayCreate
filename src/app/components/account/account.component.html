@@ -1,0 +1,73 @@
+<div class="account">
+  <div class="account-container grid-x">
+    <div class="side small-12 medium-12 large-3 columns">
+      <div class="wrapper">
+        <div class="side-banner">
+          <div class="header">
+            <p class="user"><i class="fas fa-user-circle"></i></p>
+                      <h2>{{userDetails?.firstName}} {{userDetails?.lastName}}</h2>
+            <label> You purchased:</label>
+            <p>{{sleepOption}}</p>
+
+            <button (click)="checkState('favourites')" class="viewbtn">View Programme</button>
+
+            <button *ngIf="sleepOption === 'Sleep Program 2'" class="button book" (click)="meetingSelection()">Book Meeting</button>
+            <div class="calendar" *ngIf="bookMeeting">
+              <app-calendar-modal (modalClose)="close()"></app-calendar-modal>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="call-to-action small-12 medium-12 large-9 columns">
+      <div class="quick-links grid-x">
+        <div class="options small-offset-3 small-3 medium-2 medium-offset-6 columns">
+          <button class="links" (click)="checkState('edit')"><i class="fas fa-user-edit icons"></i><span class="hide-text">Edit Profile</span></button>
+        </div>
+        <div class="options small-3 medium-2 columns">
+          <button class="links" (click)="checkState('favourites')">
+            <i class="fas fa-tasks icons"></i><span class="hide-text">Programme</span>
+          </button>
+        </div>
+        <div class="options small-3 medium-2 columns">
+          <button class="links" (click)="logout()">
+            <i class="fas fa-sign-out-alt icons"></i>
+            <span class="hide-text">Log Out</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="onLoad">
+        <div class="empty" *ngIf="empty">
+          <div class="welcome-wrapper">
+            <video class="welcome-video" autoplay controls>
+              <source src="./assets/images/video/Main%20Website%20Video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+        </div>
+        <div class="review-history" *ngIf="favourites">
+          <h2>Your Programme</h2>
+          <div class="frame-wrapper">
+                      <iframe width="100%" class="iframe" frameBorder="0" [src]="urlSafe"></iframe>
+          </div>
+        </div>
+        <div class="review-history" *ngIf="editProfile">
+          <div class="stage-header">
+            <h2>Edit Profile</h2>
+            <p>Edit your profile information here</p>
+          </div>
+          <div class="edit-section" [formGroup]="editForm">
+            <label>Your email:</label>
+            <input type="text" class="user-input" placeholder="You can not change your email" disabled [formControl]="email" />
+            <input type="password" class="user-input" placeholder="Edit your password" [formControl]="password" />
+            <button class="button" (click)="updateUser()">Save</button>
+            <p class="form-error" *ngIf="editError">{{editError}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

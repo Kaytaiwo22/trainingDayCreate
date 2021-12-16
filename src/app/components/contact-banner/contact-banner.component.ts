@@ -25,7 +25,7 @@ export class ContactBannerComponent implements OnInit {
       subject: 'Contact Banner',
       fullName: this.fullName,
       phone: this.phoneNo,
-      type: 'contact-magical-treats'
+      type: 'contact'
     }).subscribe();
   }
 

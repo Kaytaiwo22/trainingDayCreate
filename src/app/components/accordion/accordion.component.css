@@ -1,0 +1,11 @@
+.accordion {
+    background-color: white;
+    margin-top: 40px;
+}
+
+button {
+    width: 100%;
+    background-color: #131e5f;
+    padding: 20px 10px;
+    color: white;
+}

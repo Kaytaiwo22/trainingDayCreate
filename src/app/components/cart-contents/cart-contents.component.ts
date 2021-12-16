@@ -13,18 +13,20 @@ export class CartContentsComponent {
   @Output() updateQuantity: EventEmitter<{ quantity: number; productArrayNumber: number }> = new EventEmitter();
 
   @Input() product: {
-    _id: string;
-    name: string;
-    price: number;
-    currency: string;
-    imageUrls: string[];
-    description: string;
-    quantityAvailable: number;
-    productName: string;
+    optionId: string;
     productId: string;
-    quantityInBasket: number;
+    quantity: number;
+    productDetails: {
+      description: string;
+      imageUrls: string[];
+      mainProductName: string;
+      name: string;
+      price: number;
+      quantityAvailable: number;
+      _id: string;
+    };
   };
-
+  bookMeeting: boolean;
   @Input() productArrayNumber: number;
 
   constructor() {}
@@ -37,6 +39,13 @@ export class CartContentsComponent {
   }
 
   updateQuantityOnScreen(changeNumberBy: number) {
-    this.product.quantityInBasket = this.product.quantityInBasket + changeNumberBy;
+    this.product.quantity = this.product.quantity + changeNumberBy;
+  }
+
+  meetingSelection(){
+    this.bookMeeting = true;
+  }
+  close(){
+    this.bookMeeting = false;
   }
 }

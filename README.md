@@ -1,4 +1,4 @@
-# MagicalTreatsFrontend
+# JamesTheSleepCoachFrontend
 
 This project is the create digital solutions client website. It was generated with angular cli as a base.
 

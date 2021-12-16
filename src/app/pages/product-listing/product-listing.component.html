@@ -1,24 +1,10 @@
-<div class="router-outlet">
-    <div class="parallax"></div>
-    <div class="category">
-        <app-category-horizontal></app-category-horizontal>
+<div class="router-outlet wrapper">
+  <div class="row grid-x">
+    <div class="small-12 columns">
+      <h1 class="title-txt">All Programmes</h1>
     </div>
-<!--    <div class="grid-x shop-body">-->
-<!--          <div class="small-12 medium-3 columns">-->
-<!--      <app-category></app-category>-->
-<!--    </div>-->
-<!--    <div class="small-12 medium-9 columns">-->
-      <div class="row grid-x">
-<!--        <div class="small-12 columns">-->
-<!--&lt;!&ndash;          <h1 class="title-txt">Shop {{ currentCategory?.name }}</h1>&ndash;&gt;-->
-<!--        </div>-->
-        <div class="small-12 medium-4 columns" *ngFor="let product of products">
-<!--          <app-product-card [product]="product"></app-product-card>-->
-          <app-product-display-card [product]="product"></app-product-display-card>
-        </div>
-      </div>
-<!--    </div>-->
-<!--  </div>-->
-<div class="parallax"></div>
+    <div class="containProduct small-12 medium-6 columns" *ngFor="let product of products">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
 </div>
-

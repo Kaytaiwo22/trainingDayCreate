@@ -1,7 +1,3 @@
 <div class="router-outlet">
-
-    <app-product-info [product]="product" [allProductOptions]="allProductOptions"></app-product-info>
-
-
-
+    <app-product-info *ngIf="product" [product]="product"></app-product-info>
 </div>

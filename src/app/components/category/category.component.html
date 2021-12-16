@@ -1,15 +1,86 @@
-<div class="category">
-  <ul>
-    <h2 class="catHeader">Show me your yummy...</h2>
-    <li class="medium-font" *ngFor="let categoryItem of categoryItems" [ngClass]="{'selected': categoryItem?._id === queryId}">
-      <a class="cat-text" routerLink="/shop" [queryParams]="{ categoryId: categoryItem?._id }">
-        <i class="fas fa-star"></i> {{ categoryItem.name }}
-      </a>
-    </li>
-    <li class="medium-font" [ngClass]="{'selected': !queryId}">
-      <a class="showAll" routerLink="/shop">
-        Show Me Everything!
-      </a>
-    </li>
-  </ul>
-</div>
+<!--<div class="category">-->
+<!--  <div class="filters grid-x">-->
+
+<!--    <div class="refineSection medium-3 columns">-->
+<!--      <button class="color-box">-->
+<!--        <img src="/assets/images/icons/slider-filter.png" alt="refine icon" class="refineIcon"/>-->
+<!--        <span class="text">Refine</span>-->
+<!--      </button>-->
+<!--    </div>-->
+<!--    <div class="medium-3 medium-offset-3 columns">-->
+<!--      <angular2-multiselect-->
+<!--        [data]="categoryList"-->
+<!--        [(ngModel)]="selectedCategoryItems"-->
+<!--        [settings]="categorySettings"-->
+<!--        (onSelect)="onItemSelect($event)"-->
+<!--        (onDeSelect)="OnItemDeSelect($event)"-->
+<!--        (onSelectAll)="onSelectAll($event)"-->
+<!--        (onDeSelectAll)="onDeSelectAll($event)"-->
+<!--      >-->
+<!--        <c-item>-->
+<!--          <ng-template let-item="item">-->
+<!--            <li class="pure-checkbox"  [(ngModel)]="selectedCategoryItems">-->
+<!--              <a [routerLink]="categoryFilter" [queryParams]="queryId">-->
+<!--                <label class="choices">{{item.itemName}}</label>-->
+<!--              </a>-->
+<!--            </li>-->
+
+<!--          </ng-template>-->
+<!--        </c-item>-->
+<!--      </angular2-multiselect>-->
+<!--    </div>-->
+<!--    <div class="medium-3 columns">-->
+<!--      <angular2-multiselect-->
+<!--        [data]="sortByList"-->
+<!--        [(ngModel)]="selectedSortByItems"-->
+<!--        [settings]="sortBySettings"-->
+<!--        (onSelect)="onItemSelect($event)"-->
+<!--        (onDeSelect)="OnItemDeSelect($event)"-->
+<!--        (onSelectAll)="onSelectAll($event)"-->
+<!--        (onDeSelectAll)="onDeSelectAll($event)">-->
+<!--        <c-item>-->
+<!--          <ng-template let-item="item">-->
+<!--            <li class="pure-checkbox">-->
+<!--              <label class="choices">{{item.itemName}}</label>-->
+<!--            </li>-->
+
+<!--          </ng-template>-->
+<!--        </c-item>-->
+<!--      </angular2-multiselect>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;    <div class="medium-2 columns" *ngIf="isRefine">&ndash;&gt;-->
+<!--    &lt;!&ndash;      <angular2-multiselect&ndash;&gt;-->
+<!--    &lt;!&ndash;        [data]="sizeList"&ndash;&gt;-->
+<!--    &lt;!&ndash;        [(ngModel)]="selectedSizeItems"&ndash;&gt;-->
+<!--    &lt;!&ndash;        [settings]="sizeSettings"&ndash;&gt;-->
+<!--    &lt;!&ndash;        (onSelect)="onItemSelect($event)"&ndash;&gt;-->
+<!--    &lt;!&ndash;        (onDeSelect)="OnItemDeSelect($event)"&ndash;&gt;-->
+<!--    &lt;!&ndash;        (onSelectAll)="onSelectAll($event)"&ndash;&gt;-->
+<!--    &lt;!&ndash;        (onDeSelectAll)="onDeSelectAll($event)">&ndash;&gt;-->
+<!--    &lt;!&ndash;        <c-item>&ndash;&gt;-->
+<!--    &lt;!&ndash;          <ng-template let-item="item">&ndash;&gt;-->
+<!--    &lt;!&ndash;            <li class="pure-checkbox">&ndash;&gt;-->
+<!--    &lt;!&ndash;              <label class="choices">{{item.itemName}}</label>&ndash;&gt;-->
+<!--    &lt;!&ndash;            </li>&ndash;&gt;-->
+
+<!--    &lt;!&ndash;          </ng-template>&ndash;&gt;-->
+<!--    &lt;!&ndash;        </c-item>&ndash;&gt;-->
+<!--    &lt;!&ndash;      </angular2-multiselect>&ndash;&gt;-->
+<!--    &lt;!&ndash;    </div>&ndash;&gt;-->
+<!--  </div>-->
+<!--  &lt;!&ndash;-->
+<!--  <ul>-->
+<!--    <h2>Filter by Category</h2>-->
+<!--    <li class="medium-font" *ngFor="let categoryItem of categoryItems" [ngClass]="{'selected': categoryItem?._id === queryId}">-->
+<!--      <a class="cat-text" routerLink="/shop" [queryParams]="{ categoryId: categoryItem?._id }">-->
+<!--        {{ categoryItem.name }}-->
+<!--      </a>-->
+<!--    </li>-->
+<!--    <li class="medium-font" [ngClass]="{'selected': !queryId}">-->
+<!--      <a class="cat-text" routerLink="/shop">-->
+<!--        <i>Show All Products</i>-->
+<!--      </a>-->
+<!--    </li>-->
+<!--  </ul>-->
+<!--  &ndash;&gt;-->
+<!--</div>-->

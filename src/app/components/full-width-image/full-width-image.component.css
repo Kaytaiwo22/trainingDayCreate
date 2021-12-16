@@ -1,0 +1,11 @@
+.image {
+  width: 600px;
+  max-height: 600px;
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.container{
+  width: 100%;
+}

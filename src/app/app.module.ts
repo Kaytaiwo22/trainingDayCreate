@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MainComponent } from './containers/main/main.component';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AosToken, aos } from './components/animate-on-scroll/aos';
 import { HeaderModule } from './components/header/header.module';
 import { FooterModule } from './components/footer/footer.module';
@@ -22,39 +22,54 @@ import { CategoryModule } from './components/category/category.module';
 import { CookieService } from 'ngx-cookie-service';
 import {HeroModule} from './components/hero/hero.module';
 import {HomeModule} from './containers/home/home.module';
-import {ProductDisplayCardModule} from './components/product-display-card/product-display-card.module';
-import {CategoryHorizontalModule} from './components/category-horizontal/category-horizontal.module';
+import {ShopCatalogModule} from './pages/shop-catalog/shop-catalog.module';
+import {MenuModule} from './components/menu/menu.module';
+import {LoadingScreenModule} from './components/loading-screen/loading-screen.module';
+import {AccountModule} from './components/account/account.module';
+import {MyAccountModule} from './containers/myAccount/myAccount.module';
+import {LoginHeaderInterceptorService} from './components/login-form/login-header-interceptor.service';
+import {VerifiedAsLoggedInService} from "../verified-as-logged-in.service";
+import {VerifiedAsLoggedOutService} from "../verified-as-logged-out.service";
+import {UserDetailsService} from "../user-details.service";
+
 declare global {
   interface Window {
     LC_API: any;
   }
 }
+export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass: LoginHeaderInterceptorService, multi: true }];
 
 @NgModule({
   declarations: [MainComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    BrowserModule,
-    HeroModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    HeaderModule,
-    SubHeaderModule,
-    FooterModule,
-    ProductListingModule,
-    ProductCardModule,
-    ProductInfoModule,
-    ProductDetailModule,
-    ProductDisplayCardModule,
-    CartModule,
-    CartContentsModule,
-    CategoryModule,
-      CategoryHorizontalModule,
-    HomeModule,
-  ],
-  providers: [CookieService, { provide: AosToken, useValue: aos }],
+    imports: [
+        CommonModule,
+        RouterModule,
+        BrowserModule,
+        HeroModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule,
+        HeaderModule,
+        SubHeaderModule,
+        FooterModule,
+        ProductListingModule,
+        ProductCardModule,
+        ProductInfoModule,
+        ProductDetailModule,
+        CartModule,
+        CartContentsModule,
+        CategoryModule,
+        HomeModule,
+        ShopCatalogModule,
+        LoadingScreenModule,
+        MyAccountModule,
+        AccountModule,
+        MenuModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+  providers: [VerifiedAsLoggedInService,VerifiedAsLoggedOutService, UserDetailsService, CookieService, { provide: AosToken, useValue: aos },
+      httpInterceptorProviders],
   bootstrap: [MainComponent],
 })
 export class AppModule {}
