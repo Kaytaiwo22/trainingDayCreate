@@ -1,0 +1,57 @@
+@import "../../../styles.scss";
+
+.sweets-logo {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+  height: 300px;
+}
+
+.header-search input[type="text"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 17px;
+  border-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.header-search button {
+  padding: 10px;
+  background: #ed315dff;
+  color: white;
+  font-size: 17px;
+  border-left: none;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.header-search button:hover {
+  background: rgb(224, 31, 76);
+}
+
+.header-search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.search-wrapper {
+  display: flex;
+  width: 50%;
+  margin-left: 25%;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 20px;
+  height: 40px;
+  background-color: $color-tertiary;
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    border-bottom: none;
+  }
+}
