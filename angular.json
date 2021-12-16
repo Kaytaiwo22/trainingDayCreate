@@ -30,7 +30,7 @@
             "styles": [
               "src/fontawesome.min.css",
               "src/foundation.min.css",
-              "src/styles.css",
+              "src/styles.scss",
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
@@ -89,7 +89,7 @@
             "styles": [
               "src/fontawesome.min.css",
               "src/foundation.min.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "jamesTheSleepCoach-frontend"
+  "defaultProject": "jamesTheSleepCoach-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
