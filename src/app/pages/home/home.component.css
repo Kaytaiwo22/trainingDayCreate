@@ -5,11 +5,10 @@ h2 {
 .hero-wrapper {
     position: relative;
     width: 100%;
-    height: calc(100vh - 190px);
-    min-height: 30px;
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    display: table;
+    background-image: url('/assets/images/heroImage.jpg');
 }
 
 

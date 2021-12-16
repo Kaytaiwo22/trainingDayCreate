@@ -4,27 +4,29 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./home.component";
 import {HeroModule} from "../../components/hero/hero.module";
 import {StepsModule} from "../../components/steps/steps.module";
+import { SweetsHeaderModule } from "src/app/components/sweets-header/sweets-header.module";
+import { SweetCategoriesModule } from "src/app/components/sweets-categories/sweets-categories.module";
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent
-  }
+    path: "",
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class ConfirmationRoutingModule {}
-
 
 /**
  * The Module
  */
 @NgModule({
-  imports: [CommonModule, RouterModule, ConfirmationRoutingModule, HeroModule, StepsModule],
+  imports: [CommonModule, RouterModule, ConfirmationRoutingModule, HeroModule, StepsModule, SweetsHeaderModule,
+      SweetCategoriesModule],
   declarations: [HomeComponent],
-  providers: []
+  providers: [],
 })
 export class ConfirmationModule {}

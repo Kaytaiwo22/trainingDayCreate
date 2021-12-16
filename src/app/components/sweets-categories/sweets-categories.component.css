@@ -1,0 +1,16 @@
+.category-container {
+    display: inline-flex;
+    position: absolute;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+}
