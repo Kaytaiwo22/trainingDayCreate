@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepsComponent implements OnInit {
 
-  selectedSize: string = false;
+  selectedSize: string;
   public currentStep: boolean;
   counter = 0;
   public steps= [
