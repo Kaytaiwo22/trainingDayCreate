@@ -21,7 +21,6 @@ import { CartContentsModule } from './components/cart-contents/cart-contents.mod
 import { CategoryModule } from './components/category/category.module';
 import { CookieService } from 'ngx-cookie-service';
 import {HeroModule} from './components/hero/hero.module';
-import {HomeModule} from './containers/home/home.module';
 import {ShopCatalogModule} from './pages/shop-catalog/shop-catalog.module';
 import {MenuModule} from './components/menu/menu.module';
 import {LoadingScreenModule} from './components/loading-screen/loading-screen.module';
@@ -59,7 +58,6 @@ export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass:
         CartModule,
         CartContentsModule,
         CategoryModule,
-        HomeModule,
         ShopCatalogModule,
         LoadingScreenModule,
         MyAccountModule,

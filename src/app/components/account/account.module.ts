@@ -6,7 +6,6 @@ import { AccountComponent } from './account.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HomeModule } from '../../containers/home/home.module';
 import { WizardModule } from '../wizard/wizard.module';
 import {WelcomeVideoModule} from '../welcome-video/welcome-video.module';
 import {ProgrammeFeedModule} from '../programme-feed/programme-feed.module';
@@ -18,7 +17,6 @@ import {CalendarModalModule} from "../calendar-modal/calendar-modal.module";
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
-        HomeModule,
         WizardModule,
         WelcomeVideoModule,
         ProgrammeFeedModule,

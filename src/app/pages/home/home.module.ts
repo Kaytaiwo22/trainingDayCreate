@@ -1,12 +1,12 @@
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {RouterModule, Routes} from "@angular/router";
-import {ConfirmationComponent} from "./confirmation.component";
+import {HomeComponent} from "./home.component";
 
 const routes: Routes = [
   {
     path: '',
-    component: ConfirmationComponent
+    component: HomeComponent
   }
 ];
 
@@ -22,7 +22,7 @@ export class ConfirmationRoutingModule {}
  */
 @NgModule({
   imports: [CommonModule, RouterModule, ConfirmationRoutingModule],
-  declarations: [ConfirmationComponent],
+  declarations: [HomeComponent],
   providers: []
 })
 export class ConfirmationModule {}
