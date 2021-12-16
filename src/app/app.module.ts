@@ -64,7 +64,7 @@ export const httpInterceptorProviders = [{ provide: HTTP_INTERCEPTORS, useClass:
         AccountModule,
         MenuModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   providers: [VerifiedAsLoggedInService,VerifiedAsLoggedOutService, UserDetailsService, CookieService, { provide: AosToken, useValue: aos },
       httpInterceptorProviders],
