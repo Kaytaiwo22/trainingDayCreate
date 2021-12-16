@@ -134,5 +134,8 @@
       }
     }
   },
-  "defaultProject": "jamesTheSleepCoach-frontend"
+  "defaultProject": "jamesTheSleepCoach-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
