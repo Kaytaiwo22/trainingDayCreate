@@ -1,11 +1,17 @@
-.router-outlet {
-    padding: 50px 20px;
-    text-align: center;
-}
-
 h2 {
     margin-top: 100px;
 }
+
+.hero-wrapper {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 190px);
+    min-height: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: table;
+}
+
 
 p {
     margin-top: 20px;
