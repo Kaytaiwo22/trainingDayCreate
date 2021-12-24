@@ -1,20 +1,17 @@
 @import "../../../styles.scss";
 
-.sweets-logo {
-  display: block;
-  margin: 0 auto;
-  width: 400px;
-  height: 300px;
-}
-
 .header-search input[type="text"] {
   display: block;
   margin: 0 auto;
   padding: 10px;
   font-size: 17px;
   border-radius: 0;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.header-search {
+  margin-top: 150px;
 }
 
 .header-search button {
@@ -37,15 +34,28 @@
   display: table;
 }
 
+.search-bar {
+  border-radius: 30px;
+}
+
+.sweets-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-sweets {
+  position: absolute;
+}
+
 .search-wrapper {
   display: flex;
   width: 50%;
   margin-left: 25%;
   justify-content: space-between;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 30px;
   height: 40px;
-  background-color: $color-tertiary;
+  background-color: #ffffff;
   input {
     -webkit-appearance: none;
     -moz-appearance: none;

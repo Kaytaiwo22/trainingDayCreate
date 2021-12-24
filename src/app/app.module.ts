@@ -30,7 +30,7 @@ import { LoginHeaderInterceptorService } from "./components/login-form/login-hea
 import { VerifiedAsLoggedInService } from "../verified-as-logged-in.service";
 import { VerifiedAsLoggedOutService } from "../verified-as-logged-out.service";
 import { UserDetailsService } from "../user-details.service";
-import { SweetCategoriesModule } from "./components/sweets-categories/sweets-categories.module";
+import { NavbarModule } from "./components/navbar/navbar.module";
 
 declare global {
   interface Window {
@@ -72,7 +72,7 @@ export const httpInterceptorProviders = [
     MenuModule,
     FormsModule,
     ReactiveFormsModule,
-    SweetCategoriesModule,
+    NavbarModule,
   ],
   providers: [
     VerifiedAsLoggedInService,
