@@ -1,0 +1,44 @@
+.info-bar {
+  width: 100%;
+}
+
+.info-button {
+  background-color: #ffffff;
+  color: black;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.lets-go-button {
+  background-color: #ed315dff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 15px;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0px 5px 5px 0px rgb(148, 111, 111);
+}
+
+.lets-go-button:hover {
+  background-color: rgba(206, 26, 68, 0.836);
+
+  @media (max-width: 520px) {
+    .make-small {
+      font-size: 14px;
+      display: block;
+      padding-bottom: 5px;
+    }
+  }
+}
