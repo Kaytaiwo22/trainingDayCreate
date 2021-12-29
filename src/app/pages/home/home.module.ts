@@ -7,6 +7,7 @@ import { StepsModule } from "../../components/steps/steps.module";
 import { SweetsHeaderModule } from "src/app/components/sweets-header/sweets-header.module";
 import { HeaderComponent } from "src/app/components/header/header.component";
 import { NavbarModule } from "src/app/components/navbar/navbar.module";
+import { BannerModule } from "src/app/components/banner-homepage/banner-homepage.module";
 
 const routes: Routes = [
   {
@@ -33,6 +34,7 @@ export class ConfirmationRoutingModule {}
     StepsModule,
     SweetsHeaderModule,
     NavbarModule,
+    BannerModule,
   ],
   declarations: [HomeComponent],
   providers: [],

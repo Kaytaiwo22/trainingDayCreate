@@ -1,7 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 // import {VerifiedAsLoggedInService} from "../verified-as-logged-in.service";
-
 
 const routes: Routes = [
   // {
@@ -22,14 +21,15 @@ const routes: Routes = [
   //   loadChildren: () => import('./containers/pages/pages.module').then(mod => mod.PagesModule)
   // },
   {
-    path: '',
-    loadChildren: () => import('./pages/home/home.module').then(mod => mod.ConfirmationModule)
+    path: "",
+    loadChildren: () =>
+      import("./pages/home/home.module").then((mod) => mod.ConfirmationModule),
   },
-  { path: '**', redirectTo: '/', pathMatch: 'full' }
+  { path: "**", redirectTo: "/", pathMatch: "full" },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes, { anchorScrolling: 'enabled'}) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: "enabled" })],
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

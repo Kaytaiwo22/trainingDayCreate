@@ -31,6 +31,7 @@ import { VerifiedAsLoggedInService } from "../verified-as-logged-in.service";
 import { VerifiedAsLoggedOutService } from "../verified-as-logged-out.service";
 import { UserDetailsService } from "../user-details.service";
 import { NavbarModule } from "./components/navbar/navbar.module";
+import { BannerModule } from "./components/banner-homepage/banner-homepage.module";
 
 declare global {
   interface Window {
@@ -73,6 +74,7 @@ export const httpInterceptorProviders = [
     FormsModule,
     ReactiveFormsModule,
     NavbarModule,
+    BannerModule,
   ],
   providers: [
     VerifiedAsLoggedInService,
