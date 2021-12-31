@@ -30,3 +30,19 @@
 .navbar-list li {
   padding-left: 10px;
 }
+
+@media screen and (max-width: 800px) {
+  .navbar-out {
+    height: 200px;
+  }
+
+  .sweets-logo {
+    width: 90px;
+    height: 90px;
+    align-items: center;
+  }
+
+  .navbar-list {
+    font-size: 13px;
+  }
+}

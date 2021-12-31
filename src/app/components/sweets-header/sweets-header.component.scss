@@ -39,11 +39,13 @@
 }
 
 .sweets-arrow {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  left: 48%;
-  top: 90%;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  // left: 48%;
+  // top: 90%;
+  left: 920px;
+  top: 490px;
 }
 
 .down-arrow {
@@ -53,9 +55,9 @@
 
 .search-wrapper {
   display: flex;
-  width: 20%;
-  margin-left: 40%;
-  margin-right: 40%;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
   justify-content: space-between;
   text-align: center;
   border-radius: 30px;
@@ -68,5 +70,14 @@
     background-color: rgba(0, 0, 0, 0);
     box-shadow: none;
     border-bottom: none;
+  }
+
+  @media screen and (max-width: 800px) {
+    .search-wrapper {
+      display: flex;
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
   }
 }

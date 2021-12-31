@@ -33,12 +33,23 @@
 
 .lets-go-button:hover {
   background-color: rgba(206, 26, 68, 0.836);
+}
 
-  @media (max-width: 520px) {
-    .make-small {
-      font-size: 14px;
-      display: block;
-      padding-bottom: 5px;
-    }
+//   @media (max-width: 520px) {
+//     .make-small {
+//       font-size: 14px;
+//       display: block;
+//       padding-bottom: 5px;
+//     }
+//   }
+// }
+
+@media screen and (max-width: 800px) {
+  .info-button {
+    font-size: 25px;
+  }
+
+  .lets-go-button {
+    padding-top: 10px;
   }
 }
