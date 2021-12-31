@@ -1,45 +1,84 @@
-<div class="steps-container">
-    <div class="steps-wrapper">
-        <div *ngFor="let step of steps; let i = index;">
-            <div [hidden]="i !== counter">
-                <h3>Step {{[i +1]}}</h3>
-                <h5>{{step.title}}</h5>
-                <p>{{step.description}}</p>
-            </div>
-        </div>
+<app-modal>
+    <div class="steps-container">
+        <div class="steps-wrapper">
+            <div *ngFor="let step of steps; let i = index;">
+                <div [hidden]="i !== counter">
+                    <div class="steps-holder">
+                        <div class="section">
+                            <img src="./assets/images/bag.png" alt="sweets bag" class="stepsIcon bagImage"/>
+                            <label [ngClass]="{'active': i === 0}">Select Bag</label>
+                        </div>
 
-        <div class="bag-selection" *ngIf="counter===0">
-            <div class="bags-wrapper grid-x">
-                <div class="bagOption small-4 medium-4 columns">
-                <button class="optionSelectButton" (click)="selectOption('500')" [ngClass]="{'selected': selectedSize === '500'}">
-                    <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
-                   <span>500g</span>
-                </button>
-            </div>
-                <div class="bagOption small-4 medium-4 columns">
-                    <button class="optionSelectButton" (click)="selectOption('1000')" [ngClass]="{'selected': selectedSize === '1000'}">
-                        <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
-                        <span>1kg</span>
-                    </button>
-                </div>
-                <div class="bagOption small-4 medium-4 columns">
-                    <button class="optionSelectButton" (click)="selectOption('2000')" [ngClass]="{'selected': selectedSize === '2000'}">
-                        <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
-                        <span>2kg</span>
-                    </button>
-                </div>
-            <div>
-            <button class="button bottom" (click)="nextSteps()">Next</button>
-        </div>
+                        <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 1" />
+                        <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
 
+                        <div class="section">
+                            <img src="./assets/images/sweets.png" alt="sweets" class="stepsIcon sweetsImage"/>
+                            <label [ngClass]="{'active': i === 1}">Choose Sweets</label>
+                        </div>
+                        <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2" />
+                        <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
+                        <div class="section">
+                            <img src="./assets/images/transit.png" alt="delivery car" class="stepsIcon deliveryImage"/>
+                            <label [ngClass]="{'active': i === 2}">Delivery Address</label>
+                        </div>
+                    <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 3" />
+                    <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2 || i === 0"/>
+
+                        <div class="section">
+                            <img src="./assets/images/analyze.png" alt="preview section" class="stepsIcon previewImage"/>
+                            <label [ngClass]="{'active': i === 3}">Preview Order</label>
+                        </div>
+
+                    <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 4" />
+                    <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 3 || i === 0"/>
+
+                        <div class="section">
+                            <img src="./assets/images/payment.png" alt="payment section" class="stepsIcon previewImage"/>
+                            <label [ngClass]="{'active': i === 4}">Payment</label>
+                        </div>
+
+
+                    </div>
+                    <h3>Step {{[i +1]}}</h3>
+                    <h5>{{step.title}}</h5>
+                    <p>{{step.description}}</p>
+                </div>
             </div>
-        </div>
-        <div class="sweet-selection" *ngIf="counter===1">
-            <button class="button bottom" (click)="nextSteps()">Next</button>
-        </div>
-        <div class="delivery" *ngIf="counter===2">
-            <input type="text" placeholder="Address"/>
-            <button class="button bottom" (click)="nextSteps()">Finished</button>
+            <div class="bag-selection" *ngIf="counter===0">
+                <div class="bags-wrapper grid-x">
+                    <div class="bagOption small-4 medium-4 columns">
+                        <button class="optionSelectButton" (click)="selectOption('500')" [ngClass]="{'selected': selectedSize === '500'}">
+                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <span>500g</span>
+                        </button>
+                    </div>
+                    <div class="bagOption small-4 medium-4 columns">
+                        <button class="optionSelectButton" (click)="selectOption('1000')" [ngClass]="{'selected': selectedSize === '1000'}">
+                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <span>1kg</span>
+                        </button>
+                    </div>
+                    <div class="bagOption small-4 medium-4 columns">
+                        <button class="optionSelectButton" (click)="selectOption('2000')" [ngClass]="{'selected': selectedSize === '2000'}">
+                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <span>2kg</span>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="button bottom" (click)="nextSteps()">Next</button>
+                    </div>
+
+                </div>
+            </div>
+            <div class="sweet-selection" *ngIf="counter===1">
+                <button class="button bottom" (click)="nextSteps()">Next</button>
+            </div>
+            <div class="delivery" *ngIf="counter===2">
+                <input type="text" placeholder="Address"/>
+                <button class="button bottom" (click)="nextSteps()">Finished</button>
+            </div>
         </div>
     </div>
-</div>
+</app-modal>
+
