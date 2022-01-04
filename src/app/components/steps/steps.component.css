@@ -1,59 +1,76 @@
-.steps-container {
-    width: 100%;
-    height: 600px;
-    background-color: white;
-    color: black;
+.steps-wrapper {
+  padding: 30px 40px;
 }
 
-.steps-wrapper {
-    width: 550px;
-    padding: 20px 40px;
-    height: 500px;
-    display: block;
-    margin: 30px auto;
-    border-radius: 35px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    position: relative;
+.steps-holder {
+  display: flex;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px 20px 30px 20px;
+}
 
+.section {
+  position: relative;
+  top: 10px;
+}
+
+.stepsIcon {
+  width: 40px;
+  display: block;
+  margin: 0 auto;
+}
+
+.rightArrow {
+  width: 20px;
+  height: 20px;
+  margin: 20px 15px;
+}
+
+.section label {
+  font-size: 11px;
+  color: #1b9aaa;
+}
+
+.section label.active {
+  color: #ed315dff;
 }
 
 .button {
-    background-color: #ed315dff;
-    border: 2px solid #1b9aaaff;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
+  background-color: #ed315dff;
+  border: 2px solid #1b9aaaff;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
 }
-
 
 .bottom {
-    position: absolute;
-    bottom: 50px;
-    right: 50px;
+  position: relative;
+  left: 15rem;
+  /*position: absolute;*/
+  /*bottom: 50px;*/
+  /*right: 50px;*/
 }
-
 
 .selected {
-    border-radius: 30px;
-    border: 2px solid #ed315dff;
-    /*padding: 30px;*/
+  border-radius: 30px;
+  border: 2px solid #ed315dff;
+  /*padding: 30px;*/
 }
 
-
 .sweetBag {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
 
 .optionSelectButton {
-    display: grid;
-    margin: 0 auto;
-    padding: 35px;
+  display: grid;
+  margin: 0 auto;
+  padding: 35px;
 }
 .optionSelectButton span {
-    font-size: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #1b9aaaff;
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #1b9aaaff;
 }
-
