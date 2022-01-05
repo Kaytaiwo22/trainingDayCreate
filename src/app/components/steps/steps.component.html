@@ -1,6 +1,7 @@
 <app-modal>
     <div class="steps-container">
         <div class="steps-wrapper">
+            <span (click)="modalClosed()" class="close"><i class="fas fa-times"></i></span>
             <div *ngFor="let step of steps; let i = index;">
                 <div [hidden]="i !== counter">
                     <div class="steps-holder">
@@ -40,8 +41,8 @@
 
 
                     </div>
-                    <h3>Step {{[i +1]}}</h3>
-                    <h5>{{step.title}}</h5>
+                    <!-- <h3>Step {{[i +1]}}</h3> -->
+                    <h5 class="step-title">{{step.title}}</h5>
                     <p>{{step.description}}</p>
                 </div>
             </div>
@@ -49,19 +50,19 @@
                 <div class="bags-wrapper grid-x">
                     <div class="bagOption small-4 medium-4 columns">
                         <button class="optionSelectButton" (click)="selectOption('500')" [ngClass]="{'selected': selectedSize === '500'}">
-                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <img src="assets/images/sweets-bag-500g.png" class="sweetBag"/>
                             <span>500g</span>
                         </button>
                     </div>
                     <div class="bagOption small-4 medium-4 columns">
                         <button class="optionSelectButton" (click)="selectOption('1000')" [ngClass]="{'selected': selectedSize === '1000'}">
-                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <img src="assets/images/sweets-bag-1kg.png" class="sweetBag"/>
                             <span>1kg</span>
                         </button>
                     </div>
                     <div class="bagOption small-4 medium-4 columns">
                         <button class="optionSelectButton" (click)="selectOption('2000')" [ngClass]="{'selected': selectedSize === '2000'}">
-                            <img src="assets/images/icons/sweets-bag.png" class="sweetBag"/>
+                            <img src="assets/images/sweets-bag-2kg.png" class="sweetBag"/>
                             <span>2kg</span>
                         </button>
                     </div>

@@ -21,7 +21,7 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ConfirmationRoutingModule {}
+export class HomeRoutingModule {}
 
 /**
  * The Module
@@ -30,7 +30,7 @@ export class ConfirmationRoutingModule {}
   imports: [
     CommonModule,
     RouterModule,
-    ConfirmationRoutingModule,
+    HomeRoutingModule,
     HeroModule,
     StepsModule,
     SweetsHeaderModule,
@@ -41,4 +41,4 @@ export class ConfirmationRoutingModule {}
   declarations: [HomeComponent],
   providers: [],
 })
-export class ConfirmationModule {}
+export class HomeModule {}

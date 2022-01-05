@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-sweets-grid",
@@ -6,7 +6,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./sweets-grid.component.scss"],
 })
 export class SweetsGridComponent implements OnInit {
+  @Output() togglePopUp: EventEmitter<void> = new EventEmitter();
   constructor() {}
 
   ngOnInit(): void {}
+
+  openPopUp() {
+    this.togglePopUp.emit();
+  }
 }

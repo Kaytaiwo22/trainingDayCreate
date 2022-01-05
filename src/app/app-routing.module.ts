@@ -23,7 +23,7 @@ const routes: Routes = [
   {
     path: "",
     loadChildren: () =>
-      import("./pages/home/home.module").then((mod) => mod.ConfirmationModule),
+      import("./pages/home/home.module").then((mod) => mod.HomeModule),
   },
   { path: "**", redirectTo: "/", pathMatch: "full" },
 ];

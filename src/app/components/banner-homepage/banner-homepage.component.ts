@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-banner-homepage",
@@ -6,9 +6,12 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./banner-homepage.component.scss"],
 })
 export class BannerComponent implements OnInit {
-  constructor() {
-    console.log("loaded");
-  }
+  @Output() togglePopUp: EventEmitter<void> = new EventEmitter();
+  constructor() {}
 
   ngOnInit(): void {}
+
+  openPopUp() {
+    this.togglePopUp.emit();
+  }
 }

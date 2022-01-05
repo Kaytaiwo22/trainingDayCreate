@@ -1,3 +1,9 @@
+.steps-container {
+  background-color: #faedca;
+  box-shadow: 0px 0px 1px #000000;
+  border-radius: 20px;
+}
+
 .steps-wrapper {
   padding: 30px 40px;
 }
@@ -5,9 +11,27 @@
 .steps-holder {
   display: flex;
   width: 100%;
-  border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
   padding: 10px 20px 30px 20px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 1.95px 1.95px #000000;
+  border-radius: 30px;
+  justify-content: space-between;
+}
+
+.close {
+  width: 40px;
+  background-color: #ed315dff;
+  border-radius: 10px;
+  padding: 5px;
+  position: relative;
+  float: right;
+  text-align: center;
+  top: -18px;
+  right: -25px;
+  cursor: pointer;
 }
 
 .section {
@@ -19,6 +43,13 @@
   width: 40px;
   display: block;
   margin: 0 auto;
+}
+
+.step-title {
+  color: #db2763;
+  font-size: 40px;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .rightArrow {
@@ -38,7 +69,7 @@
 
 .button {
   background-color: #ed315dff;
-  border: 2px solid #1b9aaaff;
+  border: 2px solid #ffffff;
   border-radius: 8px;
   color: white;
   font-weight: bold;
@@ -46,21 +77,18 @@
 
 .bottom {
   position: relative;
-  left: 15rem;
-  /*position: absolute;*/
-  /*bottom: 50px;*/
-  /*right: 50px;*/
+  left: 27rem;
+  font-size: 40px;
+  font-weight: bold;
+  /*position: absolute;
+  bottom: 50px;
+  right: 50px; */
 }
 
 .selected {
+  border: 1px solid #db2763;
+  box-sizing: border-box;
   border-radius: 30px;
-  border: 2px solid #ed315dff;
-  /*padding: 30px;*/
-}
-
-.sweetBag {
-  width: 60px;
-  height: 60px;
 }
 
 .optionSelectButton {
@@ -69,8 +97,9 @@
   padding: 35px;
 }
 .optionSelectButton span {
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 20px;
   font-weight: bold;
-  color: #1b9aaaff;
+  color: black;
+  text-transform: uppercase;
 }
