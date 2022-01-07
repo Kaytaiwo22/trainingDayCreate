@@ -15,10 +15,19 @@ export class StepsComponent implements OnInit {
       title: "Choose Sweets",
       description: "Select up to 10 items for your bag",
     },
-    {
-      title: "Fill in delivery details",
-      description: "It will be on its way soon!",
-    },
+    // {
+    //   title: "Delivery Address",
+    //   // description: "It will be on its way soon!",
+    // },
+    // {
+    //   title: "Enter your information",
+    // },
+    // {
+    //   title: "Preview Order",
+    // },
+    // {
+    //   title: "Payment",
+    // },
   ];
 
   @Output() modalClose: EventEmitter<void> = new EventEmitter();

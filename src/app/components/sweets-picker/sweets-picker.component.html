@@ -1,0 +1,13 @@
+
+
+  <div class="image-container" *ngFor="let image of images" >
+   <div class="image-wrapper">
+     <img [src]="image.url" class="image.item" [alt]=image.description/> 
+      <div class="buttonSection">
+        <button class="addButton">+</button>
+        <button class="minusButton">-</button>
+      </div>
+    </div>
+</div>
+
+

@@ -33,6 +33,8 @@ import { UserDetailsService } from "../user-details.service";
 import { NavbarModule } from "./components/navbar/navbar.module";
 import { BannerModule } from "./components/banner-homepage/banner-homepage.module";
 import { SweetsGridModule } from "./components/sweets-grid/sweets-grid.module";
+import { StepsModule } from "./components/steps/steps.module";
+import { SweetsPickerModule } from "./components/sweets-picker/sweets-picker.module";
 
 declare global {
   interface Window {
@@ -77,6 +79,8 @@ export const httpInterceptorProviders = [
     NavbarModule,
     BannerModule,
     SweetsGridModule,
+    StepsModule,
+    SweetsPickerModule,
   ],
   providers: [
     VerifiedAsLoggedInService,
