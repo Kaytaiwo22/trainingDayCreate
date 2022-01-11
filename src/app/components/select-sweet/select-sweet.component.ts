@@ -1,15 +1,15 @@
 import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 
 @Component({
-  selector: "app-sweets-picker",
-  templateUrl: "./sweets-picker.component.html",
-  styleUrls: ["./sweets-picker.component.css"],
+  selector: "app-select-sweet",
+  templateUrl: "./select-sweet.component.html",
+  styleUrls: ["./select-sweet.component.css"],
 })
-export class SweetsPickerComponent {
-  @Input() images: {
+export class SelectSweetComponent {
+  @Input() image: {
     url: string;
     description: string;
-  }[] = [];
+  };
 
   public counter: number = 0;
 

@@ -46,12 +46,15 @@
 }
 
 .step-title {
-  color: #db2763;
-  font-size: 40px;
-  text-transform: uppercase;
   text-align: center;
-  margin-bottom: 55px;
-  margin-top: 40px;
+  color: white;
+  background-color: #db2763;
+  padding: 10px 20px;
+  border-radius: 20px;
+  width: 50%;
+  font-size: 30px;
+  display: block;
+  margin: 60px auto;
 }
 
 .fa-times {
@@ -59,17 +62,20 @@
 }
 
 .rightArrow {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin: 20px 15px;
+  position: relative;
+  top: 5px;
 }
 
 .section label {
-  font-size: 11px;
+  font-size: 17px;
   color: #1b9aaa;
 }
 
 .section label.active {
+  font-size: 17px;
   color: #ed315dff;
 }
 
@@ -87,6 +93,17 @@
   max-height: 150px;
   position: relative;
 }
+
+/*.description {*/
+/*  text-align: center;*/
+/*  color: white;*/
+/*  background-color: #db2763;*/
+/*  padding: 10px 20px;*/
+/*  border-radius: 20px;*/
+/*  width: 50%;*/
+/*  display: block;*/
+/*  margin: 0 auto;*/
+/*}*/
 
 .b1 {
   top: -10px;

@@ -1,12 +1,6 @@
-
-
-  <div class="image-container" *ngFor="let image of images" >
-   <div class="image-wrapper">
-     <img [src]="image.url" class="image.item" [alt]=image.description/> 
-      <div class="buttonSection">
-        <button class="addButton">+</button>
-        <button class="minusButton">-</button>
-      </div>
+<div class="grid-x">
+    <div class="small-6 medium-2 columns" *ngFor="let image of images">
+       <app-select-sweet [image]="image"></app-select-sweet>
     </div>
 </div>
 
