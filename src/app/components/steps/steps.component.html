@@ -19,8 +19,9 @@
                         </div>
                         <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2" />
                         <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
+                        
                         <div class="section">
-                            <img src="./assets/images/transit.png" alt="delivery car" class="stepsIcon deliveryImage"/>
+                        <img src="./assets/images/transit.png" alt="delivery car" class="stepsIcon deliveryImage"/>
                             <label [ngClass]="{'active': i === 2}">Delivery Address</label>
                         </div>
                     <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 3" />
@@ -71,6 +72,9 @@
                     </div>
 
                 </div>
+            </div>
+            <div class="sweets-picker" *ngIf="counter===1">
+                <app-sweets-picker></app-sweets-picker>
             </div>
         </div>
     </div>   

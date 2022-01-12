@@ -13,7 +13,6 @@ export class StepsComponent implements OnInit {
     { title: "Select Bag" },
     {
       title: "Choose Sweets",
-      description: "Select up to 10 items for your bag",
     },
     // {
     //   title: "Delivery Address",
@@ -38,6 +37,7 @@ export class StepsComponent implements OnInit {
 
   nextSteps() {
     this.counter++;
+    console.log(this.counter);
   }
 
   selectOption(value) {
