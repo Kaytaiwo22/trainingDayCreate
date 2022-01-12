@@ -1,13 +1,14 @@
-
-
-  <div class="image-container" *ngFor="let image of images" >
+<div class="image-container" >
+  <div class="sweets-picker grid-x">
+    <div class="small-12 medium-6 large-2 columns" *ngFor="let image of images">
    <div class="image-wrapper">
-     <img [src]="image.url" class="image.item" [alt]=image.description/> 
+     <input class="counter" [value]="quantity"/>
+     <img [src]="image.url" class="image-item" [alt]=image.description/> 
       <div class="buttonSection">
-        <button class="addButton">+</button>
-        <button class="minusButton">-</button>
+        <button class="addButton" (click)="plus()">+</button>
+        <button class="minusButton" (click)="minus()">-</button>
       </div>
-    </div>
+   </div>
+  </div>
 </div>
-
-
+</div>
