@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-select-sweet",
@@ -15,12 +15,11 @@ export class SelectSweetComponent {
 
   constructor() {}
 
-  addCounter(){
+  addCounter() {
     this.counter = this.counter + 1;
   }
-  removeCounter(){
-    if (this.counter > 0)
-    {
+  removeCounter() {
+    if (this.counter > 0) {
       this.counter = this.counter - 1;
     }
   }

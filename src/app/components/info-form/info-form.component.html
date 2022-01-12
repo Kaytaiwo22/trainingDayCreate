@@ -1,0 +1,59 @@
+<div class="registration">
+  <div class="wrapper text-center" *ngIf="isLoading">
+    <p>Please wait...</p>
+  </div>
+  <div class="wrapper" *ngIf="!isLoading">
+    <form
+      class="content"
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit($event)"
+    >
+      <label>
+        <input
+          type="text"
+          [formControl]="firstName"
+          placeholder="First Name"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+          class="username"
+        />
+        <span class="required">17/20</span>
+      </label>
+
+      <label>
+        <input
+          type="text"
+          [formControl]="lastName"
+          placeholder="Last Name"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+          class="username"
+        />
+        <span class="required">17/20</span>
+      </label>
+
+      <label>
+        <input
+          type="text"
+          [formControl]="email"
+          placeholder="Email address"
+          class="email"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+        <span class="required">17/20</span>
+      </label>
+    
+      <label>
+        <input
+          type="text"
+          [formControl]="phoneNumber"
+          placeholder="Contact number"
+          class="username"
+          [ngClass]="{ 'form-submitted': formSubmitted }"
+        />
+        <span class="required">17/20</span>
+      </label>
+    <p class="form-error" *ngIf="error">{{ error }}</p>
+    </form>
+    <div class="mini-info">
+    </div>
+  </div>
+</div>

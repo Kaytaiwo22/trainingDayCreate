@@ -10,6 +10,7 @@ import { NavbarModule } from "src/app/components/navbar/navbar.module";
 import { BannerModule } from "src/app/components/banner-homepage/banner-homepage.module";
 import { SweetsGridModule } from "src/app/components/sweets-grid/sweets-grid.module";
 import { SweetsPickerModule } from "src/app/components/sweets-picker/sweets-picker.module";
+import { InfoFormModule } from "src/app/components/info-form/info-form.module";
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ export class HomeRoutingModule {}
     BannerModule,
     SweetsGridModule,
     SweetsPickerModule,
+    InfoFormModule,
   ],
   declarations: [HomeComponent],
   providers: [],

@@ -17,16 +17,10 @@
                             <img src="./assets/images/sweets.png" alt="sweets" class="stepsIcon sweetsImage"/>
                             <label [ngClass]="{'active': i === 1}">Choose Sweets</label>
                         </div>
-<<<<<<< HEAD
-                        <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2" />
-                        <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
-                        
-=======
                         <div class="arrowSection">
                             <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i >= 2" />
                             <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i <= 1"/>
                         </div>
->>>>>>> 9f24db5d68b015cbdb6a6f6f53fb02f644f93b01
                         <div class="section">
                         <img src="./assets/images/transit.png" alt="delivery car" class="stepsIcon deliveryImage"/>
                             <label [ngClass]="{'active': i === 2}">Delivery Address</label>
@@ -88,6 +82,9 @@
                 </div>
             </div>
             <div class="delivery-selection" *ngIf="counter===2">
+                <div class="information-form" *ngIf="counter===2">
+                    <app-info-form></app-info-form>
+                </div>
                 <div class="next-button">
                     <button class="button" (click)="nextSteps()">Next</button>
                 </div>
