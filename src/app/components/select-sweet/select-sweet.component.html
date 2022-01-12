@@ -1,0 +1,12 @@
+<div class="image-container" >
+        <div class="image-wrapper" >
+            <div class="counter-wrapper">
+                <p class="counter"><span class="number">{{counter}}</span></p>
+            </div>
+            <img [src]="image.url" class="image-item" [alt]="image.description" />
+            <div class="buttonSection">
+                <button class="addButton" (click)="addCounter()">+</button>
+                <button class="minusButton" (click)="removeCounter()">-</button>
+            </div>
+        </div>
+    </div>

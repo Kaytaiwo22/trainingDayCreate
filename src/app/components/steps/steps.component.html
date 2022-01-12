@@ -9,42 +9,47 @@
                             <img src="./assets/images/bag.png" alt="sweets bag" class="stepsIcon bagImage"/>
                             <label [ngClass]="{'active': i === 0}">Select Bag</label>
                         </div>
-
-                        <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 1" />
-                        <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
-
+                        <div class="arrowSection">
+                            <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i >= 1" />
+                            <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
+                        </div>
                         <div class="section">
                             <img src="./assets/images/sweets.png" alt="sweets" class="stepsIcon sweetsImage"/>
                             <label [ngClass]="{'active': i === 1}">Choose Sweets</label>
                         </div>
+<<<<<<< HEAD
                         <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2" />
                         <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 0"/>
                         
+=======
+                        <div class="arrowSection">
+                            <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i >= 2" />
+                            <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i <= 1"/>
+                        </div>
+>>>>>>> 9f24db5d68b015cbdb6a6f6f53fb02f644f93b01
                         <div class="section">
                         <img src="./assets/images/transit.png" alt="delivery car" class="stepsIcon deliveryImage"/>
                             <label [ngClass]="{'active': i === 2}">Delivery Address</label>
                         </div>
-                    <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 3" />
-                    <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 2 || i === 0"/>
-
+                        <div class="arrowSection">
+                            <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i >= 3" />
+                            <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i <= 2"/>
+                        </div>
                         <div class="section">
                             <img src="./assets/images/analyze.png" alt="preview section" class="stepsIcon previewImage"/>
                             <label [ngClass]="{'active': i === 3}">Preview Order</label>
                         </div>
-
-                    <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 4" />
-                    <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i === 3 || i === 0"/>
-
+                        <div class="arrowSection">
+                            <img src="./assets/images/right-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i >= 4" />
+                            <img src="./assets/images/grey-arrow.png" alt="right arrow" class="rightArrow" *ngIf="i <= 3"/>
+                        </div>
                         <div class="section">
                             <img src="./assets/images/payment.png" alt="payment section" class="stepsIcon previewImage"/>
                             <label [ngClass]="{'active': i === 4}">Payment</label>
                         </div>
                     </div>
-
-                    
-                    <!-- <h3>Step {{[i +1]}}</h3> -->
                     <h5 class="step-title">{{step.title}}</h5>
-                    <p>{{step.description}}</p>
+<!--                    <p class="description">{{step.description}}</p>-->
                 </div>
             </div>
             <div class="bag-selection" *ngIf="counter===0">
@@ -70,7 +75,36 @@
                     <div class="next-button">
                         <button class="button " (click)="nextSteps()">Next</button>
                     </div>
-
+                </div>
+            </div>
+            <div class="sweets-selection" *ngIf="counter===1">
+                <div class="sweets-wrapper">
+                    <div class="sweets-picker">
+                        <app-sweets-picker [images]="images"></app-sweets-picker>
+                    </div>
+                    <div class="next-button">
+                        <button class="button" (click)="nextSteps()">Next</button>
+                    </div>
+                </div>
+            </div>
+            <div class="delivery-selection" *ngIf="counter===2">
+                <div class="next-button">
+                    <button class="button" (click)="nextSteps()">Next</button>
+                </div>
+            </div>
+            <div class="personalInformation-selection" *ngIf="counter===3">
+                <div class="next-button">
+                    <button class="button" (click)="nextSteps()">Next</button>
+                </div>
+            </div>
+            <div class="preview-selection" *ngIf="counter===4">
+                <div class="next-button">
+                    <button class="button" (click)="nextSteps()">Next</button>
+                </div>
+            </div>
+            <div class="payment-selection" *ngIf="counter===5">
+                <div class="next-button">
+                    <button class="button" (click)="nextSteps()">Next</button>
                 </div>
             </div>
             <div class="sweets-picker" *ngIf="counter===1">
