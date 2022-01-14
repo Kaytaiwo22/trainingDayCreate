@@ -9,6 +9,32 @@ export class StepsComponent implements OnInit {
   selectedSize: string;
   public currentStep: boolean;
   counter = 0;
+  public form = [
+    {
+      title: "Address Nickname",
+      length: "10",
+      type: "string",
+      required: true,
+    },
+    {
+      title: "First Line",
+      length: "20",
+      type: "string",
+      required: true,
+    },
+    {
+      title: "Second Line",
+      length: "30",
+      type: "string",
+      required: true,
+    },
+    {
+      title: "Postcode",
+      length: "6",
+      type: "string",
+      required: true,
+    },
+  ];
   public images = [
     {
       url: "../assets/images/candy.png",

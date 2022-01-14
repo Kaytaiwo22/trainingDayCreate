@@ -8,8 +8,8 @@ import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
 import { ModalModule } from "../modal/modal.module";
 import { SweetsPickerModule } from "../sweets-picker/sweets-picker.module";
-import { InfoFormModule } from "../info-form/info-form.module";
 import { ContactFormModule } from "../contact-form/contact-form.module";
+import { FormInputsModule } from "../form-inputs/form-inputs.module";
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { ContactFormModule } from "../contact-form/contact-form.module";
     ReactiveFormsModule,
     ModalModule,
     SweetsPickerModule,
-    InfoFormModule,
     ContactFormModule,
+    FormInputsModule,
   ],
   entryComponents: [StepsComponent],
   declarations: [StepsComponent],

@@ -1,0 +1,6 @@
+  <div class="formInput" *ngFor="let input of formArray">
+    <label for="input.title">
+        {{input.title}} 
+    </label>
+    <input id="input.title" type="input.type" formControlName="input.title" [maxlength]="input.length" required="input.required">
+  </div>

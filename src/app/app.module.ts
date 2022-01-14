@@ -38,6 +38,7 @@ import { SweetsPickerModule } from "./components/sweets-picker/sweets-picker.mod
 import { InfoFormModule } from "./components/info-form/info-form.module";
 import { SweetCounterModule } from "./components/sweet-counter/sweet-counter.module";
 import { ContactFormModule } from "./components/contact-form/contact-form.module";
+import { FormInputsModule } from "./components/form-inputs/form-inputs.module";
 
 declare global {
   interface Window {
@@ -87,6 +88,7 @@ export const httpInterceptorProviders = [
     InfoFormModule,
     SweetCounterModule,
     ContactFormModule,
+    FormInputsModule,
   ],
   providers: [
     VerifiedAsLoggedInService,

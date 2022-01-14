@@ -84,7 +84,8 @@
 
             <div class="delivery-selection" *ngIf="counter===2">
                 <div class="information-form" *ngIf="counter===2">
-                    <app-info-form></app-info-form>
+                    <app-form-inputs [form]="form">
+                    </app-form-inputs>
                 </div>
                 <div class="next-button">
                     <button class="button" (click)="nextSteps()">Next</button>
