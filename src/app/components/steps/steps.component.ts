@@ -11,39 +11,40 @@ export class StepsComponent implements OnInit {
   counter = 0;
   public images = [
     {
-      url:'../assets/images/candy.png',
-      description: 'sweets'
+      url: "../assets/images/candy.png",
+      description: "sweets",
     },
     {
-      url:'../assets/images/sweets.png',
-      description: 'sweets'
-    },  {
-      url:'../assets/images/candy.png',
-      description: 'sweets'
+      url: "../assets/images/sweets.png",
+      description: "sweets",
     },
     {
-      url:'../assets/images/sweets.png',
-      description: 'sweets'
-    },  {
-      url:'../assets/images/candy.png',
-      description: 'sweets'
+      url: "../assets/images/candy.png",
+      description: "sweets",
     },
     {
-      url:'../assets/images/sweets.png',
-      description: 'sweets'
-    },  {
-      url:'../assets/images/candy.png',
-      description: 'sweets'
+      url: "../assets/images/sweets.png",
+      description: "sweets",
     },
     {
-      url:'../assets/images/sweets.png',
-      description: 'sweets'
+      url: "../assets/images/candy.png",
+      description: "sweets",
     },
-  ]
+    {
+      url: "../assets/images/sweets.png",
+      description: "sweets",
+    },
+    {
+      url: "../assets/images/candy.png",
+      description: "sweets",
+    },
+    {
+      url: "../assets/images/sweets.png",
+      description: "sweets",
+    },
+  ];
   public steps = [
-    { title: "Select Bag",
-      description: "Select your bag",
-    },
+    { title: "Select Bag", description: "Select your bag" },
     {
       title: "Choose Sweets",
     },
@@ -62,7 +63,6 @@ export class StepsComponent implements OnInit {
     {
       title: "Payment",
       description: "Almost there",
-
     },
   ];
 

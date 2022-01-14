@@ -22,19 +22,8 @@
       <label>
         <input
           type="text"
-          [formControl]="FirstLine"
-          placeholder="First Line"
-          [ngClass]="{ 'form-submitted': formSubmitted }"
-          class="username"
-        />
-        <span class="required">17/20</span>
-      </label>
-
-      <label>
-        <input
-          type="text"
-          [formControl]="SecondLine"
-          placeholder="Second Line"
+          [formControl]="email"
+          placeholder="Email address"
           class="email"
           [ngClass]="{ 'form-submitted': formSubmitted }"
         />
@@ -44,8 +33,8 @@
       <label>
         <input
           type="text"
-          [formControl]="Postcode"
-          placeholder="Postcode"
+          [formControl]="phoneNumber"
+          placeholder="Contact number"
           class="username"
           [ngClass]="{ 'form-submitted': formSubmitted }"
         />
@@ -54,8 +43,4 @@
     <p class="form-error" *ngIf="error">{{ error }}</p>
     </form>
   </div>
-</div>
-
-<div class="sweets-counter-out">
-  <app-sweet-counter></app-sweet-counter>
 </div>

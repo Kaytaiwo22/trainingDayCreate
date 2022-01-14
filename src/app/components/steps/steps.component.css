@@ -57,6 +57,7 @@
   font-size: 30px;
   display: block;
   margin: 60px auto;
+  text-transform: uppercase;
 }
 
 .fa-times {
@@ -88,7 +89,7 @@
   color: white;
   font-weight: bold;
   margin-top: 45px;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .sweetBag {

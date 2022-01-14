@@ -1,21 +1,5 @@
-.heading {
-  text-align: center;
-  color: black;
-  font-size: 30px;
-}
-
-.fa-times {
-  color: white;
-  background-color: #509edc;
-  padding: 5px 10px;
-  margin-right: 13px;
-  margin-bottom: 10px;
-  float: right;
-}
-
 .wrapper {
   background-color: white;
-  width: 50%;
   margin: auto;
   border-radius: 30px;
   padding: 40px;
@@ -40,50 +24,13 @@ input[type="password"] {
   border-bottom: 2px solid black;
 }
 
-select {
-  width: 450px;
-  border-radius: 20px;
-  padding: 6px 35px;
-  height: 45px;
-  display: block;
-  margin: 15px auto 0;
-}
-
-label {
-  margin-top: 15px;
-  /*position: relative;*/
-  /*left: 122px;*/
-  margin-bottom: 5px;
-  color: black;
-}
-.tnc {
-  font-size: 12px;
-  padding: 10px 36px;
-  font-weight: bold;
-  text-align: center;
-}
-.tnc input[type="checkbox"] {
-  margin: 0;
-}
-
-.button {
-  border: 2px solid black;
-  background-color: #131e5f;
-  border-radius: 20px;
-}
-
-.form-error {
-  display: block;
-  color: darkred;
-  font-weight: bold;
-  text-align: center;
-}
-
 .registration {
   padding: 10px 10px;
   position: relative;
-  left: -25%;
-  top: -15px;
+  display: block;
+  margin: 0 auto;
+  padding-right: 20%;
+  padding-left: 20%;
 }
 
 .image-wrapper {
@@ -112,19 +59,6 @@ label {
   right: -5px;
   top: -5px;
   text-align: center;
-}
-
-.ng-valid.ng-dirty:not(form) {
-  border: solid 2px #239e23;
-}
-
-/*.small-optional {*/
-/*    font-size: 10px;*/
-/*    text-align: right;*/
-/*}*/
-.ng-invalid.ng-dirty:not(form),
-.ng-invalid:not(form).form-submitted {
-  border: solid 2px #ff3d3d;
 }
 
 @media (max-width: 700px) {

@@ -81,6 +81,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="delivery-selection" *ngIf="counter===2">
                 <div class="information-form" *ngIf="counter===2">
                     <app-info-form></app-info-form>
@@ -89,11 +90,18 @@
                     <button class="button" (click)="nextSteps()">Next</button>
                 </div>
             </div>
-            <div class="personalInformation-selection" *ngIf="counter===3">
-                <div class="next-button">
-                    <button class="button" (click)="nextSteps()">Next</button>
+
+            <div class="contact" *ngIf="counter===3">
+                <div class="contact-wrapper">
+                    <div class="contact-form-one">
+                        <app-contact-form></app-contact-form>
+                    </div>
+                    <div class="next-button">
+                        <button class="button" (click)="nextSteps()">Next</button>
+                    </div>
                 </div>
             </div>
+
             <div class="preview-selection" *ngIf="counter===4">
                 <div class="next-button">
                     <button class="button" (click)="nextSteps()">Next</button>

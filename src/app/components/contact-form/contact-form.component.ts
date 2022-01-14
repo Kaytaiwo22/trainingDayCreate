@@ -12,11 +12,11 @@ import { CookieService } from "ngx-cookie-service";
 declare var Stripe: any;
 
 @Component({
-  selector: "app-info-form",
-  templateUrl: "./info-form.component.html",
-  styleUrls: ["./info-form.component.css"],
+  selector: "app-contact-form",
+  templateUrl: "./contact-form.component.html",
+  styleUrls: ["./contact-form.component.css"],
 })
-export class InfoFormComponent implements OnInit {
+export class ContactFormComponent implements OnInit {
   @Input() isLogin: boolean;
   @Output() modalClose: EventEmitter<void> = new EventEmitter();
   formSubmitted = false;

@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { ModalModule } from "../modal/modal.module";
 import { SweetsPickerModule } from "../sweets-picker/sweets-picker.module";
 import { InfoFormModule } from "../info-form/info-form.module";
+import { ContactFormModule } from "../contact-form/contact-form.module";
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { InfoFormModule } from "../info-form/info-form.module";
     ModalModule,
     SweetsPickerModule,
     InfoFormModule,
+    ContactFormModule,
   ],
   entryComponents: [StepsComponent],
   declarations: [StepsComponent],
