@@ -10,6 +10,7 @@ import { ModalModule } from "../modal/modal.module";
 import { SweetsPickerModule } from "../sweets-picker/sweets-picker.module";
 import { ContactFormModule } from "../contact-form/contact-form.module";
 import { FormInputsModule } from "../form-inputs/form-inputs.module";
+import { PaymentModule } from "../payment/payment.module";
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { FormInputsModule } from "../form-inputs/form-inputs.module";
     SweetsPickerModule,
     ContactFormModule,
     FormInputsModule,
+    PaymentModule,
   ],
   entryComponents: [StepsComponent],
   declarations: [StepsComponent],

@@ -2,7 +2,7 @@
    <app-navbar></app-navbar> 
    <app-sweets-header></app-sweets-header>
   </div>
-  <app-banner-homepage></app-banner-homepage>
+  <app-banner-homepage (togglePopUp)="openPopUp()"></app-banner-homepage>
   <app-sweets-grid (togglePopUp)="openPopUp()"></app-sweets-grid>
   <div class="popup-modal" *ngIf="togglePopUp">
       <app-steps (modalClose)="openPopUp()"></app-steps>

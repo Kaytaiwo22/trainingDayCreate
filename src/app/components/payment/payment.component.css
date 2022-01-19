@@ -1,0 +1,24 @@
+.outer-payment {
+  background-color: white;
+  border-radius: 10px;
+  width: 65%;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 0px 1px #000000, 0px 0px 1px #000000;
+}
+
+.cardnumber {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+}
+
+.middle {
+  margin: 0;
+}
+
+.postcode {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin: 0;
+}

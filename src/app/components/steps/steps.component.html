@@ -84,7 +84,9 @@
 
             <div class="delivery-selection" *ngIf="counter===2">
                 <div class="information-form" *ngIf="counter===2">
-                    <app-form-inputs [form]="form">
+                    <app-form-inputs
+                    (formResponse)="RecieveResponse($event)"
+                    [form]="form">
                     </app-form-inputs>
                 </div>
                 <div class="next-button">
@@ -109,10 +111,14 @@
                 </div>
             </div>
             <div class="payment-selection" *ngIf="counter===5">
+                <!-- <app-payment
+                    [form]="form">
+                </app-payment> -->
                 <div class="next-button">
-                    <button class="button" (click)="nextSteps()">Next</button>
+                    <button class="button" (click)="modalClosed()">Finished</button>
                 </div>
             </div>
+            
             <div class="sweets-picker" *ngIf="counter===1">
                 <app-sweets-picker></app-sweets-picker>
             </div>
