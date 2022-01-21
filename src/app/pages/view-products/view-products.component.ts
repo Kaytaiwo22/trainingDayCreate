@@ -6,6 +6,11 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
   styleUrls: ["./view-products.component.css"],
 })
 export class ViewProductsComponent implements OnInit {
+  public images = [
+    {
+      url: "assets/images/container.png",
+    },
+  ];
   @Output() togglePopUp2: EventEmitter<void> = new EventEmitter();
   constructor() {}
 

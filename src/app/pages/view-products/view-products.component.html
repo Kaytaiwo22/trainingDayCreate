@@ -1,11 +1,19 @@
+<div class="wrapper-hero">
+    <app-all-products></app-all-products>
+  </div>
+
+   <!-- <div class="popup-modal2" *ngIf="togglePopUp2">
+    <app-product-modal (modalClose)="openPopUp2()"></app-product-modal>
+    </div> -->
+    
 <div class="outer-view">
     <div class="image-block-grid grid-x">
         <div class="image-block small-12 medium-6 columns">
-            <img src="assets/images/container.png" class="best-seller"/>
+            <img [src]="{{images.url}}" class="best-seller"/>
             <img src="assets/images/view-product.png" class="sweet-out"/>
             <img src="assets/images/vegan-logo.png" class="vegan"/>
             <div class="outer-btn">
-            <button class="view-btn" (click)="openPopUp2()">View Product</button>
+            <button class="view-btn">View Product</button>
             </div>
         </div>
     
