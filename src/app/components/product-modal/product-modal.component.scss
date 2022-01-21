@@ -1,0 +1,100 @@
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: white;
+  box-shadow: 0px 0px 1px #000000;
+  border-radius: 20px;
+  margin: auto;
+  width: 90%;
+  min-height: 580px;
+}
+
+.close {
+  color: blue;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sweet-out {
+  border: 0.5px solid #eeeee4;
+  width: 100%;
+}
+
+.image-block-grid {
+  position: absolute;
+  width: 100%;
+}
+
+.vegan {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.image-block {
+  position: relative;
+  width: 30%;
+  top: 110px;
+  left: 15px;
+}
+
+.outer-box {
+  position: relative;
+  left: 87px;
+  background-color: #1b9aaa2b;
+  padding: 20px;
+  top: 100px;
+  border-radius: 20px;
+}
+
+.header {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-transform: capitalize;
+  font-size: 45px;
+}
+
+.text {
+  margin: 0 auto;
+  position: relative;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.bag-btn {
+  background-color: #ff99bb;
+  padding: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: white;
+  position: relative;
+  left: 250px;
+  top: 65px;
+  border: 2px solid white;
+}
+
+.best-seller {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}

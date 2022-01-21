@@ -1,0 +1,40 @@
+.sweet-out {
+  border: 0.5px solid #eeeee4;
+  width: 100%;
+}
+
+.image-block-grid {
+  padding-right: 20%;
+  padding-left: 20%;
+  margin: -10px;
+}
+
+.vegan {
+  position: absolute;
+  left: 10%;
+  top: 71%;
+}
+
+.image-block {
+  padding: 30px;
+  position: relative;
+}
+
+.best-seller {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+}
+
+.outer-btn {
+  background-color: #1b9aaa;
+}
+
+.view-btn {
+  color: white;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  cursor: pointer;
+}

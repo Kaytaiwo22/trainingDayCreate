@@ -11,6 +11,9 @@ import { BannerModule } from "src/app/components/banner-homepage/banner-homepage
 import { SweetsGridModule } from "src/app/components/sweets-grid/sweets-grid.module";
 import { SweetsPickerModule } from "src/app/components/sweets-picker/sweets-picker.module";
 import { InfoFormModule } from "src/app/components/info-form/info-form.module";
+import { AllProductsModule } from "src/app/components/all-products/all-products.module";
+import { ViewProductsModule } from "src/app/components/view-products/view-products.module";
+import { ProductModalModule } from "src/app/components/product-modal/product-modal.module";
 
 const routes: Routes = [
   {
@@ -41,6 +44,9 @@ export class HomeRoutingModule {}
     SweetsGridModule,
     SweetsPickerModule,
     InfoFormModule,
+    AllProductsModule,
+    ViewProductsModule,
+    ProductModalModule,
   ],
   declarations: [HomeComponent],
   providers: [],

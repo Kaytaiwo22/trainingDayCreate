@@ -40,6 +40,9 @@ import { SweetCounterModule } from "./components/sweet-counter/sweet-counter.mod
 import { ContactFormModule } from "./components/contact-form/contact-form.module";
 import { FormInputsModule } from "./components/form-inputs/form-inputs.module";
 import { PaymentModule } from "./components/payment/payment.module";
+import { AllProductsModule } from "./components/all-products/all-products.module";
+import { ViewProductsModule } from "./components/view-products/view-products.module";
+import { ProductModalModule } from "./components/product-modal/product-modal.module";
 
 declare global {
   interface Window {
@@ -91,6 +94,9 @@ export const httpInterceptorProviders = [
     ContactFormModule,
     FormInputsModule,
     PaymentModule,
+    AllProductsModule,
+    ViewProductsModule,
+    ProductModalModule,
   ],
   providers: [
     VerifiedAsLoggedInService,

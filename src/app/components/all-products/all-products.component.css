@@ -1,0 +1,52 @@
+.navbar-out {
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
+.sweets-logo {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-left: 10px;
+}
+
+.sweets-arrow {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 48%;
+  top: 90%;
+}
+
+.content {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 60%;
+  padding-top: 6%;
+}
+
+.all-products {
+  color: white;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.text {
+  color: white;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-out {
+    height: 200px;
+  }
+
+  .sweets-logo {
+    width: 90px;
+    height: 90px;
+    align-items: center;
+  }
+}

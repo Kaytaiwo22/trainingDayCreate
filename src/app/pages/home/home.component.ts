@@ -7,6 +7,7 @@ import { TaggingService } from "../../containers/main/tagging.service";
 })
 export class HomeComponent {
   public togglePopUp: boolean;
+  public togglePopUp2: boolean;
 
   constructor(private taggingService: TaggingService) {
     this.taggingService.setAllTags("Just Pick n Mix", "Sweets for you!");
@@ -18,5 +19,13 @@ export class HomeComponent {
 
   close() {
     this.togglePopUp = true;
+  }
+
+  openPopUp2() {
+    this.togglePopUp2 = !this.togglePopUp2;
+  }
+
+  close2() {
+    this.togglePopUp2 = true;
   }
 }
