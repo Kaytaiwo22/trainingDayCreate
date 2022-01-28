@@ -42,6 +42,7 @@ import { FormInputsModule } from "./components/form-inputs/form-inputs.module";
 import { PaymentModule } from "./components/payment/payment.module";
 import { AllProductsModule } from "./components/all-products/all-products.module";
 import { ProductModalModule } from "./components/product-modal/product-modal.module";
+import { ViewProductsModule } from "./pages/view-products/view-products.module";
 
 declare global {
   interface Window {
@@ -95,6 +96,7 @@ export const httpInterceptorProviders = [
     PaymentModule,
     AllProductsModule,
     ProductModalModule,
+    ViewProductsModule,
   ],
   providers: [
     VerifiedAsLoggedInService,

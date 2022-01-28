@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-view-products",
@@ -6,9 +6,30 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
   styleUrls: ["./view-products.component.css"],
 })
 export class ViewProductsComponent implements OnInit {
-  public images = [
+  @Input() images: {
+    url: string;
+  }[] = [];
+
+  public url = [
     {
-      url: "assets/images/container.png",
+      url: "/assets/images/view-product.png",
+      bestSeller: true,
+      vegan: true,
+    },
+    {
+      url: "assets/images/view-product.png",
+      bestSeller: true,
+      vegan: true,
+    },
+    {
+      url: "assets/images/view-product.png",
+      bestSeller: true,
+      vegan: true,
+    },
+    {
+      url: "assets/images/view-product.png",
+      bestSeller: true,
+      vegan: true,
     },
   ];
   @Output() togglePopUp2: EventEmitter<void> = new EventEmitter();
@@ -18,5 +39,9 @@ export class ViewProductsComponent implements OnInit {
 
   openPopUp2() {
     this.togglePopUp2.emit();
+  }
+  closeModal(image) {
+    image.open = false;
+    console.log(image);
   }
 }

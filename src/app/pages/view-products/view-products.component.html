@@ -1,46 +1,15 @@
-<div class="wrapper-hero">
+<div class="wrapper-hero"> 
     <app-all-products></app-all-products>
   </div>
-
-   <!-- <div class="popup-modal2" *ngIf="togglePopUp2">
-    <app-product-modal (modalClose)="openPopUp2()"></app-product-modal>
-    </div> -->
     
-<div class="outer-view">
-    <div class="image-block-grid grid-x">
-        <div class="image-block small-12 medium-6 columns">
-            <img [src]="{{images.url}}" class="best-seller"/>
-            <img src="assets/images/view-product.png" class="sweet-out"/>
-            <img src="assets/images/vegan-logo.png" class="vegan"/>
-            <div class="outer-btn">
-            <button class="view-btn">View Product</button>
-            </div>
+<div class="grid-x grid-margin-x">
+    <div class="grid small-12 medium-6 cell" *ngFor="let image of url" [ngClass]="{'best-seller': image.bestSeller, 'sweet-out': true, 'vegan': true}" >
+        <img [src]="image.url" class="image"/>
+        <div class="outer-btn">
+        <button class="view-btn" (click)="image.open = true">View Product</button>
         </div>
-    
-        <div class="image-block columns medium-6">
-            <img src="assets/images/container.png" class="best-seller"/>
-            <img src="assets/images/view-product.png" class="sweet-out"/>
-            <img src="assets/images/vegan-logo.png" class="vegan"/>
-            <div class="outer-btn">
-            <button class="view-btn">View Product</button>
-            </div>
-        </div>
-    
-        <div class="image-block columns medium-6">
-            <img src="assets/images/container.png" class="best-seller"/>
-            <img src="assets/images/view-product.png" class="sweet-out"/>  
-            <img src="assets/images/vegan-logo.png" class="vegan"/>
-            <div class="outer-btn">
-            <button class="view-btn">View Product</button>
-            </div>       
-        </div>
-    
-        <div class="image-block columns medium-6">      
-            <img src="assets/images/container.png" class="best-seller"/>  
-            <img src="assets/images/view-product.png" class="sweet-out"/>
-            <img src="assets/images/vegan-logo.png" class="vegan"/>
-            <div class="outer-btn">
-            <button class="view-btn">View Product</button>
-            </div>
-       </div>
+        <app-product-modal [hidden]="!image.open" (modalClose)="closeModal(image)"></app-product-modal>
+    </div>
 </div>
+    
+

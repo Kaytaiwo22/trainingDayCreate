@@ -8,19 +8,34 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 export class SweetCounterComponent {
   @Input() image: {
     url: string;
-    description: string;
-  };
+  }[] = [];
 
-  public counter: number = 0;
+  public url = [
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+  ];
 
   constructor() {}
-
-  addCounter() {
-    this.counter = this.counter + 1;
-  }
-  removeCounter() {
-    if (this.counter > 0) {
-      this.counter = this.counter - 1;
-    }
-  }
 }

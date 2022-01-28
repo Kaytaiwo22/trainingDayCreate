@@ -1,6 +1,10 @@
+.outer-box {
+  position: relative;
+  width: 50%;
+}
+
 .image-wrapper {
   width: 70%;
-  position: relative;
   top: -485px;
   right: -320%;
 }
@@ -34,4 +38,17 @@
 .buttonSection {
   width: 100%;
   margin-top: 15px;
+}
+
+.out-text {
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  width: 50%;
+  border-radius: 10px;
+  right: 0;
+}
+
+.inside-text {
+  color: #1b9aaa;
 }

@@ -10,6 +10,7 @@ export class ProductModalComponent {
   constructor() {}
 
   public modalClosed() {
+    console.log("test");
     this.modalClose.emit();
   }
 }

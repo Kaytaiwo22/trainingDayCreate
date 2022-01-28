@@ -21,55 +21,48 @@
 }
 
 .close {
-  color: blue;
-  float: right;
+  color: #ff99bb;
   font-size: 28px;
   font-weight: bold;
   margin-right: 20px;
+  width: 100%;
+  text-align: right;
+  padding-right: 10px;
+  padding-top: 5px;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #d8386d;
   text-decoration: none;
   cursor: pointer;
 }
 
-.sweet-out {
-  border: 0.5px solid #eeeee4;
-  width: 100%;
-}
-
-.image-block-grid {
-  position: absolute;
-  width: 100%;
-}
-
 .vegan {
   position: absolute;
-  left: 0;
+  left: 23px;
   bottom: 0;
-}
-
-.image-block {
-  position: relative;
-  width: 30%;
-  top: 110px;
-  left: 15px;
 }
 
 .outer-box {
   position: relative;
-  left: 87px;
   background-color: #1b9aaa2b;
-  padding: 20px;
-  top: 100px;
   border-radius: 20px;
+  padding: 30px;
+  display: inline-block;
+  width: 55%;
+  top: 110px;
+  left: 75px;
+}
+
+.images {
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  padding-left: 40px;
 }
 
 .header {
-  padding-left: 10%;
-  padding-right: 10%;
   text-transform: capitalize;
   font-size: 45px;
 }
@@ -77,8 +70,9 @@
 .text {
   margin: 0 auto;
   position: relative;
-  padding-left: 10%;
-  padding-right: 10%;
+  // padding-left: 10%;
+  // padding-right: 10%;
+  padding-bottom: 20px;
 }
 
 .bag-btn {
@@ -88,13 +82,43 @@
   text-transform: uppercase;
   color: white;
   position: relative;
-  left: 250px;
-  top: 65px;
   border: 2px solid white;
 }
 
 .best-seller {
   position: absolute;
-  right: 0px;
-  top: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .images {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    top: 10px;
+  }
+
+  .outer-box {
+    width: 280px;
+    position: relative;
+    top: 25px;
+    left: 45px;
+  }
+
+  .header {
+    font-size: 35px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .best-seller {
+    left: -5px;
+    width: 60px;
+  }
+
+  .vegan {
+    left: -5px;
+  }
 }
