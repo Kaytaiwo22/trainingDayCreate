@@ -9,7 +9,7 @@
   border-radius: 50%;
 }
 
-.counter-wrapper{
+.counter-wrapper {
   position: relative;
 }
 .number {
@@ -20,7 +20,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #DB2763;
+  background-color: #db2763;
   border: 1px solid white;
   color: white;
   position: absolute;
@@ -29,31 +29,28 @@
   text-align: center;
 }
 
-.buttonSection{
+.buttonSection {
   width: 100%;
   margin-top: 15px;
 }
 
 .addButton {
-  background-color: #DB2763;
+  background-color: #db2763;
   border: 1px solid white;
   color: white;
   width: 50%;
-  font-size: 30px;
   padding: 5px 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   cursor: pointer;
 }
 .minusButton {
-  background-color: #DB2763;
+  background-color: #db2763;
   border: 1px solid white;
   color: white;
   width: 50%;
-  font-size: 30px;
   padding: 5px 15px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
-
 }
