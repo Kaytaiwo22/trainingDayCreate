@@ -1,0 +1,54 @@
+.outer-box {
+  position: relative;
+  width: 50%;
+}
+
+.image-wrapper {
+  width: 70%;
+  top: -485px;
+  right: -320%;
+}
+
+.image-item {
+  background-size: cover;
+  width: 70%;
+  border-radius: 50%;
+}
+
+.counter-wrapper {
+  position: relative;
+}
+.number {
+  font-weight: bold;
+  width: 100%;
+}
+.counter {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #db2763;
+  border: 1px solid white;
+  color: white;
+  position: absolute;
+  right: 5px;
+  top: -5px;
+  text-align: center;
+}
+
+.buttonSection {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.out-text {
+  background-color: white;
+  padding: 10px;
+  position: relative;
+  width: 50%;
+  border-radius: 10px;
+  right: 0;
+}
+
+.inside-text {
+  color: #1b9aaa;
+}
