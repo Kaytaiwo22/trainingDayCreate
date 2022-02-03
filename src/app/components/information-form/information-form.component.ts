@@ -17,42 +17,30 @@ import {
 } from "@angular/forms";
 
 @Component({
-  selector: "app-form-inputs",
-  templateUrl: "./form-inputs.component.html",
-  styleUrls: ["./form-inputs.component.css"],
+  selector: "app-information-form",
+  templateUrl: "./information-form.component.html",
+  styleUrls: ["./information-form.component.css"],
 })
-export class FormInputsComponent implements OnInit, OnChanges {
+export class InformationFormComponent implements OnInit, OnChanges {
   @Input() form: {
     title: string;
     length: string;
     type: string;
     required: boolean;
   }[] = [];
-  public addressNickname: FormControl = new FormControl("", {
+  public fullName: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
     ]),
   });
-  public addressLine1: FormControl = new FormControl("", {
+  public emailAddress: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
     ]),
   });
-  public addressLine2: FormControl = new FormControl("", {
-    validators: Validators.compose([
-      Validators.required,
-      Validators.pattern(/^.*$/),
-    ]),
-  });
-  public addressLine3: FormControl = new FormControl("", {
-    validators: Validators.compose([
-      Validators.required,
-      Validators.pattern(/^.*$/),
-    ]),
-  });
-  public postCode: FormControl = new FormControl("", {
+  public phoneNumber: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
@@ -66,11 +54,9 @@ export class FormInputsComponent implements OnInit, OnChanges {
 
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
-      addressNickname: this.addressNickname,
-      addressLine1: this.addressLine1,
-      addressLine2: this.addressLine2,
-      addressLine3: this.addressLine3,
-      postCode: this.postCode,
+      fullName: this.fullName,
+      emailAddress: this.emailAddress,
+      phoneNumber: this.phoneNumber,
     });
   }
 

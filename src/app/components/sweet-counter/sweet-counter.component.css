@@ -1,6 +1,8 @@
 .outer-box {
   position: relative;
   width: 50%;
+  left: 50%;
+  bottom: 300px;
 }
 
 .image-wrapper {
@@ -23,8 +25,8 @@
   width: 100%;
 }
 .counter {
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: #db2763;
   border: 1px solid white;

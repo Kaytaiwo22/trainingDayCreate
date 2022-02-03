@@ -17,36 +17,36 @@ import {
 } from "@angular/forms";
 
 @Component({
-  selector: "app-form-inputs",
-  templateUrl: "./form-inputs.component.html",
-  styleUrls: ["./form-inputs.component.css"],
+  selector: "app-payment-modal",
+  templateUrl: "./payment-modal.component.html",
+  styleUrls: ["./payment-modal.component.css"],
 })
-export class FormInputsComponent implements OnInit, OnChanges {
+export class PaymentModalComponent implements OnInit, OnChanges {
   @Input() form: {
     title: string;
     length: string;
     type: string;
     required: boolean;
   }[] = [];
-  public addressNickname: FormControl = new FormControl("", {
+  public cardNumber: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
     ]),
   });
-  public addressLine1: FormControl = new FormControl("", {
+  public cvv: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
     ]),
   });
-  public addressLine2: FormControl = new FormControl("", {
+  public expiryDate: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
     ]),
   });
-  public addressLine3: FormControl = new FormControl("", {
+  public cardOwnerName: FormControl = new FormControl("", {
     validators: Validators.compose([
       Validators.required,
       Validators.pattern(/^.*$/),
@@ -66,10 +66,10 @@ export class FormInputsComponent implements OnInit, OnChanges {
 
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
-      addressNickname: this.addressNickname,
-      addressLine1: this.addressLine1,
-      addressLine2: this.addressLine2,
-      addressLine3: this.addressLine3,
+      cardNumber: this.cardNumber,
+      cvv: this.cvv,
+      expiryDate: this.expiryDate,
+      cardOwnerName: this.cardOwnerName,
       postCode: this.postCode,
     });
   }

@@ -35,6 +35,18 @@ export class SweetCounterComponent {
     {
       url: "/assets/images/sweet-delivery1.png",
     },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
+    {
+      url: "/assets/images/sweet-delivery1.png",
+    },
   ];
 
   constructor() {}

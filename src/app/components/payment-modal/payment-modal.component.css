@@ -1,0 +1,10 @@
+.outer-form {
+  background-color: white;
+  width: 50%;
+  position: relative;
+  border-radius: 25px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #dcdcdc;
+  padding: 15px;
+}

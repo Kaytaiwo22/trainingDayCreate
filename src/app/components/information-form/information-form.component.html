@@ -1,4 +1,5 @@
 <!-- <form [formGroup]="thisform"> -->
+  <div class="outside">
 <div class="outer-form">
     <div class="formInput">
       <form
@@ -9,34 +10,22 @@
     <!-- <span class="required">* Required</span> -->
     <input
       type="text"
-      [formControl]="addressNickname"
-      placeholder="Address Nickname"
+      [formControl]="fullName"
+      placeholder="Full Name"
       class="username"
     />
   </label>
   <label>
     <input
       type="text"
-      [formControl]="addressLine1"
-      placeholder="Address Line 1"
+      [formControl]="emailAddress"
+      placeholder="Email Address"
       class="username"
     />
     <input
       type="text"
-      [formControl]="addressLine2"
-      placeholder="Address Line 2"
-      class="username"
-    />
-    <input
-      type="text"
-      [formControl]="addressLine3"
-      placeholder="Address Line 3"
-      class="username"
-    />
-    <input
-      type="text"
-      [formControl]="postCode"
-      placeholder="Post Code"
+      [formControl]="phoneNumber"
+      placeholder="Phone Number"
       class="username"
     />
   </label>
@@ -45,4 +34,6 @@
 </form>
   </div>
 </div>
+</div>
+
 

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 
 @Component({
   selector: "app-steps",
@@ -7,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 })
 export class StepsComponent implements OnInit {
   selectedSize: string;
+  sweetsLimit: number;
   public currentStep: boolean;
   counter = 0;
   public form = [
@@ -37,35 +38,35 @@ export class StepsComponent implements OnInit {
   ];
   public images = [
     {
-      url: "../assets/images/candy.png",
+      url: "../assets/images/sweets-jar1.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/sweets.png",
+      url: "../assets/images/sweets-jar2.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/candy.png",
+      url: "../assets/images/sweets-jar3.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/sweets.png",
+      url: "../assets/images/sweets-jar4.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/candy.png",
+      url: "../assets/images/sweets-jar5.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/sweets.png",
+      url: "../assets/images/sweets-jar6.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/candy.png",
+      url: "../assets/images/sweets-jar7.png",
       description: "sweets",
     },
     {
-      url: "../assets/images/sweets.png",
+      url: "../assets/images/sweets-jar1.png",
       description: "sweets",
     },
   ];
@@ -105,6 +106,17 @@ export class StepsComponent implements OnInit {
 
   selectOption(value) {
     this.selectedSize = value;
+    this.setSweetsLimit();
+  }
+  setSweetsLimit() {
+    this.selectedSize;
+    if (this.selectedSize == "500") {
+      this.sweetsLimit = 5;
+    } else if (this.selectedSize == "1000") {
+      this.sweetsLimit = 10;
+    } else if (this.selectedSize == "2000") {
+      this.sweetsLimit = 20;
+    }
   }
 
   public modalClosed() {
